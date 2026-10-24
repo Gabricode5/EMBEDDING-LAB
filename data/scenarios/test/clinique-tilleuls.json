@@ -1,0 +1,696 @@
+{
+  "project_id": "clinique-tilleuls",
+  "project_name": "Plannings soignants de la Clinique des Tilleuls",
+  "description": "Remplacement du tableur partagé et de l'ancien logiciel de gestion des temps par un logiciel de planning dédié, avec démarrage au bloc opératoire puis extension aux urgences.",
+  "people": [
+    {
+      "name": "Nadia Ferhat",
+      "role": "Directrice des soins",
+      "email": "nadia.ferhat@example.org"
+    },
+    {
+      "name": "Olivier Kervella",
+      "role": "Responsable des systèmes d'information",
+      "email": "olivier.kervella@example.org"
+    },
+    {
+      "name": "Agnès Rousseau-Lin",
+      "role": "Cadre de santé du bloc opératoire",
+      "email": null
+    },
+    {
+      "name": "Baptiste N'Diaye",
+      "role": "Contrôleur de gestion",
+      "email": "baptiste.ndiaye@example.org"
+    },
+    {
+      "name": "Inès Castellano",
+      "role": "Référente formation RH",
+      "email": "ines.castellano@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-08",
+      "title": "Lancement du projet de planning",
+      "participants": [
+        "Nadia Ferhat",
+        "Olivier Kervella",
+        "Agnès Rousseau-Lin",
+        "Baptiste N'Diaye",
+        "Inès Castellano"
+      ],
+      "units": [
+        {
+          "unit_id": "u-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "fact",
+          "statement": "La clinique veut remplacer le tableur partagé par un logiciel de planning dédié avant la fin de l'année.",
+          "speaker": "Nadia Ferhat",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon, euh… l'idée c'est qu'on lâche le tableur, quoi. D'ici la fin de l'année, on veut un vrai logiciel.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Baptiste propose un budget de 45 000 euros couvrant les licences et le paramétrage, à faire valider par la direction.",
+          "speaker": "Baptiste N'Diaye",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Moi je… je mettrais 45 000, licences et paramétrage compris. Enfin, faut voir avec la direction.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "decision",
+          "statement": "La mise en service du logiciel au bloc opératoire est fixée au 3 novembre.",
+          "speaker": "Nadia Ferhat",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le bloc, on démarre le 3 novembre. Voilà. C'est calé.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "action",
+          "statement": "La formation des équipes du bloc opératoire est confiée à Inès.",
+          "speaker": "Nadia Ferhat",
+          "owner": "Inès Castellano",
+          "due_date": null,
+          "evidence": "Inès, euh, la formation des équipes du bloc… tu prends ? Ouais ?",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "fact",
+          "statement": "Le contrat de maintenance de l'ancien logiciel de gestion des temps prend fin le 31 décembre 2026.",
+          "speaker": "Olivier Kervella",
+          "owner": null,
+          "due_date": null,
+          "evidence": "L'ancien logiciel, euh, la maintenance… ça s'arrête au 31 décembre. Pas après, hein.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-006",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Olivier évoque la possibilité d'une application mobile permettant aux infirmiers de consulter leur planning.",
+          "speaker": "Olivier Kervella",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait peut-être… je sais pas, brancher une appli mobile pour les infirmiers ? Enfin, c'est une idée comme ça.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-22",
+      "title": "Arbitrage budgétaire",
+      "participants": [
+        "Nadia Ferhat",
+        "Olivier Kervella",
+        "Baptiste N'Diaye",
+        "Inès Castellano"
+      ],
+      "units": [
+        {
+          "unit_id": "u-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "decision",
+          "statement": "La direction a validé un budget de 38 000 euros pour le logiciel de planning.",
+          "speaker": "Baptiste N'Diaye",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon. La direction a dit oui… mais à 38 000. Pas un euro de plus.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "question",
+          "statement": "Inès demande si la formation des utilisateurs est incluse dans le budget de 38 000 euros.",
+          "speaker": "Inès Castellano",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et euh… la formation, elle est dedans ? Dans les 38 000 ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "commitment",
+          "statement": "Olivier s'engage à transmettre la grille de paramétrage des trames de garde à l'éditeur avant le 2 octobre.",
+          "speaker": "Olivier Kervella",
+          "owner": "Olivier Kervella",
+          "due_date": "2026-10-02",
+          "evidence": "Ouais, la grille des trames… je l'envoie à l'éditeur. Avant le 2. Promis.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "risk",
+          "statement": "Olivier signale que le logiciel ne gère pas nativement les gardes de nuit du week-end.",
+          "speaker": "Olivier Kervella",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Par contre, hein… les nuits du week-end, le logiciel sait pas faire tout seul. Faut bricoler.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-011",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "action",
+          "statement": "Nadia demande à Olivier de contacter l'éditeur pour obtenir un correctif sur les gardes de nuit du week-end.",
+          "speaker": "Nadia Ferhat",
+          "owner": "Olivier Kervella",
+          "due_date": null,
+          "evidence": "Olivier, tu peux les appeler ? Qu'ils nous sortent un truc pour les nuits, là.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-06",
+      "title": "Préparation du démarrage au bloc",
+      "participants": [
+        "Nadia Ferhat",
+        "Olivier Kervella",
+        "Agnès Rousseau-Lin",
+        "Inès Castellano"
+      ],
+      "units": [
+        {
+          "unit_id": "u-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "answer",
+          "statement": "Nadia indique que la formation n'est pas incluse dans les 38 000 euros et qu'elle est financée par le plan de formation RH.",
+          "speaker": "Nadia Ferhat",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Non non, la formation c'est pas dans les 38 000. Ça passe sur le plan de formation RH.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "decision",
+          "statement": "Le démarrage au bloc opératoire est reporté au 17 novembre.",
+          "speaker": "Nadia Ferhat",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon… le 3, on tiendra pas. On décale. Le 17 novembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "action",
+          "statement": "La formation des équipes du bloc est réattribuée à Agnès, qui doit l'avoir terminée avant le 13 novembre.",
+          "speaker": "Inès Castellano",
+          "owner": "Agnès Rousseau-Lin",
+          "due_date": "2026-11-13",
+          "evidence": "Euh, Agnès, ce serait mieux que ce soit toi pour le bloc, non ? Tu les connais. Moi je lâche, du coup.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "decision",
+          "statement": "L'extension du logiciel aux urgences en décembre est validée à condition que le démarrage au bloc se fasse sans incident majeur.",
+          "speaker": "Nadia Ferhat",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le bloc tourne sans gros souci, euh… alors on valide les urgences pour décembre. Sinon, on attend.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-016",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "fact",
+          "statement": "Olivier confirme avoir transmis la grille des trames de garde à l'éditeur le 1er octobre.",
+          "speaker": "Olivier Kervella",
+          "owner": null,
+          "due_date": null,
+          "evidence": "La grille, c'est parti chez l'éditeur. Le 1er, je crois. Ouais, le 1er.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-20",
+      "title": "Suivi éditeur et contrat",
+      "participants": [
+        "Nadia Ferhat",
+        "Olivier Kervella",
+        "Agnès Rousseau-Lin",
+        "Baptiste N'Diaye"
+      ],
+      "units": [
+        {
+          "unit_id": "u-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Le contrat de maintenance de l'ancien logiciel de gestion des temps est prolongé jusqu'au 31 mars 2027.",
+          "speaker": "Baptiste N'Diaye",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bonne nouvelle, enfin… on a prolongé l'ancien. Jusqu'au 31 mars. Ça laisse de la marge.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "L'éditeur a livré un correctif pour les gardes de nuit du week-end, qu'Olivier a testé avec succès.",
+          "speaker": "Olivier Kervella",
+          "owner": null,
+          "due_date": null,
+          "evidence": "L'éditeur a envoyé le patch pour les nuits. Testé hier. Ça passe.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-019",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "risk",
+          "statement": "Agnès signale que des gardes de nuit apparaissent encore en double dans l'environnement de test.",
+          "speaker": "Agnès Rousseau-Lin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Euh, moi sur la recette… j'ai encore des nuits en doublon, hein. Pas partout. Mais j'en ai.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-020",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "commitment",
+          "statement": "Agnès s'engage à envoyer à Olivier les captures des doublons de gardes avant le 22 octobre.",
+          "speaker": "Agnès Rousseau-Lin",
+          "owner": "Agnès Rousseau-Lin",
+          "due_date": "2026-10-22",
+          "evidence": "Je t'envoie les captures, euh… d'ici jeudi. Ça te va ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-05",
+      "date": "2026-11-10",
+      "title": "Go / no-go bloc opératoire",
+      "participants": [
+        "Nadia Ferhat",
+        "Olivier Kervella",
+        "Agnès Rousseau-Lin",
+        "Baptiste N'Diaye",
+        "Inès Castellano"
+      ],
+      "units": [
+        {
+          "unit_id": "u-021",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-10",
+          "type": "decision",
+          "statement": "Le démarrage du logiciel au bloc opératoire le 17 novembre est confirmé.",
+          "speaker": "Nadia Ferhat",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon, on y va. Le 17, c'est confirmé. Go.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-022",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-10",
+          "type": "fact",
+          "statement": "Agnès a formé 42 personnes du bloc ; deux agents en congé restent à former.",
+          "speaker": "Agnès Rousseau-Lin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Alors, euh… 42 formés au bloc. Il m'en reste deux, ils sont en congé.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-023",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-10",
+          "type": "fact",
+          "statement": "Les doublons de gardes de nuit sont corrigés après un second correctif de l'éditeur.",
+          "speaker": "Olivier Kervella",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Les doublons, c'est réglé. Deuxième patch. Cette fois c'est bon, j'ai vérifié.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "u-007",
+      "to_id": "u-002",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-013",
+      "to_id": "u-003",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-014",
+      "to_id": "u-004",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-017",
+      "to_id": "u-005",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-023",
+      "to_id": "u-019",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-012",
+      "to_id": "u-008",
+      "relation": "answers",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-016",
+      "to_id": "u-009",
+      "relation": "supports",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-021",
+      "to_id": "u-013",
+      "relation": "supports",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-022",
+      "to_id": "u-014",
+      "relation": "supports",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-010",
+      "to_id": "u-011",
+      "relation": "creates_action",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-019",
+      "to_id": "u-020",
+      "relation": "creates_action",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-019",
+      "to_id": "u-018",
+      "relation": "contradicts",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-006",
+      "to_id": "u-013",
+      "relation": "unrelated",
+      "evidence_source_id": "meeting-03"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Quelle date de démarrage au bloc opératoire a finalement été retenue ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-021",
+        "u-013"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Quel budget a été validé pour le logiciel de planning ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-007"
+      ],
+      "hard_negative_unit_ids": [
+        "u-002"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui est chargé de former les équipes du bloc ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-014"
+      ],
+      "hard_negative_unit_ids": [
+        "u-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "owner_change",
+        "current_decision",
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui doit contacter l'éditeur pour le problème des gardes de nuit ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-020",
+        "u-010"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner",
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "La formation des soignants est-elle comprise dans l'enveloppe validée ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-012"
+      ],
+      "hard_negative_unit_ids": [
+        "u-008",
+        "u-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "negation",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Est-ce que le logiciel sera déployé aux urgences en décembre ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-015"
+      ],
+      "hard_negative_unit_ids": [
+        "u-021"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "conditional_agreement"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Une application mobile est-elle prévue pour que les infirmiers consultent leur planning ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision",
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Jusqu'à quand l'ancien logiciel de gestion des temps reste-t-il sous maintenance ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-017"
+      ],
+      "hard_negative_unit_ids": [
+        "u-005"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "date_change",
+        "current_decision",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Le bug des nuits du week-end, c'est réglé ou toujours pas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-023"
+      ],
+      "hard_negative_unit_ids": [
+        "u-019",
+        "u-010"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "informal",
+        "multi_meeting",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Qu'est-ce qui a changé entre la proposition budgétaire de septembre et le montant validé ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-002",
+        "u-007"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "budget_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-11",
+      "text": "Rédige un mail à l'équipe pour confirmer le démarrage au bloc et l'état de la formation.",
+      "intent": "draft_email",
+      "relevant_unit_ids": [
+        "u-021",
+        "u-022"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003",
+        "u-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-12",
+      "text": "Olivier a-t-il bien envoyé la grille des trames de garde dans les temps ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-016",
+        "u-009"
+      ],
+      "hard_negative_unit_ids": [
+        "u-011"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment",
+        "paraphrase",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-13",
+      "text": "Combien coûte l'abonnement annuel à l'application mobile ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "q-14",
+      "text": "Quel prestataire héberge les données de planning de la clinique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    }
+  ]
+}

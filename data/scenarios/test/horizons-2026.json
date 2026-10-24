@@ -1,0 +1,663 @@
+{
+  "project_id": "horizons-2026",
+  "project_name": "Séminaire Horizons",
+  "description": "Préparation du séminaire de fin d'année d'une ETI de services numériques : lieu, dates, budget, transport et programme.",
+  "people": [
+    {
+      "name": "Camille Vasseur",
+      "role": "DRH, cheffe de projet séminaire",
+      "email": "camille.vasseur@example.org"
+    },
+    {
+      "name": "Rachid Ouali",
+      "role": "Contrôleur de gestion",
+      "email": "rachid.ouali@example.org"
+    },
+    {
+      "name": "Hélène Kowalski",
+      "role": "Assistante de direction",
+      "email": "helene.kowalski@example.org"
+    },
+    {
+      "name": "Bastien Ferreira",
+      "role": "Directeur général",
+      "email": "bastien.ferreira@example.org"
+    },
+    {
+      "name": "Yuki Tanaka-Roux",
+      "role": "Chargée de communication interne",
+      "email": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-08",
+      "title": "Lancement de l'organisation du séminaire",
+      "participants": [
+        "Camille Vasseur",
+        "Rachid Ouali",
+        "Hélène Kowalski",
+        "Bastien Ferreira",
+        "Yuki Tanaka-Roux"
+      ],
+      "units": [
+        {
+          "unit_id": "u-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "fact",
+          "statement": "Le séminaire doit réunir environ 70 collaborateurs sur deux jours.",
+          "speaker": "Camille Vasseur",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon, on sera, euh… à peu près 70. Sur deux jours, quoi.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Rachid propose un budget de 45 000 euros pour le séminaire, à faire valider par le comité de direction.",
+          "speaker": "Rachid Ouali",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Moi je dirais… 45 000, à peu près. Mais faut que ça passe en CODIR, hein.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "decision",
+          "statement": "Le séminaire est fixé aux 4 et 5 décembre.",
+          "speaker": "Bastien Ferreira",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Allez, on bloque le 4 et le 5 décembre. C'est bon pour moi.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Yuki évoque la possibilité de faire intervenir un conférencier externe.",
+          "speaker": "Yuki Tanaka-Roux",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait peut-être… je sais pas, faire venir quelqu'un de l'extérieur ? Enfin, à voir.",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "u-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "action",
+          "statement": "Hélène est chargée de réserver le transport en car pour le 15 octobre.",
+          "speaker": "Camille Vasseur",
+          "owner": "Hélène Kowalski",
+          "due_date": "2026-10-15",
+          "evidence": "Hélène, tu t'occupes des cars ? Genre… pour mi-octobre ?",
+          "status": "superseded"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-22",
+      "title": "Repérage du lieu et préparation du budget",
+      "participants": [
+        "Camille Vasseur",
+        "Rachid Ouali",
+        "Hélène Kowalski",
+        "Bastien Ferreira",
+        "Yuki Tanaka-Roux"
+      ],
+      "units": [
+        {
+          "unit_id": "u-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "fact",
+          "statement": "Le domaine des Grands Chênes dispose de 80 chambres.",
+          "speaker": "Hélène Kowalski",
+          "owner": null,
+          "due_date": null,
+          "evidence": "J'ai appelé le domaine. Euh, ils ont 80 chambres, donc on est larges.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "decision",
+          "statement": "Bastien accepte le domaine des Grands Chênes à condition que le devis reste inférieur à 20 000 euros.",
+          "speaker": "Bastien Ferreira",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si leur devis passe sous les 20 000… ben on valide, hein.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "question",
+          "statement": "Yuki demande si les conjoints sont invités à la soirée du séminaire.",
+          "speaker": "Yuki Tanaka-Roux",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et les conjoints, euh… ils viennent à la soirée ou pas ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "commitment",
+          "statement": "Rachid s'engage à présenter le budget du séminaire au comité de direction avant le 30 septembre.",
+          "speaker": "Rachid Ouali",
+          "owner": "Rachid Ouali",
+          "due_date": "2026-09-30",
+          "evidence": "Je le passe en CODIR. Avant la fin du mois, promis.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "risk",
+          "statement": "Hélène signale que le domaine a déjà une option de réservation pour le 4 décembre.",
+          "speaker": "Hélène Kowalski",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Par contre le 4… ils ont un mariage en option. Ça sent pas bon.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-06",
+      "title": "Point budget et calendrier",
+      "participants": [
+        "Camille Vasseur",
+        "Rachid Ouali",
+        "Hélène Kowalski",
+        "Bastien Ferreira"
+      ],
+      "units": [
+        {
+          "unit_id": "u-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "decision",
+          "statement": "Le comité de direction a validé un budget de 38 000 euros pour le séminaire.",
+          "speaker": "Rachid Ouali",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon. Le CODIR a tranché… ce sera 38 000. Pas un euro de plus.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "decision",
+          "statement": "Le séminaire est décalé aux 11 et 12 décembre.",
+          "speaker": "Bastien Ferreira",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Du coup on glisse d'une semaine. Le 11 et le 12. C'est acté.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "fact",
+          "statement": "Le devis du domaine des Grands Chênes s'élève à 18 500 euros.",
+          "speaker": "Hélène Kowalski",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le devis est arrivé. Euh… 18 500, tout compris.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "action",
+          "statement": "Camille reprend la réservation des cars à la place d'Hélène, avec une échéance au 24 octobre.",
+          "speaker": "Camille Vasseur",
+          "owner": "Camille Vasseur",
+          "due_date": "2026-10-24",
+          "evidence": "Hélène est sous l'eau, là. Je reprends les cars, je boucle ça pour le 24.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "answer",
+          "statement": "Bastien indique que les conjoints ne sont pas invités à la soirée cette année.",
+          "speaker": "Bastien Ferreira",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Non non, les conjoints… pas cette année. On reste entre nous.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-20",
+      "title": "Programme et communication",
+      "participants": [
+        "Camille Vasseur",
+        "Hélène Kowalski",
+        "Bastien Ferreira",
+        "Yuki Tanaka-Roux"
+      ],
+      "units": [
+        {
+          "unit_id": "u-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Le domaine ne dispose finalement que de 65 chambres en raison de travaux.",
+          "speaker": "Hélène Kowalski",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Ah, petit souci… c'est 65 chambres, pas 80. Ils ont des travaux dans une aile.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "decision",
+          "statement": "Les collaborateurs habitant à moins de 30 km rentreront dormir chez eux.",
+          "speaker": "Camille Vasseur",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Ceux qui habitent à moins de 30 bornes… ils rentrent chez eux le soir. Voilà.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "commitment",
+          "statement": "Yuki s'engage à rédiger le discours d'ouverture prononcé par Bastien, pour le 1er décembre.",
+          "speaker": "Yuki Tanaka-Roux",
+          "owner": "Yuki Tanaka-Roux",
+          "due_date": "2026-12-01",
+          "evidence": "Le mot d'ouverture de Bastien, je l'écris. Euh… je vous l'envoie le 1er.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-019",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "action",
+          "statement": "Hélène doit envoyer les invitations au séminaire avant le 31 octobre.",
+          "speaker": "Camille Vasseur",
+          "owner": "Hélène Kowalski",
+          "due_date": "2026-10-31",
+          "evidence": "Hélène, les invits, faut qu'elles partent avant le 31. OK ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-05",
+      "date": "2026-11-03",
+      "title": "Point de suivi avant le séminaire",
+      "participants": [
+        "Camille Vasseur",
+        "Rachid Ouali",
+        "Bastien Ferreira",
+        "Yuki Tanaka-Roux"
+      ],
+      "units": [
+        {
+          "unit_id": "u-020",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "fact",
+          "statement": "Camille a réservé deux cars avec un départ à 8 h le 11 décembre.",
+          "speaker": "Camille Vasseur",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Les cars, c'est bon. Deux cars, départ 8 h le 11.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-021",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "idea",
+          "statement": "Rachid propose d'ajouter une activité de team building pour environ 3 000 euros, sans décision prise.",
+          "speaker": "Rachid Ouali",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et si on rajoutait un team building ? Genre 3 000 balles… on en reparle ?",
+          "status": "proposed"
+        },
+        {
+          "unit_id": "u-022",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "fact",
+          "statement": "Rachid indique que 36 000 euros du budget sont déjà engagés.",
+          "speaker": "Rachid Ouali",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On est à 36 000 engagés, hein. Il reste pas grand-chose.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-023",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "decision",
+          "statement": "Le contrat avec le domaine des Grands Chênes est signé définitivement.",
+          "speaker": "Bastien Ferreira",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le domaine, c'est signé. On n'y revient plus.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "u-011",
+      "to_id": "u-002",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-012",
+      "to_id": "u-003",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-014",
+      "to_id": "u-005",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-016",
+      "to_id": "u-006",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-015",
+      "to_id": "u-008",
+      "relation": "answers",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-013",
+      "to_id": "u-007",
+      "relation": "supports",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-010",
+      "to_id": "u-012",
+      "relation": "supports",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-020",
+      "to_id": "u-014",
+      "relation": "supports",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-023",
+      "to_id": "u-007",
+      "relation": "supports",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-012",
+      "to_id": "u-019",
+      "relation": "creates_action",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-004",
+      "to_id": "u-018",
+      "relation": "unrelated",
+      "evidence_source_id": "meeting-04"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Quelles sont les dates définitives du séminaire ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-012"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Quel budget a été validé pour le séminaire ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-002",
+        "u-022"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui s'occupe de la réservation des cars ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-014",
+        "u-020"
+      ],
+      "hard_negative_unit_ids": [
+        "u-005"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "owner_change",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui est chargé d'écrire le discours d'ouverture ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-018"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner",
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "Le domaine des Grands Chênes a-t-il été retenu, et sous quelle condition ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-007",
+        "u-013",
+        "u-023"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "conditional_agreement",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Combien de chambres sont disponibles sur le lieu du séminaire ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-016"
+      ],
+      "hard_negative_unit_ids": [
+        "u-006"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Est-ce qu'un conférencier externe est prévu au programme ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-004"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision",
+        "negation"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Les conjoints sont-ils conviés à la soirée ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-015"
+      ],
+      "hard_negative_unit_ids": [
+        "u-008"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "negation",
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Comment le budget a-t-il évolué entre la première estimation et la validation ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-002",
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-021"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Bon, le team building, c'est acté ou pas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-021"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "informal",
+        "proposal_vs_decision"
+      ]
+    },
+    {
+      "query_id": "q-11",
+      "text": "Crée une tâche de rappel pour l'envoi des invitations.",
+      "intent": "create_task",
+      "relevant_unit_ids": [
+        "u-019"
+      ],
+      "hard_negative_unit_ids": [
+        "u-014"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment",
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-12",
+      "text": "Rédige un mail à l'équipe pour annoncer les dates et le lieu du séminaire.",
+      "intent": "draft_email",
+      "relevant_unit_ids": [
+        "u-012",
+        "u-023",
+        "u-017"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-13",
+      "text": "Quel traiteur a été retenu pour le dîner de gala ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    }
+  ]
+}

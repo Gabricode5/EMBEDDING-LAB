@@ -1,0 +1,475 @@
+{
+  "project_id": "atlas",
+  "project_name": "Atlas",
+  "description": "Refonte de l'espace client en ligne d'une PME de services.",
+  "people": [
+    {
+      "name": "Marie Dubois",
+      "role": "Cheffe de projet",
+      "email": "marie.dubois@example.org"
+    },
+    {
+      "name": "Karim Benali",
+      "role": "Contrôleur financier",
+      "email": "karim.benali@example.org"
+    },
+    {
+      "name": "Sophie Laurent",
+      "role": "Responsable marketing",
+      "email": null
+    },
+    {
+      "name": "Thomas Girard",
+      "role": "Lead technique",
+      "email": "thomas.girard@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-14",
+      "title": "Lancement du projet",
+      "participants": [
+        "Marie Dubois",
+        "Karim Benali",
+        "Sophie Laurent",
+        "Thomas Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "u-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-14",
+          "type": "fact",
+          "statement": "Le projet Atlas doit remplacer l'espace client actuel avant la fin de l'année.",
+          "speaker": "Marie Dubois",
+          "evidence": "L'objectif, c'est que le nouvel espace client remplace l'ancien d'ici décembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-14",
+          "type": "idea",
+          "statement": "Thomas propose de lancer Atlas le 15 novembre.",
+          "speaker": "Thomas Girard",
+          "evidence": "Je propose qu'on vise le 15 novembre pour le lancement.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-14",
+          "type": "idea",
+          "statement": "Karim propose un budget de 120 000 euros pour Atlas, sous réserve de validation par le comité.",
+          "speaker": "Karim Benali",
+          "evidence": "Je propose une enveloppe de 120 000 euros, à faire valider en comité.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-14",
+          "type": "commitment",
+          "statement": "Karim s'engage à présenter le budget d'Atlas au comité de direction avant le 25 septembre.",
+          "speaker": "Karim Benali",
+          "evidence": "Je le présente au comité avant le 25.",
+          "status": "active",
+          "owner": "Karim Benali",
+          "due_date": "2026-09-25"
+        },
+        {
+          "unit_id": "u-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-14",
+          "type": "idea",
+          "statement": "Sophie évoque la possibilité d'une campagne d'e-mailing pour le lancement.",
+          "speaker": "Sophie Laurent",
+          "evidence": "On pourrait peut-être faire une campagne mail au lancement, à voir.",
+          "status": "superseded"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-28",
+      "title": "Point après comité de direction",
+      "participants": [
+        "Marie Dubois",
+        "Karim Benali",
+        "Sophie Laurent",
+        "Thomas Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "u-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "decision",
+          "statement": "Le comité de direction a validé un budget de 100 000 euros pour Atlas.",
+          "speaker": "Marie Dubois",
+          "evidence": "Le comité a tranché : on part sur 100 000 euros, c'est validé.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "decision",
+          "statement": "La date de lancement d'Atlas est fixée au 15 novembre.",
+          "speaker": "Marie Dubois",
+          "evidence": "On confirme le 15 novembre.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "risk",
+          "statement": "Thomas signale un risque de retard de deux semaines lié à la migration des données clients.",
+          "speaker": "Thomas Girard",
+          "evidence": "La migration des données me fait peur, on peut déraper de deux semaines.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "action",
+          "statement": "Marie demande à Karim d'envoyer la version validée du budget à toute l'équipe.",
+          "speaker": "Marie Dubois",
+          "evidence": "Karim, tu peux envoyer la version validée du budget à toute l'équipe ?",
+          "status": "active",
+          "owner": "Karim Benali"
+        },
+        {
+          "unit_id": "u-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "question",
+          "statement": "Sophie demande si la campagne d'e-mailing est comprise dans le budget validé.",
+          "speaker": "Sophie Laurent",
+          "evidence": "Et la campagne mail, elle rentre dans les 100 000 ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-12",
+      "title": "Suivi du planning",
+      "participants": [
+        "Marie Dubois",
+        "Karim Benali",
+        "Thomas Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "u-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "decision",
+          "statement": "Le lancement d'Atlas est reporté au 22 novembre.",
+          "speaker": "Marie Dubois",
+          "evidence": "On confirme le report au 22 novembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "answer",
+          "statement": "Karim indique que la campagne d'e-mailing n'est pas comprise dans le budget validé.",
+          "speaker": "Karim Benali",
+          "evidence": "Non, la campagne mail n'est pas dans l'enveloppe validée.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "commitment",
+          "statement": "Thomas s'engage à livrer le plan de migration des données avant le 30 octobre.",
+          "speaker": "Thomas Girard",
+          "evidence": "Je vous livre le plan de migration avant le 30 octobre.",
+          "status": "active",
+          "owner": "Thomas Girard",
+          "due_date": "2026-10-30"
+        },
+        {
+          "unit_id": "u-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "fact",
+          "statement": "Karim est le responsable du suivi du budget d'Atlas.",
+          "speaker": "Marie Dubois",
+          "evidence": "Pour rappel, c'est Karim qui pilote le budget.",
+          "status": "active",
+          "owner": "Karim Benali"
+        },
+        {
+          "unit_id": "u-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "idea",
+          "statement": "Marie évoque l'idée de revoir le budget à la hausse si la migration prend du retard.",
+          "speaker": "Marie Dubois",
+          "evidence": "Si ça dérape, on pourrait peut-être revoir le budget.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-19",
+      "title": "Préparation du lancement",
+      "participants": [
+        "Marie Dubois",
+        "Sophie Laurent",
+        "Thomas Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "u-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-19",
+          "type": "decision",
+          "statement": "La campagne d'e-mailing de lancement est abandonnée faute de budget.",
+          "speaker": "Marie Dubois",
+          "evidence": "Sans budget, on laisse tomber la campagne mail.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-19",
+          "type": "commitment",
+          "statement": "Sophie s'engage à préparer l'annonce du lancement sur le site pour le 20 novembre.",
+          "speaker": "Sophie Laurent",
+          "evidence": "Je prépare l'annonce sur le site, prête pour le 20.",
+          "status": "active",
+          "owner": "Sophie Laurent",
+          "due_date": "2026-11-20"
+        },
+        {
+          "unit_id": "u-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-19",
+          "type": "fact",
+          "statement": "Thomas a livré le plan de migration des données.",
+          "speaker": "Thomas Girard",
+          "evidence": "Le plan de migration est sur le drive depuis vendredi.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "u-006",
+      "to_id": "u-003",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-007",
+      "to_id": "u-002",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-011",
+      "to_id": "u-007",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-016",
+      "to_id": "u-005",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-012",
+      "to_id": "u-010",
+      "relation": "answers",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-018",
+      "to_id": "u-013",
+      "relation": "supports",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-006",
+      "to_id": "u-004",
+      "relation": "creates_action",
+      "evidence_source_id": "meeting-01"
+    },
+    {
+      "from_id": "u-008",
+      "to_id": "u-011",
+      "relation": "unrelated",
+      "evidence_source_id": "meeting-03"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Quelle date de lancement a finalement été retenue pour Atlas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-007",
+        "u-002"
+      ],
+      "origin": "manual",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Le budget d'Atlas a-t-il été validé ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003",
+        "u-015"
+      ],
+      "origin": "manual",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui est responsable du budget du projet ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-014"
+      ],
+      "hard_negative_unit_ids": [
+        "u-006"
+      ],
+      "origin": "manual",
+      "tags": [
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui doit envoyer la version validée du budget à l'équipe ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-009"
+      ],
+      "hard_negative_unit_ids": [
+        "u-004"
+      ],
+      "origin": "manual",
+      "tags": [
+        "person_cited_vs_owner",
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "Quels risques pèsent sur le projet Atlas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-008"
+      ],
+      "hard_negative_unit_ids": [],
+      "origin": "manual",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Est-ce qu'une campagne d'e-mailing est prévue pour le lancement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-016",
+        "u-012"
+      ],
+      "hard_negative_unit_ids": [
+        "u-005"
+      ],
+      "origin": "manual",
+      "tags": [
+        "hypothesis_vs_decision",
+        "negation",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Qu'est-ce qui a changé pour la date de lancement entre septembre et octobre ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-007",
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [],
+      "origin": "manual",
+      "tags": [
+        "compare",
+        "date_change"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Qui s'est engagé à livrer le plan de migration, et pour quand ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-013"
+      ],
+      "hard_negative_unit_ids": [
+        "u-008"
+      ],
+      "origin": "manual",
+      "tags": [
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Quel budget a été alloué au salon professionnel de Lyon ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "origin": "manual",
+      "tags": [
+        "unanswerable"
+      ],
+      "answerable": false
+    },
+    {
+      "query_id": "q-10",
+      "text": "Bon, au final on part sur combien pour Atlas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003",
+        "u-015"
+      ],
+      "origin": "manual",
+      "tags": [
+        "informal",
+        "budget_change"
+      ]
+    }
+  ]
+}

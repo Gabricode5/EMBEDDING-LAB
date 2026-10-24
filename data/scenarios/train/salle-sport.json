@@ -1,0 +1,519 @@
+{
+  "project_id": "salle-sport",
+  "project_name": "Lancement d'une offre d'abonnement pour une salle de sport",
+  "description": "Développement d'une offre d'abonnement mensuel pour une salle de sport en pleine expansion.",
+  "people": [
+    {
+      "name": "Lucas Moreau",
+      "role": "Responsable de projet",
+      "email": "lucas.moreau@example.org"
+    },
+    {
+      "name": "Sophie Lefevre",
+      "role": "Responsable marketing",
+      "email": null
+    },
+    {
+      "name": "Thomas Leclerc",
+      "role": "Responsable technique",
+      "email": "thomas.leclerc@example.org"
+    },
+    {
+      "name": "Mathilde Martin",
+      "role": "Responsable RH",
+      "email": "mathilde.martin@example.org"
+    },
+    {
+      "name": "Julien Dubois",
+      "role": "Responsable finances",
+      "email": "julien.dubois@example.org"
+    },
+    {
+      "name": "Léa Martin",
+      "role": "Responsable communication",
+      "email": "leamartin@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-15",
+      "title": "Lancement de l'offre d'abonnement",
+      "participants": [
+        "Lucas Moreau",
+        "Sophie Lefevre",
+        "Thomas Leclerc",
+        "Mathilde Martin",
+        "Julien Dubois",
+        "Léa Martin"
+      ],
+      "units": [
+        {
+          "unit_id": "u-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "fact",
+          "statement": "L'offre d'abonnement doit être lancée avant la fin de l'année.",
+          "speaker": "Lucas Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On doit lancer l'offre avant la fin de l'année pour attirer les nouveaux clients.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "idea",
+          "statement": "Sophie propose un tarif de 50 euros par mois pour l'abonnement.",
+          "speaker": "Sophie Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait peut-être proposer un tarif de 50 euros par mois.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "idea",
+          "statement": "Julien propose un budget de 200 000 euros pour le lancement de l'offre.",
+          "speaker": "Julien Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je propose un budget de 200 000 euros pour le lancement de l'offre.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "commitment",
+          "statement": "Julien s'engage à présenter le budget d'abonnement avant le 25 septembre.",
+          "speaker": "Julien Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je présente le budget avant le 25.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "idea",
+          "statement": "Léa suggère de lancer une campagne de communication dès octobre.",
+          "speaker": "Léa Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait lancer la campagne de communication dès octobre.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-28",
+      "title": "Validation du budget et de l'offre",
+      "participants": [
+        "Lucas Moreau",
+        "Sophie Lefevre",
+        "Thomas Leclerc",
+        "Mathilde Martin",
+        "Julien Dubois",
+        "Léa Martin"
+      ],
+      "units": [
+        {
+          "unit_id": "u-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "decision",
+          "statement": "Le budget d'abonnement a été validé à 150 000 euros.",
+          "speaker": "Lucas Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le budget a été validé à 150 000 euros.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "decision",
+          "statement": "L'offre d'abonnement sera lancée au 1er octobre.",
+          "speaker": "Lucas Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On confirme la date de lancement au 1er octobre.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "risk",
+          "statement": "Thomas signale un risque de retard lié à l'intégration technique de l'offre.",
+          "speaker": "Thomas Leclerc",
+          "owner": null,
+          "due_date": null,
+          "evidence": "L'intégration technique risque de retarder le lancement.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "action",
+          "statement": "Sophie demande à Léa de préparer la campagne de communication pour octobre.",
+          "speaker": "Sophie Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Léa, tu peux préparer la campagne de communication pour octobre ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-28",
+          "type": "question",
+          "statement": "Mathilde demande si le budget inclut les primes de l'équipe.",
+          "speaker": "Mathilde Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le budget inclut-il les primes de l'équipe ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-12",
+      "title": "Suivi de l'avancement",
+      "participants": [
+        "Lucas Moreau",
+        "Sophie Lefevre",
+        "Thomas Leclerc",
+        "Julien Dubois",
+        "Léa Martin"
+      ],
+      "units": [
+        {
+          "unit_id": "u-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "decision",
+          "statement": "L'offre d'abonnement est reportée au 15 octobre.",
+          "speaker": "Lucas Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On reporte la date de lancement au 15 octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "answer",
+          "statement": "Julien indique que le budget inclut les primes de l'équipe.",
+          "speaker": "Julien Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Oui, le budget inclut les primes de l'équipe.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "commitment",
+          "statement": "Thomas s'engage à livrer l'intégration technique avant le 30 octobre.",
+          "speaker": "Thomas Leclerc",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je vous livre l'intégration technique avant le 30 octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "fact",
+          "statement": "Julien est le responsable du suivi du budget de l'offre.",
+          "speaker": "Lucas Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "C'est Julien qui pilote le budget.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-12",
+          "type": "idea",
+          "statement": "Sophie évoque la possibilité de revoir le budget si le lancement se fait en retard.",
+          "speaker": "Sophie Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le lancement se fait en retard, on pourrait peut-être revoir le budget.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-19",
+      "title": "Préparation de la campagne",
+      "participants": [
+        "Lucas Moreau",
+        "Sophie Lefevre",
+        "Léa Martin",
+        "Thomas Leclerc"
+      ],
+      "units": [
+        {
+          "unit_id": "u-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-19",
+          "type": "decision",
+          "statement": "La campagne de communication est lancée pour octobre.",
+          "speaker": "Sophie Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "La campagne est lancée pour octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-19",
+          "type": "commitment",
+          "statement": "Léa s'engage à finaliser la campagne avant le 20 octobre.",
+          "speaker": "Léa Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je finalise la campagne avant le 20 octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-19",
+          "type": "fact",
+          "statement": "Thomas a livré l'intégration technique.",
+          "speaker": "Thomas Leclerc",
+          "owner": null,
+          "due_date": null,
+          "evidence": "L'intégration technique est livrée.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "u-006",
+      "to_id": "u-003",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-007",
+      "to_id": "u-002",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-011",
+      "to_id": "u-007",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-012",
+      "to_id": "u-010",
+      "relation": "answers",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-013",
+      "to_id": "u-008",
+      "relation": "supports",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-006",
+      "to_id": "u-004",
+      "relation": "creates_action",
+      "evidence_source_id": "meeting-01"
+    },
+    {
+      "from_id": "u-009",
+      "to_id": "u-012",
+      "relation": "unrelated",
+      "evidence_source_id": "meeting-02"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Quelle date de lancement a finalement été retenue pour l'offre d'abonnement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Le budget de l'offre d'abonnement a-t-il été validé ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui est responsable du suivi du budget de l'offre d'abonnement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-014"
+      ],
+      "hard_negative_unit_ids": [
+        "u-006"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui doit finaliser la campagne de communication avant le 20 octobre ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-017"
+      ],
+      "hard_negative_unit_ids": [
+        "u-009"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "Quels sont les risques liés à l'intégration technique de l'offre d'abonnement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-008"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Est-ce qu'une campagne de communication est prévue pour le lancement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-016",
+        "u-012"
+      ],
+      "hard_negative_unit_ids": [
+        "u-005"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision",
+        "negation",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Qu'est-ce qui a changé pour la date de lancement entre septembre et octobre ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-007",
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "date_change"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Qui s'est engagé à livrer l'intégration technique, et pour quand ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-013"
+      ],
+      "hard_negative_unit_ids": [
+        "u-008"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Quel budget a été alloué au projet de la nouvelle salle de sport à Paris ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Bon, au final on part sur combien pour l'offre d'abonnement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "informal",
+        "budget_change"
+      ]
+    }
+  ]
+}

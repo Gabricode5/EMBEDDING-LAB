@@ -1,0 +1,527 @@
+{
+  "project_id": "rh-refresh",
+  "project_name": "Refonte de l'application RH interne",
+  "description": "Modernisation de l'outil RH pour améliorer la gestion des employés et des ressources humaines.",
+  "people": [
+    {
+      "name": "Julien Moreau",
+      "role": "Responsable RH",
+      "email": "julien.moreau@example.org"
+    },
+    {
+      "name": "Léa Dubois",
+      "role": "Chef de projet",
+      "email": null
+    },
+    {
+      "name": "Thomas Girard",
+      "role": "Responsable IT",
+      "email": "thomas.girard@example.org"
+    },
+    {
+      "name": "Sophie Laurent",
+      "role": "Responsable paie",
+      "email": "sophie.laurent@example.org"
+    },
+    {
+      "name": "Mathilde Morin",
+      "role": "Responsable formation",
+      "email": null
+    },
+    {
+      "name": "Lucas Martin",
+      "role": "Responsable recrutement",
+      "email": "lucas.martin@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-15",
+      "title": "Lancement de la refonte RH",
+      "participants": [
+        "Julien Moreau",
+        "Léa Dubois",
+        "Thomas Girard",
+        "Sophie Laurent",
+        "Mathilde Morin",
+        "Lucas Martin"
+      ],
+      "units": [
+        {
+          "unit_id": "u-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "decision",
+          "statement": "La refonte de l'application RH démarre à partir de septembre 2026.",
+          "speaker": "Léa Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On lance la refonte à partir de septembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "idea",
+          "statement": "Sophie propose un budget de 150 000 euros, à valider par le conseil d'administration.",
+          "speaker": "Sophie Laurent",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je propose un budget de 150 000 euros, à valider par le conseil.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "idea",
+          "statement": "Thomas propose de lancer la refonte en octobre.",
+          "speaker": "Thomas Girard",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je pense qu'on pourrait décaler à octobre.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "commitment",
+          "statement": "Sophie s'engage à présenter le budget à la direction avant le 20 septembre.",
+          "speaker": "Sophie Laurent",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je présente le budget à la direction avant le 20.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "idea",
+          "statement": "Léa suggère de prévoir un module de formation intégré à l'application.",
+          "speaker": "Léa Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait peut-être intégrer un module de formation.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-29",
+      "title": "Validation du budget",
+      "participants": [
+        "Julien Moreau",
+        "Léa Dubois",
+        "Thomas Girard",
+        "Sophie Laurent",
+        "Mathilde Morin",
+        "Lucas Martin"
+      ],
+      "units": [
+        {
+          "unit_id": "u-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "decision",
+          "statement": "Le conseil d'administration a validé un budget de 120 000 euros.",
+          "speaker": "Julien Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le conseil a validé 120 000 euros.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "decision",
+          "statement": "La refonte démarre le 1er octobre.",
+          "speaker": "Léa Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On confirme le lancement le 1er octobre.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "idea",
+          "statement": "Lucas propose de revoir la date si les équipes de développement sont surchargées.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si les équipes de développement sont surchargées, on pourrait revoir la date.",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "u-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "commitment",
+          "statement": "Thomas s'engage à livrer le plan technique avant le 5 octobre.",
+          "speaker": "Thomas Girard",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je livre le plan technique avant le 5.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "question",
+          "statement": "Mathilde demande si le module de formation est inclus.",
+          "speaker": "Mathilde Morin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et le module de formation, il est inclus ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-13",
+      "title": "Suivi du planning",
+      "participants": [
+        "Julien Moreau",
+        "Léa Dubois",
+        "Sophie Laurent",
+        "Thomas Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "u-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-13",
+          "type": "decision",
+          "statement": "La refonte est reportée au 15 octobre.",
+          "speaker": "Léa Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On reporte la refonte au 15 octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-13",
+          "type": "answer",
+          "statement": "Sophie confirme que le module de formation n'est pas inclus.",
+          "speaker": "Sophie Laurent",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le module de formation n'est pas inclus.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-13",
+          "type": "commitment",
+          "statement": "Thomas s'engage à livrer le plan technique avant le 10 octobre.",
+          "speaker": "Thomas Girard",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je livre le plan technique avant le 10.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-13",
+          "type": "fact",
+          "statement": "Sophie est la responsable du suivi du budget.",
+          "speaker": "Julien Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "C'est Sophie qui pilote le budget.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-13",
+          "type": "idea",
+          "statement": "Léa propose de revoir le budget si le planning se complique.",
+          "speaker": "Léa Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le planning se complique, on pourrait revoir le budget.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-20",
+      "title": "Préparation du lancement",
+      "participants": [
+        "Julien Moreau",
+        "Léa Dubois",
+        "Sophie Laurent",
+        "Thomas Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "u-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "decision",
+          "statement": "Le lancement est confirmé au 15 octobre.",
+          "speaker": "Léa Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le lancement est confirmé le 15.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "commitment",
+          "statement": "Sophie s'engage à finaliser les paramètres RH avant le 12 octobre.",
+          "speaker": "Sophie Laurent",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je finalize les paramètres RH avant le 12.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Thomas a livré le plan technique.",
+          "speaker": "Thomas Girard",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le plan technique est sur le drive depuis hier.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "u-006",
+      "to_id": "u-002",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-007",
+      "to_id": "u-003",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-011",
+      "to_id": "u-007",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-012",
+      "to_id": "u-010",
+      "relation": "answers",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-013",
+      "to_id": "u-009",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-014",
+      "to_id": "u-004",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-017",
+      "to_id": "u-015",
+      "relation": "supports",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-018",
+      "to_id": "u-013",
+      "relation": "supports",
+      "evidence_source_id": "meeting-04"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Quand a lieu le lancement de la refonte RH ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-016"
+      ],
+      "hard_negative_unit_ids": [
+        "u-007",
+        "u-011"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Le budget de la refonte a-t-il été validé ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-002"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui est responsable du suivi du budget ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-014"
+      ],
+      "hard_negative_unit_ids": [
+        "u-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Quel est le budget alloué à la refonte RH ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-002",
+        "u-015"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "Quel module a été décidé pour la refonte RH ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-012"
+      ],
+      "hard_negative_unit_ids": [
+        "u-005"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision",
+        "negation"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Quel est le risque lié au retard des équipes IT ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-008"
+      ],
+      "hard_negative_unit_ids": [
+        "u-013"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "conditional_agreement"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Quel a été le changement de date entre septembre et octobre ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-007",
+        "u-011",
+        "u-016"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "date_change"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Quel est le plan technique livré par Thomas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-018"
+      ],
+      "hard_negative_unit_ids": [
+        "u-009"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Quel budget a été alloué au projet de migration des données ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "On a-t-il décidé de revoir le budget si le planning se complique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-015"
+      ],
+      "hard_negative_unit_ids": [
+        "u-002"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision",
+        "budget_change"
+      ]
+    }
+  ]
+}

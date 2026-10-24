@@ -1,0 +1,491 @@
+{
+  "project_id": "immobilis",
+  "project_name": "Migration du CRM d'une agence immobilière",
+  "description": "Transition vers un nouveau système de gestion client pour une agence immobilière basée en Île-de-France.",
+  "people": [
+    {
+      "name": "Clémentine Martin",
+      "role": "Responsable des opérations",
+      "email": "clementine.martin@example.org"
+    },
+    {
+      "name": "Léa Dubois",
+      "role": "Responsable marketing",
+      "email": "leaa.dubois@example.org"
+    },
+    {
+      "name": "Julien Moreau",
+      "role": "Responsable IT",
+      "email": null
+    },
+    {
+      "name": "Mathilde Lefevre",
+      "role": "Chef de projet",
+      "email": "mathilde.lefevre@example.org"
+    },
+    {
+      "name": "Simon Durand",
+      "role": "Responsable des ventes",
+      "email": "simon.durand@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-15",
+      "title": "Lancement de la migration CRM",
+      "participants": [
+        "Clémentine Martin",
+        "Léa Dubois",
+        "Julien Moreau",
+        "Mathilde Lefevre",
+        "Simon Durand"
+      ],
+      "units": [
+        {
+          "unit_id": "u-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "fact",
+          "statement": "La migration du CRM doit être achevée avant la fin de l'année.",
+          "speaker": "Mathilde Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le projet a pour objectif de finaliser la migration d'ici la fin de l'année.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "idea",
+          "statement": "Léa propose de revoir le budget si le système est retardé.",
+          "speaker": "Léa Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le système est en retard, on pourrait peut-être revoir le budget.",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "u-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "idea",
+          "statement": "Julien propose un budget de 150 000 euros pour la migration.",
+          "speaker": "Julien Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je propose une enveloppe de 150 000 euros.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "commitment",
+          "statement": "Mathilde s'engage à finaliser le planning de migration avant le 30 septembre.",
+          "speaker": "Mathilde Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je livre le planning avant le 30 septembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-15",
+          "type": "idea",
+          "statement": "Simon suggère de revoir la date de migration si la migration des données prend trop de temps.",
+          "speaker": "Simon Durand",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si la migration des données prend trop de temps, on pourrait peut-être revoir la date.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-29",
+      "title": "Réunion de suivi",
+      "participants": [
+        "Clémentine Martin",
+        "Léa Dubois",
+        "Julien Moreau",
+        "Mathilde Lefevre",
+        "Simon Durand"
+      ],
+      "units": [
+        {
+          "unit_id": "u-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "decision",
+          "statement": "Le budget de la migration a été validé à 120 000 euros.",
+          "speaker": "Clémentine Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le budget de 120 000 euros a été validé.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "decision",
+          "statement": "La migration du CRM est fixée au 10 décembre.",
+          "speaker": "Mathilde Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On confirme la date de migration au 10 décembre.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "risk",
+          "statement": "Julien signale un risque de retard de deux semaines liées aux données.",
+          "speaker": "Julien Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "La migration des données me fait peur, on peut déraper de deux semaines.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "action",
+          "statement": "Clémentine demande à Simon de présenter une alternative si la migration est en retard.",
+          "speaker": "Clémentine Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Simon, tu proposes une alternative si la migration est en retard ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-29",
+          "type": "question",
+          "statement": "Léa demande si le budget peut être augmenté si le retard persiste.",
+          "speaker": "Léa Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et si le retard persiste, on peut augmenter le budget ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-13",
+      "title": "Révision du planning",
+      "participants": [
+        "Clémentine Martin",
+        "Léa Dubois",
+        "Julien Moreau",
+        "Mathilde Lefevre",
+        "Simon Durand"
+      ],
+      "units": [
+        {
+          "unit_id": "u-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-13",
+          "type": "decision",
+          "statement": "La migration du CRM est reportée au 20 décembre.",
+          "speaker": "Mathilde Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On confirme le report au 20 décembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-13",
+          "type": "commitment",
+          "statement": "Julien s'engage à livrer le planning de migration des données avant le 15 octobre.",
+          "speaker": "Julien Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je livre le planning de migration avant le 15 octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-13",
+          "type": "fact",
+          "statement": "Simon est le responsable de la gestion des ventes et de la migration.",
+          "speaker": "Clémentine Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Pour rappel, c'est Simon qui pilote la migration.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-13",
+          "type": "idea",
+          "statement": "Léa évoque l'idée de revoir le budget à la hausse si le retard persiste.",
+          "speaker": "Léa Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le retard persiste, on pourrait peut-être revoir le budget.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-20",
+      "title": "Préparation finale",
+      "participants": [
+        "Clémentine Martin",
+        "Léa Dubois",
+        "Julien Moreau",
+        "Mathilde Lefevre",
+        "Simon Durand"
+      ],
+      "units": [
+        {
+          "unit_id": "u-015",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "decision",
+          "statement": "Le budget de la migration a été augmenté à 140 000 euros.",
+          "speaker": "Clémentine Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le budget a été augmenté à 140 000 euros.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Julien a livré le planning de migration des données.",
+          "speaker": "Julien Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le planning de migration est sur le drive depuis hier.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "action",
+          "statement": "Mathilde demande à Léa de finaliser la communication pour le lancement.",
+          "speaker": "Mathilde Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Léa, tu finalises la communication pour le lancement.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "u-006",
+      "to_id": "u-003",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-011",
+      "to_id": "u-007",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-015",
+      "to_id": "u-006",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-016",
+      "to_id": "u-012",
+      "relation": "supports",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-015",
+      "to_id": "u-010",
+      "relation": "answers",
+      "evidence_source_id": "meeting-04"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Quelle date de migration du CRM a finalement été retenue ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Le budget de la migration a-t-il été validé ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-015",
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003",
+        "u-014"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui pilote la migration du CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-013"
+      ],
+      "hard_negative_unit_ids": [
+        "u-009"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui doit finaliser la communication pour le lancement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-017"
+      ],
+      "hard_negative_unit_ids": [
+        "u-009"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "Quels risques pèsent sur la migration du CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-008"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Est-ce qu'une augmentation de budget a été décidée ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-015"
+      ],
+      "hard_negative_unit_ids": [
+        "u-006"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "budget_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Qu'est-ce qui a changé pour la date de migration entre septembre et octobre ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-007",
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "date_change"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Qui s'est engagé à livrer le planning de migration des données ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-012"
+      ],
+      "hard_negative_unit_ids": [
+        "u-008",
+        "u-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Qui s'occupe de former les agents au nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Finalement, l'enveloppe de la migration, c'est combien ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-015"
+      ],
+      "hard_negative_unit_ids": [
+        "u-006",
+        "u-003"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "informal",
+        "budget_change"
+      ]
+    }
+  ]
+}

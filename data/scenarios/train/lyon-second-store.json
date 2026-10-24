@@ -1,0 +1,510 @@
+{
+  "project_id": "lyon-second-store",
+  "project_name": "Ouverture d'une deuxième boutique à Lyon",
+  "description": "Stratégie et plan d'ouverture d'une nouvelle boutique dans le centre-ville de Lyon.",
+  "people": [
+    {
+      "name": "Lucas Martin",
+      "role": "Directeur des opérations",
+      "email": "lucas.martin@example.org"
+    },
+    {
+      "name": "Sophie Dubois",
+      "role": "Responsable marketing",
+      "email": null
+    },
+    {
+      "name": "Thomas Leclerc",
+      "role": "Chef de projet",
+      "email": "thomas.leclerc@example.org"
+    },
+    {
+      "name": "Mathilde Morin",
+      "role": "Responsable des finances",
+      "email": "mathilde.morin@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-10",
+      "title": "Présentation de la stratégie",
+      "participants": [
+        "Lucas Martin",
+        "Sophie Dubois",
+        "Thomas Leclerc",
+        "Mathilde Morin"
+      ],
+      "units": [
+        {
+          "unit_id": "u-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "fact",
+          "statement": "La nouvelle boutique de Lyon doit ouvrir avant la fin de l'année.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "L'objectif est d'ouvrir avant la fin de l'année, c'est prioritaire.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "idea",
+          "statement": "Sophie propose de lancer les études de faisabilité dès octobre.",
+          "speaker": "Sophie Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait lancer les études de faisabilité dès octobre.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "idea",
+          "statement": "Thomas suggère un budget de 300 000 euros pour la nouvelle boutique.",
+          "speaker": "Thomas Leclerc",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je propose un budget de 300 000 euros pour la boutique.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "commitment",
+          "statement": "Mathilde s'engage à présenter les coûts de l'ouverture avant le 20 septembre.",
+          "speaker": "Mathilde Morin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je présente les coûts avant le 20 septembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "idea",
+          "statement": "Sophie évoque la possibilité d'une campagne de communication dès le lancement.",
+          "speaker": "Sophie Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait peut-être lancer une campagne dès le lancement.",
+          "status": "superseded"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-25",
+      "title": "Validation des budgets",
+      "participants": [
+        "Lucas Martin",
+        "Sophie Dubois",
+        "Thomas Leclerc",
+        "Mathilde Morin"
+      ],
+      "units": [
+        {
+          "unit_id": "u-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "decision",
+          "statement": "Le budget pour la nouvelle boutique est fixé à 250 000 euros.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le budget est fixé à 250 000 euros, c'est validé.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "decision",
+          "statement": "La date de lancement de la boutique est fixée au 15 novembre.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On confirme le 15 novembre.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "risk",
+          "statement": "Mathilde signale un risque de retard lié à la recherche de locaux.",
+          "speaker": "Mathilde Morin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "La recherche de locaux me fait peur, on peut déraper de deux semaines.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "action",
+          "statement": "Sophie demande à Thomas de valider le plan de communication.",
+          "speaker": "Sophie Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Thomas, tu peux valider le plan de communication ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "question",
+          "statement": "Lucas demande si la campagne de communication est prévue.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et la campagne de communication, elle est prévue ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-05",
+      "title": "Suivi des travaux",
+      "participants": [
+        "Lucas Martin",
+        "Thomas Leclerc",
+        "Mathilde Morin"
+      ],
+      "units": [
+        {
+          "unit_id": "u-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-05",
+          "type": "decision",
+          "statement": "La date de lancement de la boutique est reportée au 25 novembre.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On confirme le report au 25 novembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-05",
+          "type": "answer",
+          "statement": "Thomas indique que le plan de communication est validé.",
+          "speaker": "Thomas Leclerc",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Oui, le plan de communication est validé.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-05",
+          "type": "commitment",
+          "statement": "Mathilde s'engage à finaliser les contrats de locaux avant le 20 octobre.",
+          "speaker": "Mathilde Morin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je finalise les contrats avant le 20 octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-05",
+          "type": "fact",
+          "statement": "Thomas est le responsable des travaux de la nouvelle boutique.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Pour rappel, c'est Thomas qui pilote les travaux.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-05",
+          "type": "idea",
+          "statement": "Lucas évoque l'idée de revoir le budget si la recherche de locaux prend du retard.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si ça dérape, on pourrait peut-être revoir le budget.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-15",
+      "title": "Préparation de l'ouverture",
+      "participants": [
+        "Lucas Martin",
+        "Sophie Dubois",
+        "Thomas Leclerc"
+      ],
+      "units": [
+        {
+          "unit_id": "u-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-15",
+          "type": "decision",
+          "statement": "La campagne de communication pour la nouvelle boutique est reportée.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "La campagne de communication est reportée.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-15",
+          "type": "commitment",
+          "statement": "Sophie s'engage à finaliser la communication avant le 20 novembre.",
+          "speaker": "Sophie Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je finalise la communication avant le 20 novembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-15",
+          "type": "fact",
+          "statement": "Mathilde a finalisé les contrats de locaux.",
+          "speaker": "Mathilde Morin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Les contrats sont finalisés.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "u-006",
+      "to_id": "u-003",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-007",
+      "to_id": "u-002",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-011",
+      "to_id": "u-007",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-016",
+      "to_id": "u-005",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-012",
+      "to_id": "u-010",
+      "relation": "answers",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-013",
+      "to_id": "u-008",
+      "relation": "supports",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-006",
+      "to_id": "u-004",
+      "relation": "creates_action",
+      "evidence_source_id": "meeting-01"
+    },
+    {
+      "from_id": "u-008",
+      "to_id": "u-011",
+      "relation": "unrelated",
+      "evidence_source_id": "meeting-03"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Quelle date d'ouverture a finalement été retenue pour la nouvelle boutique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Le budget de la nouvelle boutique a-t-il été validé ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui est responsable des travaux de la nouvelle boutique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-014"
+      ],
+      "hard_negative_unit_ids": [
+        "u-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui doit finaliser la communication avant le 20 novembre ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-017"
+      ],
+      "hard_negative_unit_ids": [
+        "u-012"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner",
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "Quels sont les risques associés à la nouvelle boutique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-008"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "La campagne de communication pour la nouvelle boutique est-elle prévue ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-016"
+      ],
+      "hard_negative_unit_ids": [
+        "u-005"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision",
+        "negation",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Qu'est-ce qui a changé pour la date d'ouverture entre septembre et octobre ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-007",
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "date_change"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Quel budget a été alloué à la nouvelle boutique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003",
+        "u-015"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Quel budget a été alloué au salon professionnel de Lyon ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Bon, au final on part sur combien pour la nouvelle boutique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003",
+        "u-015"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "informal",
+        "budget_change"
+      ]
+    }
+  ]
+}
