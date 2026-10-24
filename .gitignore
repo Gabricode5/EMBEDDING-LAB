@@ -1,0 +1,39 @@
+cat > .gitignore << 'EOF'
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secrets (clés API, tokens, mots de passe)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets*
+
+# Modèles et résultats d'expériences (trop lourds)
+models/
+checkpoints/
+experiments/*
+!experiments/.gitkeep
+mlruns/
+wandb/
+
+# Fichiers de travail
+data/manual_io/
+data/rejected/
+*.log
+
+# Notes personnelles
+embedding-lab-todo.md
+
+# Éditeur et système
+.vscode/
+.idea/
+.DS_Store
+EOF
