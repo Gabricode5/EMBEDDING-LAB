@@ -1,0 +1,112 @@
+[
+  {
+    "query_id": "a-01",
+    "text": "Tu peux me confirmer les dates définitives du séminaire ?",
+    "intent": "answer",
+    "relevant_unit_ids": ["u-012"],
+    "hard_negative_unit_ids": ["u-003", "u-010"],
+    "answerable": true,
+    "origin": "assisted",
+    "tags": ["current_decision", "date_change"]
+  },
+  {
+    "query_id": "a-02",
+    "text": "Est-ce que le budget de 45 000 euros a été validé ?",
+    "intent": "answer",
+    "relevant_unit_ids": ["u-011"],
+    "hard_negative_unit_ids": ["u-002", "u-022"],
+    "answerable": true,
+    "origin": "assisted",
+    "tags": ["budget_change", "proposal_vs_decision"]
+  },
+  {
+    "query_id": "a-03",
+    "text": "Qui gère la réservation des cars désormais ?",
+    "intent": "answer",
+    "relevant_unit_ids": ["u-014", "u-020"],
+    "hard_negative_unit_ids": ["u-005", "u-019"],
+    "answerable": true,
+    "origin": "assisted",
+    "tags": ["owner_change", "current_decision"]
+  },
+  {
+    "query_id": "a-04",
+    "text": "Qui doit rédiger le discours d'ouverture ?",
+    "intent": "answer",
+    "relevant_unit_ids": ["u-018"],
+    "hard_negative_unit_ids": ["u-009", "u-019"],
+    "answerable": true,
+    "origin": "assisted",
+    "tags": ["person_cited_vs_owner", "commitment"]
+  },
+  {
+    "query_id": "a-05",
+    "text": "Est-ce que la venue d'un conférencier externe a été décidée ?",
+    "intent": "answer",
+    "relevant_unit_ids": ["u-004"],
+    "hard_negative_unit_ids": [],
+    "answerable": true,
+    "origin": "assisted",
+    "tags": ["hypothesis_vs_decision"]
+  },
+  {
+    "query_id": "a-06",
+    "text": "Le domaine des Grands Chênes, c'est accepté ? Et sous quelle condition ?",
+    "intent": "answer",
+    "relevant_unit_ids": ["u-007", "u-013", "u-023"],
+    "hard_negative_unit_ids": ["u-006", "u-010"],
+    "answerable": true,
+    "origin": "assisted",
+    "tags": ["conditional_agreement", "multi_meeting"]
+  },
+  {
+    "query_id": "a-07",
+    "text": "Qu'est-ce qui a changé concernant le nombre de chambres disponibles ?",
+    "intent": "compare",
+    "relevant_unit_ids": ["u-006", "u-016"],
+    "hard_negative_unit_ids": ["u-017"],
+    "answerable": true,
+    "origin": "assisted",
+    "tags": ["compare"]
+  },
+  {
+    "query_id": "a-08",
+    "text": "Est-ce que l'activité de team building a été validée ?",
+    "intent": "answer",
+    "relevant_unit_ids": ["u-021"],
+    "hard_negative_unit_ids": [],
+    "answerable": true,
+    "origin": "assisted",
+    "tags": ["proposal_vs_decision"]
+  },
+  {
+    "query_id": "a-09",
+    "text": "Est-ce que les conjoints sont conviés à la soirée ?",
+    "intent": "answer",
+    "relevant_unit_ids": ["u-015"],
+    "hard_negative_unit_ids": ["u-008"],
+    "answerable": true,
+    "origin": "assisted",
+    "tags": ["negation", "multi_meeting"]
+  },
+  {
+    "query_id": "a-10",
+    "text": "Tu sais quel traiteur a été choisi ?",
+    "intent": "answer",
+    "relevant_unit_ids": [],
+    "hard_negative_unit_ids": [],
+    "answerable": false,
+    "origin": "assisted",
+    "tags": ["unanswerable"]
+  },
+  {
+    "query_id": "a-11",
+    "text": "Tu peux me rappeler le thème retenu pour la soirée ?",
+    "intent": "answer",
+    "relevant_unit_ids": [],
+    "hard_negative_unit_ids": [],
+    "answerable": false,
+    "origin": "assisted",
+    "tags": ["unanswerable"]
+  }
+]
