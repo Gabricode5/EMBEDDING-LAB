@@ -14,12 +14,12 @@ UnitType = Literal["decision", "action", "commitment", "question", "answer", "fa
 UnitStatus = Literal["active", "proposed", "hypothetical", "superseded", "cancelled"]
 RelationType = Literal["supports", "contradicts", "supersedes", "creates_action", "answers", "unrelated"]
 IntentType = Literal["answer", "compare", "build_dossier", "draft_email", "create_task", "schedule_event", "clarify"]
-QueryOrigin = Literal["generated", "manual"]
+QueryOrigin = Literal["generated", "manual", "assisted"]
 
 QUERY_TAGS: tuple[str, ...] = (
     "current_decision", "proposal_vs_decision", "hypothesis_vs_decision", "conditional_agreement",
     "date_change", "budget_change", "owner_change", "person_cited_vs_owner", "negation",
-    "compare", "commitment", "multi_meeting", "unanswerable", "paraphrase", "informal",
+    "compare", "commitment", "multi_meeting", "unanswerable", "paraphrase", "informal", "polite",
 )
 
 

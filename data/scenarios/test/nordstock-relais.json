@@ -682,6 +682,201 @@
       "tags": [
         "unanswerable"
       ]
+    },
+    {
+      "query_id": "a-01",
+      "text": "Salut, tu sais à quelle date le pilote démarre finalement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-013",
+        "u-020"
+      ],
+      "hard_negative_unit_ids": [
+        "u-006"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "date_change",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "a-02",
+      "text": "Montant validé du contrat avec NordStock ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-002"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "budget_change",
+        "proposal_vs_decision"
+      ]
+    },
+    {
+      "query_id": "a-03",
+      "text": "Est-ce que tu pourrais me dire qui pilote maintenant la négo du contrat de niveau de service ? Merci !",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-009",
+        "u-010"
+      ],
+      "hard_negative_unit_ids": [
+        "u-004"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "owner_change",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "a-04",
+      "text": "Qui tient le tableau de suivi des coûts ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-015"
+      ],
+      "hard_negative_unit_ids": [
+        "u-024"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "a-05",
+      "text": "Salut, tu sais si la mutualisation des véhicules électriques avec NordStock est actée ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-005"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "hypothesis_vs_decision"
+      ]
+    },
+    {
+      "query_id": "a-06",
+      "text": "L'exclusivité NordStock, c'est validé sous quelle condition ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-017",
+        "u-007",
+        "u-016"
+      ],
+      "hard_negative_unit_ids": [
+        "u-011"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "conditional_agreement",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "a-07",
+      "text": "Qu'est-ce qui a changé pour les quais de chargement ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-003",
+        "u-018"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "query_id": "a-08",
+      "text": "Est-ce que tu pourrais me confirmer si l'extension à Bobigny en 2027 est décidée ? Merci !",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-021"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "proposal_vs_decision"
+      ]
+    },
+    {
+      "query_id": "a-09",
+      "text": "La manutention est-elle incluse dans le contrat ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-012"
+      ],
+      "hard_negative_unit_ids": [
+        "u-008",
+        "u-022"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "negation"
+      ]
+    },
+    {
+      "query_id": "a-10",
+      "text": "Salut, tu sais si le risque de saturation des créneaux du matin est toujours d'actualité ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-023"
+      ],
+      "hard_negative_unit_ids": [
+        "u-014"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "negation",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "a-11",
+      "text": "Nom du contact chez NordStock ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "assisted",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "a-12",
+      "text": "Est-ce que tu pourrais me dire le tarif par palette ? Merci !",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "unanswerable"
+      ]
     }
   ]
 }

@@ -691,6 +691,173 @@
       "tags": [
         "unanswerable"
       ]
+    },
+    {
+      "query_id": "a-01",
+      "text": "Salut, est-ce que tu pourrais me confirmer la date de démarrage au bloc, la version qui tient maintenant ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-013",
+        "u-021"
+      ],
+      "hard_negative_unit_ids": [
+        "u-003"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "a-02",
+      "text": "Coucou, tu sais à qui on a confié la formation des équipes du bloc au final ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-014"
+      ],
+      "hard_negative_unit_ids": [
+        "u-004"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "current_decision",
+        "owner_change",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "a-03",
+      "text": "Salut, le budget de 45 000 euros dont on parlait, il a été validé ou pas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-007"
+      ],
+      "hard_negative_unit_ids": [
+        "u-002"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "a-04",
+      "text": "Est-ce que tu pourrais me dire si l'appli mobile pour les infirmiers a été décidée, ou si ça reste une idée ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "hypothesis_vs_decision",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "a-05",
+      "text": "Salut, pour l'extension aux urgences en décembre, c'est acté fermement ou il y a une condition ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-015"
+      ],
+      "hard_negative_unit_ids": [
+        "u-021"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "conditional_agreement",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "a-06",
+      "text": "Coucou, qu'est-ce qui a bougé sur la maintenance de l'ancien logiciel de gestion des temps ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-005",
+        "u-017"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "compare",
+        "date_change",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "a-07",
+      "text": "Salut, tu sais qui doit relancer l'éditeur pour le souci des gardes de nuit ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-009",
+        "u-010",
+        "u-020"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "person_cited_vs_owner",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "a-08",
+      "text": "Est-ce que tu pourrais me dire si le problème des doublons de gardes est réglé maintenant ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-023"
+      ],
+      "hard_negative_unit_ids": [
+        "u-019",
+        "u-018"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "current_decision",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "a-09",
+      "text": "Salut, tu aurais le nombre de licences achetées pour le logiciel de planning ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "assisted",
+      "tags": [
+        "unanswerable",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "a-10",
+      "text": "Coucou, est-ce que tu sais qui sera le référent planning aux urgences ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "assisted",
+      "tags": [
+        "unanswerable",
+        "polite"
+      ]
     }
   ]
 }
