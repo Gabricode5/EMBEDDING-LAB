@@ -20,9 +20,9 @@ def norm(text: str) -> str:
 INTENT_RULES: list[tuple[str, re.Pattern]] = [
     ("draft_email", re.compile(r"\b(e-?mail|mail|courriel|ecris(-moi)? (a|au|un)|redige (un|une) (message|mot)|envoie(r)? un message)\b")),
     ("create_task", re.compile(r"\b(tache|to-?do|a faire pour|assigne(r)?|cree(r)? une action)\b")),
-    ("schedule_event", re.compile(r"\b(planifie|programme|cale(r)? un|organise(r)? (un|une) (point|reunion|rdv)|prepare(r)? (un|une) (point|reunion)|rendez-vous|rdv)\b")),
+    ("schedule_event", re.compile(r"\b(planifie|programme(r)? (un|une)|cale(r)? un|organise(r)? (un|une) (point|reunion|rdv)|prepare(r)? (un|une) (point|reunion)|rendez-vous|rdv)\b")),
     ("build_dossier", re.compile(r"\b(dossier|synthese|recap|recapitulatif|fais (le|un) point complet|bilan complet)\b")),
-    ("compare", re.compile(r"(qu'est-ce qui a (change|bouge)|ce qui a (change|bouge)|a change|a evolue|evolution|difference|contredi|par rapport a)")),
+    ("compare", re.compile(r"(qu'est-ce qui a (change|bouge)|ce qui a (change|bouge)|a change|evolue|evolution|difference|contredi|par rapport a)")),
 ]
 ACTION_INTENTS = {"draft_email", "create_task", "schedule_event"}
 
