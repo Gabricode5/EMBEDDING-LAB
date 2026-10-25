@@ -64,6 +64,11 @@ class EvalQuery:
     answerable: bool
     origin: str
     tags: tuple[str, ...]
+    intent: str = "answer"
+
+    @property
+    def project(self) -> str:
+        return self.qid.split("/", 1)[0]
 
 
 def build_queries(scenarios: list[Scenario]) -> list[EvalQuery]:
@@ -78,5 +83,6 @@ def build_queries(scenarios: list[Scenario]) -> list[EvalQuery]:
                 answerable=q.answerable,
                 origin=q.origin,
                 tags=tuple(q.tags),
+                intent=q.intent,
             ))
     return out
