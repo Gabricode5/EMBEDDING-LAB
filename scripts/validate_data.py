@@ -12,7 +12,7 @@ from sae.data import load_scenarios
 from sae.schemas import QUERY_TAGS
 
 ROOT = Path("data/scenarios")
-SPLITS = ("train", "val", "test")
+SPLITS = ("train", "val", "test", "test2")
 REQUIRED_TAGS = ("proposal_vs_decision", "hypothesis_vs_decision", "date_change",
                  "person_cited_vs_owner", "unanswerable", "compare")
 

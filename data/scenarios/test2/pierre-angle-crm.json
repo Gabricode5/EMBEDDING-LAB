@@ -1,0 +1,708 @@
+{
+  "project_id": "pierre-angle-crm",
+  "project_name": "Bascule CRM Pierre d'Angle",
+  "description": "Remplacement de l'ancien CRM d'un réseau d'agences immobilières par un nouvel outil, avec reprise des contacts, des fiches propriétaires et des mandats.",
+  "people": [
+    {
+      "name": "Aurélie Fontaine",
+      "role": "Directrice du réseau d'agences",
+      "email": "aurelie.fontaine@example.org"
+    },
+    {
+      "name": "Mehdi Saadi",
+      "role": "Chef de projet CRM",
+      "email": "mehdi.saadi@example.org"
+    },
+    {
+      "name": "Corentin Le Bihan",
+      "role": "Responsable data",
+      "email": "corentin.lebihan@example.org"
+    },
+    {
+      "name": "Valentina Ricci",
+      "role": "Négociatrice senior",
+      "email": null
+    },
+    {
+      "name": "Jonas Weber",
+      "role": "Consultant intégrateur",
+      "email": "jonas.weber@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-08",
+      "title": "Kick-off de la bascule CRM",
+      "participants": [
+        "Aurélie Fontaine",
+        "Mehdi Saadi",
+        "Corentin Le Bihan",
+        "Valentina Ricci",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "u-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "fact",
+          "statement": "Environ 12 000 fiches contacts doivent être migrées depuis l'ancien CRM.",
+          "speaker": "Corentin Le Bihan",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On a à peu près 12 000 fiches à basculer, faut pas rêver.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Mehdi propose une enveloppe de 45 000 euros pour la migration du CRM.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Moi je mets 45 000 sur la table, ça te va Aurélie ?",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Jonas propose une mise en production du nouveau CRM le 16 novembre.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je te propose le 16 novembre pour le go-live, ça laisse de la marge.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "action",
+          "statement": "Valentina est chargée de former les négociateurs au nouveau CRM.",
+          "speaker": "Aurélie Fontaine",
+          "owner": "Valentina Ricci",
+          "due_date": null,
+          "evidence": "Valentina, tu t'occupes de former les négos, t'es la mieux placée.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "fact",
+          "statement": "L'ancien CRM restera accessible en lecture jusqu'au 31 décembre.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "L'ancien outil, on le garde en lecture jusqu'à fin décembre, t'inquiète.",
+          "status": "superseded"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-22",
+      "title": "Arbitrage budget et planning",
+      "participants": [
+        "Aurélie Fontaine",
+        "Mehdi Saadi",
+        "Corentin Le Bihan",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "u-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "decision",
+          "statement": "La direction valide un budget de 38 000 euros pour la migration du CRM.",
+          "speaker": "Aurélie Fontaine",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon, j'ai vu la direction : c'est 38 000, pas un euro de plus.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "decision",
+          "statement": "La mise en production du nouveau CRM est fixée au 16 novembre.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Ok, on cale le 16, je le mets dans le planning.",
+          "status": "superseded"
+        },
+        {
+          "unit_id": "u-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "risk",
+          "statement": "Corentin signale un grand nombre de doublons dans les fiches propriétaires.",
+          "speaker": "Corentin Le Bihan",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Gros souci : t'as des doublons partout chez les proprios.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "commitment",
+          "statement": "Corentin s'engage à dédoublonner les fiches propriétaires avant le 15 octobre.",
+          "speaker": "Corentin Le Bihan",
+          "owner": "Corentin Le Bihan",
+          "due_date": "2026-10-15",
+          "evidence": "Je te nettoie tout ça, c'est fait avant le 15 octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "question",
+          "statement": "Jonas demande si les mandats exclusifs doivent conserver leur historique complet.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et les mandats exclus, tu veux tout l'historique ou juste la dernière version ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-06",
+      "title": "Point data et export",
+      "participants": [
+        "Mehdi Saadi",
+        "Corentin Le Bihan",
+        "Valentina Ricci",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "u-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "answer",
+          "statement": "Mehdi indique que l'historique complet des mandats exclusifs doit être conservé.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Tout l'historique, Jonas. Les agences en ont besoin en cas de litige.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "fact",
+          "statement": "Corentin rapporte que, selon Valentina, la plupart des doublons proviennent de l'agence de Nantes.",
+          "speaker": "Corentin Le Bihan",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Valentina m'a glissé que les doublons, ça vient surtout de Nantes.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "idea",
+          "statement": "Jonas évoque la possibilité de connecter directement les portails d'annonces au nouveau CRM.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait peut-être brancher les portails d'annonces direct dessus, non ?",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "u-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "risk",
+          "statement": "Jonas signale que l'export des mandats depuis l'ancien CRM échoue dès qu'ils contiennent des pièces jointes.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Là, l'export plante dès qu'il y a des PJ, je te cache pas.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "decision",
+          "statement": "La mise en production du nouveau CRM est reportée au 30 novembre.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Avec l'export qui plante, on décale au 30, pas le choix.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-016",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "action",
+          "statement": "Jonas doit corriger l'export des mandats avec pièces jointes avant le 27 octobre.",
+          "speaker": "Mehdi Saadi",
+          "owner": "Jonas Weber",
+          "due_date": "2026-10-27",
+          "evidence": "Jonas, tu me répares l'export des PJ pour le 27, ok ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-20",
+      "title": "Préparation de la recette",
+      "participants": [
+        "Aurélie Fontaine",
+        "Mehdi Saadi",
+        "Valentina Ricci",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "u-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "decision",
+          "statement": "La formation des négociateurs est confiée à Jonas à la place de Valentina.",
+          "speaker": "Aurélie Fontaine",
+          "owner": "Jonas Weber",
+          "due_date": null,
+          "evidence": "Valentina, t'es sous l'eau avec les ventes, c'est Jonas qui reprend la formation.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "decision",
+          "statement": "Aurélie valide la bascule du 30 novembre sous réserve que le test d'export des mandats soit concluant.",
+          "speaker": "Aurélie Fontaine",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le test d'export passe, alors on valide le 30. Sinon on en reparle.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-019",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Valentina indique que les négociateurs refusent d'être formés le samedi.",
+          "speaker": "Valentina Ricci",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le samedi, les négos, ils veulent pas entendre parler de formation.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-020",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Mehdi affirme que le dédoublonnage des fiches est terminé.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Les doublons, c'est réglé, Corentin a tout nettoyé.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-05",
+      "date": "2026-11-03",
+      "title": "Go / no-go",
+      "participants": [
+        "Aurélie Fontaine",
+        "Mehdi Saadi",
+        "Corentin Le Bihan",
+        "Valentina Ricci",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "u-021",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "fact",
+          "statement": "Jonas confirme que le test d'export des mandats avec pièces jointes est concluant.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le test d'export, c'est bon, toutes les PJ passent.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-022",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "decision",
+          "statement": "La licence de l'ancien CRM est résiliée au 15 décembre, sans accès en lecture au-delà.",
+          "speaker": "Aurélie Fontaine",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On coupe l'ancien CRM le 15 décembre. Après, t'as plus rien, même en lecture.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-023",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "commitment",
+          "statement": "Jonas s'engage à former les négociateurs les 24 et 25 novembre, en semaine.",
+          "speaker": "Jonas Weber",
+          "owner": "Jonas Weber",
+          "due_date": "2026-11-25",
+          "evidence": "Je te fais les sessions le 24 et le 25, en semaine, promis.",
+          "status": "active"
+        },
+        {
+          "unit_id": "u-024",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "fact",
+          "statement": "Corentin indique qu'il reste encore environ 300 doublons dans la base.",
+          "speaker": "Corentin Le Bihan",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Euh non, t'as encore genre 300 doublons, surtout sur Nantes.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "from_id": "u-006",
+      "to_id": "u-002",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-007",
+      "to_id": "u-003",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-015",
+      "to_id": "u-007",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-017",
+      "to_id": "u-004",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-04"
+    },
+    {
+      "from_id": "u-022",
+      "to_id": "u-005",
+      "relation": "supersedes",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-011",
+      "to_id": "u-010",
+      "relation": "answers",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-021",
+      "to_id": "u-018",
+      "relation": "supports",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-021",
+      "to_id": "u-016",
+      "relation": "supports",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-008",
+      "to_id": "u-009",
+      "relation": "creates_action",
+      "evidence_source_id": "meeting-02"
+    },
+    {
+      "from_id": "u-014",
+      "to_id": "u-016",
+      "relation": "creates_action",
+      "evidence_source_id": "meeting-03"
+    },
+    {
+      "from_id": "u-017",
+      "to_id": "u-023",
+      "relation": "creates_action",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-024",
+      "to_id": "u-020",
+      "relation": "contradicts",
+      "evidence_source_id": "meeting-05"
+    },
+    {
+      "from_id": "u-013",
+      "to_id": "u-015",
+      "relation": "unrelated",
+      "evidence_source_id": "meeting-03"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Elle est quand finalement, la mise en prod du nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-015",
+        "u-018"
+      ],
+      "hard_negative_unit_ids": [
+        "u-007",
+        "u-003"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "informal",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Quel budget a été validé pour la migration du CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [
+        "u-002"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui forme les négociateurs au nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-017",
+        "u-023"
+      ],
+      "hard_negative_unit_ids": [
+        "u-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "owner_change",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui est responsable du dédoublonnage des fiches propriétaires ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-009"
+      ],
+      "hard_negative_unit_ids": [
+        "u-012"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner",
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "La bascule du 30 novembre a-t-elle été validée sans condition ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-018",
+        "u-021"
+      ],
+      "hard_negative_unit_ids": [
+        "u-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "conditional_agreement",
+        "negation",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Est-ce qu'il a été décidé de connecter les portails d'annonces au nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-013"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision",
+        "negation"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Jusqu'à quand pourra-t-on consulter l'ancien CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-022"
+      ],
+      "hard_negative_unit_ids": [
+        "u-005"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Tous les doublons ont-ils été supprimés de la base ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-024"
+      ],
+      "hard_negative_unit_ids": [
+        "u-020",
+        "u-009"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "negation",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Qu'est-ce qui a changé sur le budget entre le kick-off et l'arbitrage ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "u-002",
+        "u-006"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Tu pourrais me rédiger un mail aux négociateurs pour annoncer les dates de formation, s'il te plaît ?",
+      "intent": "draft_email",
+      "relevant_unit_ids": [
+        "u-023",
+        "u-019"
+      ],
+      "hard_negative_unit_ids": [
+        "u-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "polite",
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-11",
+      "text": "Crée une tâche pour la réparation de l'export des mandats avec pièces jointes.",
+      "intent": "create_task",
+      "relevant_unit_ids": [
+        "u-016"
+      ],
+      "hard_negative_unit_ids": [
+        "u-014"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment",
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-12",
+      "text": "On garde l'historique des mandats exclusifs ou pas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "u-011"
+      ],
+      "hard_negative_unit_ids": [
+        "u-010"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "paraphrase",
+        "informal"
+      ]
+    },
+    {
+      "query_id": "q-13",
+      "text": "Quel éditeur a été retenu pour le nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "q-14",
+      "text": "Combien coûte la licence annuelle du nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [
+        "u-006"
+      ],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    }
+  ]
+}
