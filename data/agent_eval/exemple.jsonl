@@ -1,0 +1,6 @@
+{"id": "a-01", "project": "atlas", "message": "Quelle date de lancement a finalement été retenue ?", "expected_kind": "answer", "expected_recipient": null, "expected_units": ["u-011"], "category": "décision en vigueur"}
+{"id": "a-02", "project": "atlas", "message": "Rédige un mail à la personne responsable du budget pour lui demander la dernière version validée.", "expected_kind": "email_draft", "expected_recipient": "Karim Benali", "expected_units": [], "category": "destinataire par responsabilité"}
+{"id": "a-03", "project": "atlas", "message": "Envoie un mail à la bonne personne.", "expected_kind": "clarify", "expected_recipient": null, "expected_units": [], "category": "demande vague"}
+{"id": "a-04", "project": "atlas", "message": "On pourrait peut-être revoir le budget.", "expected_kind": "no_action", "expected_recipient": null, "expected_units": [], "category": "hypothèse"}
+{"id": "a-05", "project": "atlas", "message": "Crée une tâche pour Sophie : finaliser l'annonce du lancement", "expected_kind": "task_draft", "expected_recipient": "Sophie Laurent", "expected_units": [], "category": "personne nommée"}
+{"id": "a-06", "project": "atlas", "message": "Qu'est-ce qui a changé pour la date de lancement ?", "expected_kind": "compare", "expected_recipient": null, "expected_units": ["u-002", "u-007", "u-011"], "category": "comparaison"}

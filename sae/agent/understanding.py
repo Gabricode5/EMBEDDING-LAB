@@ -20,9 +20,9 @@ def norm(text: str) -> str:
 INTENT_RULES: list[tuple[str, re.Pattern]] = [
     ("draft_email", re.compile(r"\b(e-?mail|mail|courriel|ecris(-moi)? (a|au|un)|redige (un|une) (message|mot)|envoie(r)? un message)\b")),
     ("create_task", re.compile(r"\b(tache|to-?do|a faire pour|assigne(r)?|cree(r)? une action)\b")),
-    ("schedule_event", re.compile(r"\b(planifie|programme(r)? (un|une)|cale(r)? un|organise(r)? (un|une) (point|reunion|rdv)|prepare(r)? (un|une) (point|reunion)|rendez-vous|rdv)\b")),
+    ("schedule_event", re.compile(r"\b(planifie|programme|cale(r)? un|organise(r)? (un|une) (point|reunion|rdv)|prepare(r)? (un|une) (point|reunion)|rendez-vous|rdv)\b")),
     ("build_dossier", re.compile(r"\b(dossier|synthese|recap|recapitulatif|fais (le|un) point complet|bilan complet)\b")),
-    ("compare", re.compile(r"(qu'est-ce qui a (change|bouge)|ce qui a (change|bouge)|a change|evolue|evolution|difference|contredi|par rapport a)")),
+    ("compare", re.compile(r"(qu'est-ce qui a (change|bouge)|ce qui a (change|bouge)|a change|a evolue|evolution|difference|contredi|par rapport a)")),
 ]
 ACTION_INTENTS = {"draft_email", "create_task", "schedule_event"}
 
@@ -72,13 +72,21 @@ def find_person(message: str, scenarios: list[Scenario]) -> str | None:
     return hits.pop() if len(hits) == 1 else None
 
 
+def proper_nouns(project_name: str) -> list[str]:
+    """Noms propres du titre : mots en majuscule qui ne sont pas le premier mot (« Clinique », « Tilleuls »)."""
+    words = re.findall(r"[\w'-]+", project_name)
+    out = [w for w in words[1:] if w[:1].isupper() and len(w) > 2]
+    return out or (words if len(words) == 1 else [])   # nom d'un seul mot : « Atlas »
+
+
 def find_projects(message: str, scenarios: list[Scenario]) -> list[str]:
+    """Projets cités explicitement : identifiant, nom complet ou nom propre du titre."""
     m = norm(message)
     found = []
     for s in scenarios:
-        names = {norm(s.project_name), norm(s.project_id.replace("-", " "))}
-        words = [w for w in re.findall(r"\w+", norm(s.project_name)) if len(w) > 4]
-        if any(n in m for n in names) or any(re.search(rf"\b{re.escape(w)}\b", m) for w in words):
+        names = {norm(s.project_name), norm(s.project_id.replace("-", " ")), norm(s.project_id)}
+        nouns = [norm(w) for w in proper_nouns(s.project_name)]
+        if any(n in m for n in names) or any(re.search(rf"\b{re.escape(w)}\b", m) for w in nouns):
             found.append(s.project_id)
     return found
 
@@ -92,7 +100,11 @@ def understand(message: str, scenarios: list[Scenario], default_project: str | N
     if project is None and len(scenarios) == 1:
         project = scenarios[0].project_id
     deadline = DEADLINE.search(norm(message))
-    u = Understanding(intent=intent, reason=reason, person=find_person(message, scenarios), project=project,
+    in_project = [s for s in scenarios if s.project_id == project]
+    person = find_person(message, in_project) if in_project else None
+    if person is None:
+        person = find_person(message, scenarios)
+    u = Understanding(intent=intent, reason=reason, person=person, project=project,
                       deadline=deadline.group(0) if deadline else None, candidates_projects=projects)
     if is_hypothetical(message):
         u.hypothetical = True
