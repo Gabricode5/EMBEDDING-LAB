@@ -14,16 +14,27 @@ import numpy as np
 from sae.agent.understanding import ACTION_INTENTS, Understanding, norm, understand
 from sae.data import TYPE_LABELS_FR, EvalQuery, gid
 from sae.memory import Memory, apply_memory
-from sae.retrieval.bm25 import FRENCH_STOPWORDS
+from sae.retrieval.bm25 import BM25, FRENCH_STOPWORDS
 from sae.schemas import (Claim, Clarification, Dossier, DossierSection, EmailDraft, EventDraft, Recipient,
                          Scenario, TaskDraft, Unit)
 
 GENERIC = set("""mail e-mail email courriel message ecris ecrire redige rediger envoie envoyer prepare preparer
 cree creer tache planifie reunion point bonne personne personnes quelqu quelqu'un responsable peux pourrais
 merci salut bonjour stp svp dossier complet projet faire fais demander demande lui leur
+envoie-lui envoie-leur ecris-lui ecris-leur dis-lui dis-leur demande-lui demande-leur
 lundi mardi mercredi jeudi vendredi samedi dimanche janvier fevrier mars avril juin juillet aout septembre
 octobre novembre decembre avant semaine prochaine""".split())
 OWNER_TYPES = {"commitment", "action", "fact", "decision"}
+# Abstention sur les questions d'information : « none » garde le comportement historique (toujours répondre).
+ABSTENTION_STRATEGIES = ("none", "lexical", "score", "gap", "both", "either")
+LEXICAL_K = 3   # nombre d'unités examinées pour la vérification lexicale, comme pour le choix du destinataire
+# Seuils par stratégie et par intention, calibrés sur train + val (scripts/eval_abstention.py --calibrate),
+# figés avant toute mesure sur test et test2. Pas de seuil pour compare : aucune question de comparaison
+# sans réponse dans les données de calibrage.
+ABSTENTION_THRESHOLDS: dict[str, dict[str, float]] = {
+    "score": {"answer": 0.5121}, "gap": {"answer": 0.0031}, "both": {"answer": 0.5379}, "either": {"answer": 0.5121},
+}
+DEFAULT_ABSTENTION = "score"   # choisie sur train + val : aucune abstention à tort, 6/9 abstentions justifiées
 TEMPORAL_TAIL = re.compile(
     r"\s+(?:avant|d'ici|d’ici|pour)?\s*(?:le |la |ce |cette )?(?:lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche|"
     r"\d{1,2}(?:er)? \w+|demain|la semaine prochaine|fin de (?:la )?semaine|fin du mois)\b.*$", re.I)
@@ -46,15 +57,38 @@ class Source:
 
 @dataclass
 class AgentResult:
-    kind: str           # answer, compare, dossier, email_draft, task_draft, event_draft, clarify, no_action
+    kind: str           # answer, compare, no_answer, dossier, email_draft, task_draft, event_draft, clarify, no_action
     text: str
     understanding: Understanding
     sources: list[Source] = field(default_factory=list)
     payload: dict | None = None
+    signals: dict | None = None   # indices de confiance de la recherche (questions d'information)
+
+
+_STEMMER = BM25()   # sert seulement à la tokenisation et à la racinisation françaises
+
+
+def stems(text: str) -> set[str]:
+    return {t for t in _STEMMER.tokenize(norm(text)) if len(t) >= 3}
+
+
+def should_abstain(strategy: str, thresholds: dict[str, float], intent: str, signals: dict) -> bool:
+    """Décision d'abstention à partir des indices de la recherche (fonction pure, réutilisée au calibrage)."""
+    if strategy == "none":
+        return False
+    miss = not signals["lexical"]
+    t = thresholds.get(intent)
+    low = t is not None and signals["gap" if strategy == "gap" else "score"] < t
+    return {"lexical": miss, "score": low, "gap": low, "both": miss and low, "either": miss or low}[strategy]
 
 
 class Agent:
-    def __init__(self, scenarios: list[Scenario], memory: Memory, retriever, with_type: bool = True) -> None:
+    def __init__(self, scenarios: list[Scenario], memory: Memory, retriever, with_type: bool = True,
+                 abstention: str = DEFAULT_ABSTENTION, thresholds: dict[str, float] | None = None) -> None:
+        if abstention not in ABSTENTION_STRATEGIES:
+            raise ValueError(f"stratégie d'abstention inconnue : {abstention}")
+        self.abstention = abstention
+        self.thresholds = ABSTENTION_THRESHOLDS.get(abstention, {}) if thresholds is None else thresholds
         self.scenarios = {s.project_id: s for s in scenarios}
         self.memory = memory
         self.with_type = with_type
@@ -93,6 +127,34 @@ class Agent:
             frontier = nxt
         return sorted(chain, key=lambda x: (self.units[x].source_date, x))
 
+    def signals(self, message: str, hits: list[tuple[str, float]]) -> dict:
+        """Indices de confiance : score de la 1re unité, écart avec la 2e, racine commune avec le sujet."""
+        topic = stems(" ".join(self.topic_words(message)))
+        # sans mot de sujet exploitable, la vérification lexicale ne peut pas conclure : on ne la compte pas comme échec
+        lexical = not topic or any(topic & stems(self.units[g].statement) for g, _ in hits[:LEXICAL_K])
+        gap = hits[0][1] - hits[1][1] if len(hits) > 1 else hits[0][1]
+        return {"score": hits[0][1], "gap": gap, "lexical": lexical}
+
+    def abstains(self, intent: str, sig: dict) -> bool:
+        return should_abstain(self.abstention, self.thresholds, intent, sig)
+
+    def _no_answer(self, u: Understanding, hits: list[tuple[str, float]], sig: dict) -> AgentResult:
+        """Information absente des réunions : on le dit, et on montre les unités proches sans les donner comme réponse."""
+        why = []
+        if not sig["lexical"]:
+            why.append("aucun mot du sujet dans les unités trouvées")
+        t = self.thresholds.get(u.intent)
+        key = "gap" if self.abstention == "gap" else "score"
+        if t is not None and sig[key] < t:
+            why.append(f"{'écart' if key == 'gap' else 'similarité'} {sig[key]:.3f} sous le seuil {t:.3f}")
+        near = [self.source(g) for g, _ in hits[:2]]
+        text = "Je n'ai pas trouvé cette information dans les réunions."
+        if near:
+            text += ("\n\nSujets proches (ce ne sont pas des réponses à la question) :\n"
+                     + "\n".join(f"- {s.statement} [{s.unit_id}, {s.date}]" for s in near))
+        payload = {"reason": "; ".join(why), "related_unit_ids": [s.unit_id for s in near]}
+        return AgentResult("no_answer", text, u, [], payload, sig)
+
     def topic_query(self, message: str) -> str:
         words = self.topic_words(message)
         return " ".join(words) if words else message
@@ -114,14 +176,23 @@ class Agent:
                     "personne nommée dans la demande")
         hits = self.search(self.topic_query(message), u.project, "answer", k=5)
         owners: dict[str, str] = {}                      # responsable -> unité qui le désigne
+        topic = stems(" ".join(self.topic_words(message)))
         for g, _ in hits[:3]:
             x = self.units[g]
+            # l'unité doit parler du sujet demandé (au moins un mot en commun, après racinisation)
+            if not (topic & stems(x.statement)):
+                continue
             if x.owner and x.type in OWNER_TYPES and g not in self.inactive:
                 # pour chaque responsable, on garde l'attribution la plus récente
                 if x.owner not in owners or x.source_date > self.units[owners[x.owner]].source_date:
                     owners[x.owner] = g
         if not owners:
-            return None, [g for g, _ in hits[:3]], "aucun responsable explicite dans les unités trouvées"
+            return None, [g for g, _ in hits[:3]], "aucun responsable explicite pour ce sujet dans les réunions"
+        # l'attribution trouvée est-elle encore valable ? on cherche une réattribution plus récente sur le même sujet
+        for name_, g_ in list(owners.items()):
+            later = self.reassignment(g_, u.project)
+            if later and self.units[later].owner not in owners:
+                owners[self.units[later].owner] = later
         ranked = sorted(owners.items(), key=lambda kv: self.units[kv[1]].source_date, reverse=True)
         name, g = ranked[0]
         if len(ranked) > 1 and self.units[ranked[1][1]].source_date == self.units[g].source_date:
@@ -136,6 +207,16 @@ class Agent:
         return (Recipient(name=name, email=email, evidence_unit_ids=[g],
                           resolution_status="resolved" if email else "email_missing"),
                 [g] + [h for _, h in ranked[1:]], why)
+
+    def reassignment(self, g: str, project: str | None) -> str | None:
+        """Unité plus récente, très proche de g, qui désigne un autre responsable (réattribution)."""
+        x = self.units[g]
+        for h, _ in self.search(x.statement, project, "answer", k=3):
+            y = self.units[h]
+            if (h != g and y.owner and y.owner != x.owner and y.type in ("action", "commitment")
+                    and y.source_date > x.source_date and h not in self.inactive):
+                return h
+        return None
 
     @staticmethod
     def request_text(message: str) -> str:
@@ -192,6 +273,9 @@ class Agent:
     # ------------------------------------------------------------------ opérations
     def _answer(self, message: str, u: Understanding) -> AgentResult:
         hits = self.search(message, u.project, "answer", k=3)
+        sig = self.signals(message, hits)
+        if self.abstains("answer", sig):
+            return self._no_answer(u, hits, sig)
         top = self.source(hits[0][0])
         text = top.statement
         older = [g for g in self.history(hits[0][0]) if g != hits[0][0]]
@@ -199,10 +283,13 @@ class Agent:
             text += "\n\nCette information remplace : " + " ; ".join(
                 f"{self.units[g].statement} ({self.units[g].source_date})" for g in older)
         text += "\n\nSource : " + top.cite()
-        return AgentResult("answer", text, u, [top] + [self.source(g) for g in older])
+        return AgentResult("answer", text, u, [top] + [self.source(g) for g in older], signals=sig)
 
     def _compare(self, message: str, u: Understanding) -> AgentResult:
         hits = self.search(message, u.project, "compare", k=3)
+        sig = self.signals(message, hits)
+        if self.abstains("compare", sig):
+            return self._no_answer(u, hits, sig)
         chain = self.history(hits[0][0])
         if len(chain) == 1:
             top = self.units[hits[0][0]]
@@ -214,15 +301,16 @@ class Agent:
                 return AgentResult("compare", "Je n'ai pas de lien de remplacement confirmé, mais voici les "
                                    "informations sur ce sujet, de la plus ancienne à la plus récente :\n"
                                    + "\n".join(lines) + f"\n\nLa plus récente : {srcs[-1].statement} "
-                                   "(à vérifier : je ne peux pas confirmer qu'elle remplace les précédentes)", u, srcs)
+                                   "(à vérifier : je ne peux pas confirmer qu'elle remplace les précédentes)", u, srcs,
+                                   signals=sig)
             s = self.source(chain[0])
             return AgentResult("compare", "Je n'ai trouvé aucune modification enregistrée sur ce point. "
-                               f"Dernière information : {s.statement}\n\nSource : {s.cite()}", u, [s])
+                               f"Dernière information : {s.statement}\n\nSource : {s.cite()}", u, [s], signals=sig)
         srcs = [self.source(g) for g in chain]
         lines = [f"- {s.date} : {s.statement} [{s.unit_id}]" for s in srcs]
         text = ("Évolution sur ce point, de la plus ancienne à la plus récente :\n" + "\n".join(lines)
                 + f"\n\nVersion en vigueur : {srcs[-1].statement}")
-        return AgentResult("compare", text, u, srcs)
+        return AgentResult("compare", text, u, srcs, signals=sig)
 
     def _build_dossier(self, message: str, u: Understanding) -> AgentResult:
         p = u.project
@@ -281,7 +369,7 @@ class Agent:
         if blocked:
             return blocked
         rec, sources, why = ok
-        ctx = self.units[sources[0]] if sources else None   # l'unité qui justifie le destinataire
+        ctx = self.units[sources[-1]] if sources else None
         sentence, obj = self.email_sentence(self.request_text(message))
         if u.deadline and u.deadline not in norm(sentence):
             sentence = sentence.rstrip(" ?.") + f" {u.deadline} ?"

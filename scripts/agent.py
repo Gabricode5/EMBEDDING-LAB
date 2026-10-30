@@ -4,6 +4,7 @@
     python scripts/agent.py --project clinique-tilleuls --chat
     python scripts/agent.py --eval-intents
     python scripts/agent.py --relations gold --demo     # mémoire annotée (borne haute)
+    python scripts/agent.py --abstention score --chat   # abstention si l'information est absente
 """
 from __future__ import annotations
 
@@ -11,7 +12,7 @@ import argparse
 import json
 from collections import Counter
 
-from sae.agent.engine import Agent
+from sae.agent.engine import ABSTENTION_STRATEGIES, DEFAULT_ABSTENTION, Agent
 from sae.agent.understanding import detect_intent, is_hypothetical
 from sae.data import load_scenarios
 from sae.memory import Memory
@@ -57,7 +58,8 @@ def build_agent(args) -> Agent:
     elif args.relations == "none":
         memory.successor, memory.inactive_override = {}, set()
     print(f"Mémoire : {len(memory.corpus.ids)} unités, {len(memory.successor)} remplacements ({args.relations})")
-    return Agent(scenarios, memory, make_retriever(args.retriever), with_type=not args.no_type)
+    return Agent(scenarios, memory, make_retriever(args.retriever), with_type=not args.no_type,
+                 abstention=getattr(args, "abstention", DEFAULT_ABSTENTION))
 
 
 def show(label: str, message: str, agent: Agent, project: str | None, as_json: bool) -> None:
@@ -98,6 +100,8 @@ def main() -> None:
     ap.add_argument("--relations", choices=("predicted", "gold", "none"), default="predicted")
     ap.add_argument("--relations-model", default="models/relations-cross")
     ap.add_argument("--threshold", type=float, default=0.45)
+    ap.add_argument("--abstention", choices=ABSTENTION_STRATEGIES, default=DEFAULT_ABSTENTION,
+                    help="stratégie d'abstention pour les questions sans réponse (none : toujours répondre)")
     ap.add_argument("--demo", action="store_true")
     ap.add_argument("--chat", action="store_true")
     ap.add_argument("--eval-intents", action="store_true")

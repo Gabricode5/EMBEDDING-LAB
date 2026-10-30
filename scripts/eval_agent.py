@@ -19,6 +19,7 @@ from pathlib import Path
 
 from sklearn.metrics import classification_report
 
+from sae.agent.engine import ABSTENTION_STRATEGIES, DEFAULT_ABSTENTION
 from sae.data import gid
 
 ACTION_KINDS = {"email_draft", "task_draft", "event_draft"}
@@ -45,6 +46,8 @@ def main() -> None:
     ap.add_argument("--relations", choices=("predicted", "gold", "none"), default="predicted")
     ap.add_argument("--relations-model", default="models/relations-cross")
     ap.add_argument("--threshold", type=float, default=0.45)
+    ap.add_argument("--abstention", choices=ABSTENTION_STRATEGIES, default=DEFAULT_ABSTENTION,
+                    help="stratégie d'abstention (none : comportement historique)")
     ap.add_argument("--verbose", action="store_true", help="affiche chaque demande ratée")
     args = ap.parse_args()
 

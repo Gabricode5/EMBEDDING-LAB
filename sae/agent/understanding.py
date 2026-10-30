@@ -18,7 +18,7 @@ def norm(text: str) -> str:
 
 # L'ordre compte : la première règle qui correspond l'emporte.
 INTENT_RULES: list[tuple[str, re.Pattern]] = [
-    ("draft_email", re.compile(r"\b(e-?mail|mail|courriel|ecris(-moi)? (a|au|un)|redige (un|une) (message|mot)|envoie(r)? un message)\b")),
+    ("draft_email", re.compile(r"\b(e-?mail|mail|courriel|ecris(-moi|-lui|-leur)? (a|au|un)|ecris-(lui|leur)|redige (un|une) (message|mot)|envoie(r)?(-lui|-leur)? un (message|mot))\b")),
     ("create_task", re.compile(r"\b(tache|to-?do|a faire pour|assigne(r)?|cree(r)? une action)\b")),
     ("schedule_event", re.compile(r"\b(planifie|programme|cale(r)? un|organise(r)? (un|une) (point|reunion|rdv)|prepare(r)? (un|une) (point|reunion)|rendez-vous|rdv)\b")),
     ("build_dossier", re.compile(r"\b(dossier|synthese|recap|recapitulatif|fais (le|un) point complet|bilan complet)\b")),
