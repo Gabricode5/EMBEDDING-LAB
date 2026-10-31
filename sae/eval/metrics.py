@@ -47,6 +47,56 @@ def per_query(scores: np.ndarray, queries: list[EvalQuery], doc_index: dict[str,
     return rows
 
 
+def per_query_docs(scores: np.ndarray, queries: list[EvalQuery], doc_units: list[frozenset[str]]) -> list[dict]:
+    """Mêmes métriques que per_query, pour des documents qui contiennent chacun 0, 1 ou plusieurs unités.
+
+    - document pertinent : contient au moins une unité pertinente ; piège : un négatif difficile et aucune pertinente ;
+    - Recall@k : part des unités pertinentes présentes dans au moins un des k premiers documents ;
+    - MRR@10 : rang du premier document pertinent ;
+    - nDCG@10 : gain = nombre d'unités pertinentes *nouvelles* apportées par le document (une fenêtre qui
+      chevauche la précédente ne rapporte rien de plus), même idéal que per_query, plafonné à 1 ;
+    - hn_acc : pour chaque négatif difficile, le meilleur document pertinent doit dépasser tous les pièges qui le
+      contiennent ; un négatif qui n'apparaît que mélangé à une unité pertinente compte comme un échec (non séparé).
+    Avec un document par unité, ces définitions redonnent exactement per_query.
+    """
+    rows: list[dict] = []
+    for qi, q in enumerate(queries):
+        if not q.answerable:
+            continue
+        row, rel, hn = scores[qi], set(q.relevant), set(q.hard_negatives)
+        order = np.argsort(-row, kind="stable")
+        is_rel = np.array([bool(u & rel) for u in doc_units])
+        best = int(np.flatnonzero(is_rel[order])[0]) + 1
+
+        covered: set[str] = set()
+        metrics, dcg = {}, 0.0
+        for rank in range(1, max(KS) + 1):
+            if rank <= len(order):
+                new = (doc_units[order[rank - 1]] & rel) - covered
+                dcg += len(new) / math.log2(rank + 1)
+                covered |= new
+            if rank in KS:
+                metrics[f"recall@{rank}"] = len(covered) / len(rel)
+        metrics["mrr@10"] = 1.0 / best if best <= 10 else 0.0
+        idcg = sum(1.0 / math.log2(i + 1) for i in range(1, min(len(rel), 10) + 1))
+        metrics["ndcg@10"] = min(1.0, dcg / idcg)
+
+        hn_total = hn_ok = hn_mixed = 0
+        best_rel_score = float(row[is_rel].max())
+        for h in hn:
+            hn_total += 1
+            traps = [i for i, u in enumerate(doc_units) if h in u and not u & rel]
+            if not traps:
+                hn_mixed += 1
+            else:
+                hn_ok += int(best_rel_score > float(row[traps].max()))
+        top = doc_units[order[0]]
+        rows.append({"qid": q.qid, "origin": q.origin, "tags": list(q.tags), "best_rank": best,
+                     "hn_total": hn_total, "hn_ok": hn_ok, "hn_mixed": hn_mixed,
+                     "top1_mixed": bool(top & rel and top & hn) if hn else None, **metrics})
+    return rows
+
+
 def aggregate(rows: list[dict]) -> dict[str, float]:
     if not rows:
         return {}
