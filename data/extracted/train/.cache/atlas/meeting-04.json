@@ -1,0 +1,5 @@
+{
+ "key": "14f09679bc81",
+ "model": "qwen3:8b",
+ "raw": "{\n  \"units\": [\n    {\n      \"type\": \"decision\",\n      \"statement\": \"La campagne mail est annulée en cas d'absence de budget.\",\n      \"evidence\": \"Sans budget, on laisse tomber la campagne mail.\",\n      \"speaker\": \"Marie Dubois\",\n      \"owner\": null,\n      \"due_date\": null,\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"commitment\",\n      \"statement\": \"Sophie Laurent s'engage à préparer l'annonce sur le site pour le 20.\",\n      \"evidence\": \"Je prépare l'annonce sur le site, prête pour le 20.\",\n      \"speaker\": \"Sophie Laurent\",\n      \"owner\": \"Sophie Laurent\",\n      \"due_date\": \"2026-10-20\",\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"fact\",\n      \"statement\": \"Le plan de migration est disponible sur le drive depuis vendredi.\",\n      \"evidence\": \"Le plan de migration est sur le drive depuis vendredi.\",\n      \"speaker\": \"Thomas Girard\",\n      \"owner\": null,\n      \"due_date\": null,\n      \"status\": \"active\"\n    }\n  ]\n}"
+}

@@ -1,0 +1,5 @@
+{
+ "key": "14f09679bc81",
+ "model": "qwen3:8b",
+ "raw": "{\n  \"units\": [\n    {\n      \"type\": \"fact\",\n      \"statement\": \"La campagne est lancée pour octobre.\",\n      \"evidence\": \"La campagne est lancée pour octobre.\",\n      \"speaker\": \"Sophie Lefevre\",\n      \"owner\": null,\n      \"due_date\": null,\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"commitment\",\n      \"statement\": \"Léa Martin finalise la campagne avant le 20 octobre.\",\n      \"evidence\": \"Je finalise la campagne avant le 20 octobre.\",\n      \"speaker\": \"Léa Martin\",\n      \"owner\": \"Léa Martin\",\n      \"due_date\": \"2026-10-20\",\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"fact\",\n      \"statement\": \"L'intégration technique est livrée.\",\n      \"evidence\": \"L'intégration technique est livrée.\",\n      \"speaker\": \"Thomas Leclerc\",\n      \"owner\": null,\n      \"due_date\": null,\n      \"status\": \"active\"\n    }\n  ]\n}"
+}

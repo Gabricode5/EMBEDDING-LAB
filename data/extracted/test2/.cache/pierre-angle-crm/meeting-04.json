@@ -1,0 +1,5 @@
+{
+ "key": "14f09679bc81",
+ "model": "qwen3:8b",
+ "raw": "{\n  \"units\": [\n    {\n      \"type\": \"decision\",\n      \"statement\": \"Si le test d'export est validé, la date de validation est fixée au 30 octobre 2026.\",\n      \"evidence\": \"Si le test d'export passe, alors on valide le 30. Sinon on en reparle.\",\n      \"speaker\": \"Aurélie Fontaine\",\n      \"owner\": \"Aurélie Fontaine\",\n      \"due_date\": \"2026-10-30\",\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"fact\",\n      \"statement\": \"Les négociations du samedi ne souhaitent pas entendre parler de formation.\",\n      \"evidence\": \"Le samedi, les négos, ils veulent pas entendre parler de formation.\",\n      \"speaker\": \"Valentina Ricci\"\n    },\n    {\n      \"type\": \"fact\",\n      \"statement\": \"Les doublons ont été résolus par Corentin.\",\n      \"evidence\": \"Les doublons, c'est réglé, Corentin a tout nettoyé.\",\n      \"speaker\": \"Mehdi Saadi\"\n    }\n  ]\n}"
+}

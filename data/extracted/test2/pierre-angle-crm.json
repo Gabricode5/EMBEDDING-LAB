@@ -1,0 +1,604 @@
+{
+  "project_id": "pierre-angle-crm",
+  "project_name": "Bascule CRM Pierre d'Angle",
+  "description": "Remplacement de l'ancien CRM d'un réseau d'agences immobilières par un nouvel outil, avec reprise des contacts, des fiches propriétaires et des mandats.",
+  "people": [
+    {
+      "name": "Aurélie Fontaine",
+      "role": "Directrice du réseau d'agences",
+      "email": "aurelie.fontaine@example.org"
+    },
+    {
+      "name": "Mehdi Saadi",
+      "role": "Chef de projet CRM",
+      "email": "mehdi.saadi@example.org"
+    },
+    {
+      "name": "Corentin Le Bihan",
+      "role": "Responsable data",
+      "email": "corentin.lebihan@example.org"
+    },
+    {
+      "name": "Valentina Ricci",
+      "role": "Négociatrice senior",
+      "email": null
+    },
+    {
+      "name": "Jonas Weber",
+      "role": "Consultant intégrateur",
+      "email": "jonas.weber@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-08",
+      "title": "Kick-off de la bascule CRM",
+      "participants": [
+        "Aurélie Fontaine",
+        "Mehdi Saadi",
+        "Corentin Le Bihan",
+        "Valentina Ricci",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "x-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "fact",
+          "statement": "Le nombre de fiches à basculer est estimé à 12 000.",
+          "speaker": "Corentin Le Bihan",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On a à peu près 12 000 fiches à basculer, faut pas rêver.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Mehdi Saadi propose de basculer 45 000 fiches.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Moi je mets 45 000 sur la table, ça te va Aurélie ?",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "x-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Jonas Weber propose le 16 novembre comme date de go-live.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je te propose le 16 novembre pour le go-live, ça laisse de la marge.",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "x-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "action",
+          "statement": "Valentina Ricci est chargée de former les négos.",
+          "speaker": "Aurélie Fontaine",
+          "owner": "Valentina Ricci",
+          "due_date": null,
+          "evidence": "Valentina, tu t'occupes de former les négos, t'es la mieux placée.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "fact",
+          "statement": "L'ancien outil sera conservé en lecture jusqu'à fin décembre.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "L'ancien outil, on le garde en lecture jusqu'à fin décembre, t'inquiète.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-22",
+      "title": "Arbitrage budget et planning",
+      "participants": [
+        "Aurélie Fontaine",
+        "Mehdi Saadi",
+        "Corentin Le Bihan",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "x-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "decision",
+          "statement": "Le budget a été fixé à 38 000 euros.",
+          "speaker": "Aurélie Fontaine",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon, j'ai vu la direction : c'est 38 000, pas un euro de plus.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "action",
+          "statement": "Mehdi Saadi doit intégrer le 16 dans le planning.",
+          "speaker": "Mehdi Saadi",
+          "owner": "Mehdi Saadi",
+          "due_date": "2026-10-16",
+          "evidence": "Ok, on cale le 16, je le mets dans le planning.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "commitment",
+          "statement": "Corentin Le Bihan s'engage à nettoyer les doublons avant le 15 octobre.",
+          "speaker": "Corentin Le Bihan",
+          "owner": "Corentin Le Bihan",
+          "due_date": "2026-10-15",
+          "evidence": "Je te nettoie tout ça, c'est fait avant le 15 octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "question",
+          "statement": "Jonas Weber demande si les mandats exclus doivent inclure l'historique ou seulement la dernière version.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et les mandats exclus, tu veux tout l'historique ou juste la dernière version ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-06",
+      "title": "Point data et export",
+      "participants": [
+        "Mehdi Saadi",
+        "Corentin Le Bihan",
+        "Valentina Ricci",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "x-010",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "fact",
+          "statement": "Mehdi Saadi rappelle que l'historique est nécessaire pour les agences en cas de litige.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Tout l'historique, Jonas. Les agences en ont besoin en cas de litige.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "fact",
+          "statement": "Corentin Le Bihan indique que les doublons proviennent principalement de Nantes.",
+          "speaker": "Corentin Le Bihan",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Valentina m'a glissé que les doublons, ça vient surtout de Nantes.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "idea",
+          "statement": "Jonas Weber propose de brancher les portails d'annonces directement sur le système.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait peut-être brancher les portails d'annonces direct dessus, non ?",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "x-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "risk",
+          "statement": "L'export plante lorsqu'il y a des pièces jointes, selon Jonas Weber.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Là, l'export plante dès qu'il y a des PJ, je te cache pas.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "decision",
+          "statement": "La date de lancement est décalée au 30, en raison de l'export qui plante.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Avec l'export qui plante, on décale au 30, pas le choix.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "action",
+          "statement": "Jonas Weber doit réparer l'export des pièces jointes avant le 27.",
+          "speaker": "Mehdi Saadi",
+          "owner": "Jonas Weber",
+          "due_date": "2026-10-27",
+          "evidence": "Jonas, tu me répares l'export des PJ pour le 27, ok ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-20",
+      "title": "Préparation de la recette",
+      "participants": [
+        "Aurélie Fontaine",
+        "Mehdi Saadi",
+        "Valentina Ricci",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "x-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "decision",
+          "statement": "Si le test d'export est validé, la date de validation est fixée au 30 octobre 2026.",
+          "speaker": "Aurélie Fontaine",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le test d'export passe, alors on valide le 30. Sinon on en reparle.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Les négociations du samedi ne souhaitent pas entendre parler de formation.",
+          "speaker": "Valentina Ricci",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le samedi, les négos, ils veulent pas entendre parler de formation.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Les doublons ont été résolus par Corentin.",
+          "speaker": "Mehdi Saadi",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Les doublons, c'est réglé, Corentin a tout nettoyé.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-05",
+      "date": "2026-11-03",
+      "title": "Go / no-go",
+      "participants": [
+        "Aurélie Fontaine",
+        "Mehdi Saadi",
+        "Corentin Le Bihan",
+        "Valentina Ricci",
+        "Jonas Weber"
+      ],
+      "units": [
+        {
+          "unit_id": "x-019",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "fact",
+          "statement": "Le test d'export a été validé, toutes les pièces jointes passent.",
+          "speaker": "Jonas Weber",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le test d'export, c'est bon, toutes les PJ passent.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-020",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "fact",
+          "statement": "La coupure de l'ancien CRM a été programmée pour le 15 décembre.",
+          "speaker": "Aurélie Fontaine",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On coupe l'ancien CRM le 15 décembre. Après, t'as plus rien, même en lecture.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-021",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "commitment",
+          "statement": "Jonas Weber s'engage à réaliser les sessions le 24 et le 25 en semaine.",
+          "speaker": "Jonas Weber",
+          "owner": "Jonas Weber",
+          "due_date": "2026-11-25",
+          "evidence": "Je te fais les sessions le 24 et le 25, en semaine, promis.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-022",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "risk",
+          "statement": "Il existe des doublons importants, notamment sur Nantes.",
+          "speaker": "Corentin Le Bihan",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Euh non, t'as encore genre 300 doublons, surtout sur Nantes.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Elle est quand finalement, la mise en prod du nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-014",
+        "x-016"
+      ],
+      "hard_negative_unit_ids": [
+        "x-003",
+        "x-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "informal",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Quel budget a été validé pour la migration du CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-006"
+      ],
+      "hard_negative_unit_ids": [
+        "x-002"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui forme les négociateurs au nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-021"
+      ],
+      "hard_negative_unit_ids": [
+        "x-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "owner_change",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui est responsable du dédoublonnage des fiches propriétaires ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-008"
+      ],
+      "hard_negative_unit_ids": [
+        "x-011"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner",
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "La bascule du 30 novembre a-t-elle été validée sans condition ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-016",
+        "x-019"
+      ],
+      "hard_negative_unit_ids": [
+        "x-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "conditional_agreement",
+        "negation",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Est-ce qu'il a été décidé de connecter les portails d'annonces au nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-012"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision",
+        "negation"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Jusqu'à quand pourra-t-on consulter l'ancien CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-020"
+      ],
+      "hard_negative_unit_ids": [
+        "x-005"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Tous les doublons ont-ils été supprimés de la base ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-022"
+      ],
+      "hard_negative_unit_ids": [
+        "x-008",
+        "x-018"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "negation",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Qu'est-ce qui a changé sur le budget entre le kick-off et l'arbitrage ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "x-002",
+        "x-006"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Tu pourrais me rédiger un mail aux négociateurs pour annoncer les dates de formation, s'il te plaît ?",
+      "intent": "draft_email",
+      "relevant_unit_ids": [
+        "x-017",
+        "x-021"
+      ],
+      "hard_negative_unit_ids": [
+        "x-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "polite",
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-11",
+      "text": "Crée une tâche pour la réparation de l'export des mandats avec pièces jointes.",
+      "intent": "create_task",
+      "relevant_unit_ids": [
+        "x-015"
+      ],
+      "hard_negative_unit_ids": [
+        "x-013"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment",
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-12",
+      "text": "On garde l'historique des mandats exclusifs ou pas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-010"
+      ],
+      "hard_negative_unit_ids": [
+        "x-009"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "paraphrase",
+        "informal"
+      ]
+    },
+    {
+      "query_id": "q-13",
+      "text": "Quel éditeur a été retenu pour le nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "q-14",
+      "text": "Combien coûte la licence annuelle du nouveau CRM ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [
+        "x-006"
+      ],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    }
+  ]
+}

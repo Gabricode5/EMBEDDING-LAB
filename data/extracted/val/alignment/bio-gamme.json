@@ -1,0 +1,28 @@
+{
+  "units": {
+    "bio-gamme/u-012": "bio-gamme/x-012",
+    "bio-gamme/u-011": "bio-gamme/x-011",
+    "bio-gamme/u-014": "bio-gamme/x-014",
+    "bio-gamme/u-013": "bio-gamme/x-013",
+    "bio-gamme/u-015": "bio-gamme/x-015",
+    "bio-gamme/u-017": "bio-gamme/x-017",
+    "bio-gamme/u-016": "bio-gamme/x-016",
+    "bio-gamme/u-003": "bio-gamme/x-003",
+    "bio-gamme/u-004": "bio-gamme/x-004",
+    "bio-gamme/u-005": "bio-gamme/x-005",
+    "bio-gamme/u-002": "bio-gamme/x-002",
+    "bio-gamme/u-001": "bio-gamme/x-001",
+    "bio-gamme/u-006": "bio-gamme/x-006",
+    "bio-gamme/u-009": "bio-gamme/x-009",
+    "bio-gamme/u-008": "bio-gamme/x-008",
+    "bio-gamme/u-007": "bio-gamme/x-007",
+    "bio-gamme/u-010": "bio-gamme/x-010"
+  },
+  "lost_queries": [],
+  "grounding": {
+    "proposed": 17,
+    "regrounded": 1,
+    "dropped": 0
+  },
+  "key": "14f09679bc81"
+}

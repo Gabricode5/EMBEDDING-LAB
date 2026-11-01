@@ -1,0 +1,29 @@
+{
+  "units": {
+    "salle-sport/u-003": "salle-sport/x-003",
+    "salle-sport/u-002": "salle-sport/x-002",
+    "salle-sport/u-004": "salle-sport/x-004",
+    "salle-sport/u-001": "salle-sport/x-001",
+    "salle-sport/u-005": "salle-sport/x-005",
+    "salle-sport/u-016": "salle-sport/x-016",
+    "salle-sport/u-017": "salle-sport/x-017",
+    "salle-sport/u-018": "salle-sport/x-018",
+    "salle-sport/u-013": "salle-sport/x-013",
+    "salle-sport/u-012": "salle-sport/x-012",
+    "salle-sport/u-015": "salle-sport/x-015",
+    "salle-sport/u-011": "salle-sport/x-011",
+    "salle-sport/u-014": "salle-sport/x-014",
+    "salle-sport/u-006": "salle-sport/x-006",
+    "salle-sport/u-009": "salle-sport/x-009",
+    "salle-sport/u-010": "salle-sport/x-010",
+    "salle-sport/u-008": "salle-sport/x-008",
+    "salle-sport/u-007": "salle-sport/x-007"
+  },
+  "lost_queries": [],
+  "grounding": {
+    "proposed": 18,
+    "regrounded": 1,
+    "dropped": 0
+  },
+  "key": "14f09679bc81"
+}

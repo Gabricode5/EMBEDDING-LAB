@@ -1,0 +1,33 @@
+{
+  "units": {
+    "clinique-tilleuls/u-004": "clinique-tilleuls/x-004",
+    "clinique-tilleuls/u-002": "clinique-tilleuls/x-002",
+    "clinique-tilleuls/u-005": "clinique-tilleuls/x-005",
+    "clinique-tilleuls/u-001": "clinique-tilleuls/x-001",
+    "clinique-tilleuls/u-006": "clinique-tilleuls/x-006",
+    "clinique-tilleuls/u-003": "clinique-tilleuls/x-003",
+    "clinique-tilleuls/u-007": "clinique-tilleuls/x-007",
+    "clinique-tilleuls/u-008": "clinique-tilleuls/x-008",
+    "clinique-tilleuls/u-011": "clinique-tilleuls/x-011",
+    "clinique-tilleuls/u-009": "clinique-tilleuls/x-009",
+    "clinique-tilleuls/u-010": "clinique-tilleuls/x-010",
+    "clinique-tilleuls/u-012": "clinique-tilleuls/x-012",
+    "clinique-tilleuls/u-016": "clinique-tilleuls/x-016",
+    "clinique-tilleuls/u-013": "clinique-tilleuls/x-013",
+    "clinique-tilleuls/u-015": "clinique-tilleuls/x-015",
+    "clinique-tilleuls/u-014": "clinique-tilleuls/x-014",
+    "clinique-tilleuls/u-021": "clinique-tilleuls/x-020",
+    "clinique-tilleuls/u-022": "clinique-tilleuls/x-021",
+    "clinique-tilleuls/u-023": "clinique-tilleuls/x-022",
+    "clinique-tilleuls/u-017": "clinique-tilleuls/x-017",
+    "clinique-tilleuls/u-020": "clinique-tilleuls/x-019",
+    "clinique-tilleuls/u-018": "clinique-tilleuls/x-018"
+  },
+  "lost_queries": [],
+  "grounding": {
+    "proposed": 22,
+    "regrounded": 6,
+    "dropped": 0
+  },
+  "key": "14f09679bc81"
+}

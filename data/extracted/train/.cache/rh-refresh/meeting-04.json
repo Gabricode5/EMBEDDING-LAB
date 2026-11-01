@@ -1,0 +1,5 @@
+{
+ "key": "14f09679bc81",
+ "model": "qwen3:8b",
+ "raw": "{\n  \"units\": [\n    {\n      \"type\": \"decision\",\n      \"statement\": \"Le lancement est confirmé le 15 octobre 2026.\",\n      \"evidence\": \"Le lancement est confirmé le 15.\",\n      \"speaker\": \"Léa Dubois\",\n      \"owner\": null,\n      \"due_date\": \"2026-10-15\",\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"commitment\",\n      \"statement\": \"Sophie Laurent finalise les paramètres RH avant le 12 octobre 2026.\",\n      \"evidence\": \"Je finalize les paramètres RH avant le 12.\",\n      \"speaker\": \"Sophie Laurent\",\n      \"owner\": \"Sophie Laurent\",\n      \"due_date\": \"2026-10-12\",\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"fact\",\n      \"statement\": \"Le plan technique est disponible sur le drive.\",\n      \"evidence\": \"Le plan technique est sur le drive depuis hier.\",\n      \"speaker\": \"Thomas Girard\",\n      \"owner\": null,\n      \"due_date\": null,\n      \"status\": \"active\"\n    }\n  ]\n}"
+}

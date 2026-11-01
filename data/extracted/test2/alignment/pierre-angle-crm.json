@@ -1,0 +1,33 @@
+{
+  "units": {
+    "pierre-angle-crm/u-016": "pierre-angle-crm/x-015",
+    "pierre-angle-crm/u-012": "pierre-angle-crm/x-011",
+    "pierre-angle-crm/u-013": "pierre-angle-crm/x-012",
+    "pierre-angle-crm/u-015": "pierre-angle-crm/x-014",
+    "pierre-angle-crm/u-014": "pierre-angle-crm/x-013",
+    "pierre-angle-crm/u-011": "pierre-angle-crm/x-010",
+    "pierre-angle-crm/u-018": "pierre-angle-crm/x-016",
+    "pierre-angle-crm/u-019": "pierre-angle-crm/x-017",
+    "pierre-angle-crm/u-020": "pierre-angle-crm/x-018",
+    "pierre-angle-crm/u-023": "pierre-angle-crm/x-021",
+    "pierre-angle-crm/u-022": "pierre-angle-crm/x-020",
+    "pierre-angle-crm/u-021": "pierre-angle-crm/x-019",
+    "pierre-angle-crm/u-024": "pierre-angle-crm/x-022",
+    "pierre-angle-crm/u-009": "pierre-angle-crm/x-008",
+    "pierre-angle-crm/u-010": "pierre-angle-crm/x-009",
+    "pierre-angle-crm/u-006": "pierre-angle-crm/x-006",
+    "pierre-angle-crm/u-007": "pierre-angle-crm/x-007",
+    "pierre-angle-crm/u-004": "pierre-angle-crm/x-004",
+    "pierre-angle-crm/u-005": "pierre-angle-crm/x-005",
+    "pierre-angle-crm/u-002": "pierre-angle-crm/x-002",
+    "pierre-angle-crm/u-003": "pierre-angle-crm/x-003",
+    "pierre-angle-crm/u-001": "pierre-angle-crm/x-001"
+  },
+  "lost_queries": [],
+  "grounding": {
+    "proposed": 22,
+    "regrounded": 1,
+    "dropped": 0
+  },
+  "key": "14f09679bc81"
+}

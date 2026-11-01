@@ -1,0 +1,460 @@
+{
+  "project_id": "santech",
+  "project_name": "Mise en conformité RGPD d'une start-up de santé",
+  "description": "Projet de mise en conformité RGPD pour une start-up de santé basée à Paris, spécialisée dans l'analyse de données biomédicales.",
+  "people": [
+    {
+      "name": "Pauline Dubois",
+      "role": "Responsable RGPD",
+      "email": "pauline.dubois@example.org"
+    },
+    {
+      "name": "Lucas Martin",
+      "role": "Responsable IT",
+      "email": null
+    },
+    {
+      "name": "Sophie Moreau",
+      "role": "Responsable des données",
+      "email": "sophie.moreau@example.org"
+    },
+    {
+      "name": "Théo Lefevre",
+      "role": "Chef de projet",
+      "email": "theo.lefevre@example.org"
+    },
+    {
+      "name": "Mathilde Girard",
+      "role": "Responsable marketing",
+      "email": null
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-10",
+      "title": "Lancement du projet RGPD",
+      "participants": [
+        "Pauline Dubois",
+        "Lucas Martin",
+        "Sophie Moreau",
+        "Théo Lefevre",
+        "Mathilde Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "x-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "fact",
+          "statement": "Le projet a pour objectif de finaliser la conformité d'ici la fin de l'année.",
+          "speaker": "Théo Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le projet a pour objectif de finaliser la conformité d'ici la fin de l'année.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "idea",
+          "statement": "Si le projet est en retard, on pourrait peut-être revoir le budget.",
+          "speaker": "Sophie Moreau",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le projet est en retard, on pourrait peut-être revoir le budget.",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "x-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "idea",
+          "statement": "Lucas Martin propose une enveloppe de 200 000 euros.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Je propose une enveloppe de 200 000 euros.",
+          "status": "proposed"
+        },
+        {
+          "unit_id": "x-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "commitment",
+          "statement": "Théo Lefevre s'engage à livrer le planning avant le 30 septembre.",
+          "speaker": "Théo Lefevre",
+          "owner": "Théo Lefevre",
+          "due_date": "2026-09-30",
+          "evidence": "Je livre le planning avant le 30 septembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-10",
+          "type": "idea",
+          "statement": "Si la collecte de données prend trop de temps, on pourrait peut-être revoir la date.",
+          "speaker": "Mathilde Girard",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si la collecte de données prend trop de temps, on pourrait peut-être revoir la date.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-25",
+      "title": "Réunion de suivi",
+      "participants": [
+        "Pauline Dubois",
+        "Lucas Martin",
+        "Sophie Moreau",
+        "Théo Lefevre",
+        "Mathilde Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "x-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "decision",
+          "statement": "Le budget de 180 000 euros a été validé.",
+          "speaker": "Pauline Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le budget de 180 000 euros a été validé.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "decision",
+          "statement": "La date de conformité a été confirmée au 15 décembre.",
+          "speaker": "Théo Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On confirme la date de conformité au 15 décembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "risk",
+          "statement": "La collecte de données risque de retarder le projet de trois semaines.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "La collecte de données me fait peur, on peut déraper de trois semaines.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "action",
+          "statement": "Sophie Moreau est chargée de proposer une alternative si la collecte de données est en retard.",
+          "speaker": "Pauline Dubois",
+          "owner": "Sophie Moreau",
+          "due_date": null,
+          "evidence": "Sophie, tu proposes une alternative si la collecte de données est en retard ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-25",
+          "type": "idea",
+          "statement": "Si la collecte de données persiste en retard, l'idée est d'augmenter le budget.",
+          "speaker": "Mathilde Girard",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et si le retard persiste, on peut augmenter le budget ?",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-10",
+      "title": "Révision du planning",
+      "participants": [
+        "Pauline Dubois",
+        "Lucas Martin",
+        "Sophie Moreau",
+        "Théo Lefevre",
+        "Mathilde Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "x-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-10",
+          "type": "decision",
+          "statement": "La date de la révision du planning a été confirmée au 22 décembre.",
+          "speaker": "Théo Lefevre",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On confirme le report au 22 décembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-10",
+          "type": "action",
+          "statement": "Lucas Martin doit livrer le planning de collecte de données avant le 15 octobre.",
+          "speaker": "Lucas Martin",
+          "owner": "Lucas Martin",
+          "due_date": "2026-10-15",
+          "evidence": "Je livre le planning de collecte de données avant le 15 octobre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-10",
+          "type": "fact",
+          "statement": "Sophie Moreau pilote la conformité.",
+          "speaker": "Pauline Dubois",
+          "owner": "Sophie Moreau",
+          "due_date": null,
+          "evidence": "Pour rappel, c'est Sophie qui pilote la conformité.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-10",
+          "type": "idea",
+          "statement": "Si le retard persiste, le budget pourrait être révisé.",
+          "speaker": "Mathilde Girard",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le retard persiste, on pourrait peut-être revoir le budget.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-25",
+      "title": "Préparation finale",
+      "participants": [
+        "Pauline Dubois",
+        "Lucas Martin",
+        "Sophie Moreau",
+        "Théo Lefevre",
+        "Mathilde Girard"
+      ],
+      "units": [
+        {
+          "unit_id": "x-015",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-25",
+          "type": "decision",
+          "statement": "Le budget a été augmenté à 220 000 euros.",
+          "speaker": "Pauline Dubois",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le budget a été augmenté à 220 000 euros.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-25",
+          "type": "fact",
+          "statement": "Le planning de collecte de données est disponible sur le drive.",
+          "speaker": "Lucas Martin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le planning de collecte de données est sur le drive depuis hier.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-25",
+          "type": "action",
+          "statement": "Sophie Moreau doit finaliser la communication pour le lancement.",
+          "speaker": "Théo Lefevre",
+          "owner": "Sophie Moreau",
+          "due_date": null,
+          "evidence": "Sophie, tu finalises la communication pour le lancement.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Quelle date de conformité RGPD a finalement été retenue ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-011"
+      ],
+      "hard_negative_unit_ids": [
+        "x-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Le budget de la conformité a-t-il été validé ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-006",
+        "x-015"
+      ],
+      "hard_negative_unit_ids": [
+        "x-003",
+        "x-014"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui pilote la conformité RGPD ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-013"
+      ],
+      "hard_negative_unit_ids": [
+        "x-009"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui doit finaliser la communication pour le lancement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-017"
+      ],
+      "hard_negative_unit_ids": [
+        "x-009"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "Quels risques pèsent sur la conformité RGPD ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-008"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Est-ce qu'une augmentation de budget a été décidée ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-015"
+      ],
+      "hard_negative_unit_ids": [
+        "x-006"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "budget_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Qu'est-ce qui a changé pour la date de conformité entre septembre et octobre ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "x-007",
+        "x-011"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "date_change"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Qui s'est engagé à livrer le planning de collecte de données ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-012"
+      ],
+      "hard_negative_unit_ids": [
+        "x-004",
+        "x-008"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Qui s'occupe de former les agents au nouveau système RGPD ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Finalement, l'enveloppe de la conformité, c'est combien ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-015"
+      ],
+      "hard_negative_unit_ids": [
+        "x-003",
+        "x-006"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "informal",
+        "budget_change"
+      ]
+    }
+  ]
+}

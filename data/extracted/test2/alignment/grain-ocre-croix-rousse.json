@@ -1,0 +1,34 @@
+{
+  "units": {
+    "grain-ocre-croix-rousse/u-014": "grain-ocre-croix-rousse/x-014",
+    "grain-ocre-croix-rousse/u-015": "grain-ocre-croix-rousse/x-015",
+    "grain-ocre-croix-rousse/u-013": "grain-ocre-croix-rousse/x-013",
+    "grain-ocre-croix-rousse/u-011": "grain-ocre-croix-rousse/x-011",
+    "grain-ocre-croix-rousse/u-012": "grain-ocre-croix-rousse/x-012",
+    "grain-ocre-croix-rousse/u-017": "grain-ocre-croix-rousse/x-017",
+    "grain-ocre-croix-rousse/u-016": "grain-ocre-croix-rousse/x-016",
+    "grain-ocre-croix-rousse/u-020": "grain-ocre-croix-rousse/x-020",
+    "grain-ocre-croix-rousse/u-019": "grain-ocre-croix-rousse/x-019",
+    "grain-ocre-croix-rousse/u-018": "grain-ocre-croix-rousse/x-018",
+    "grain-ocre-croix-rousse/u-022": "grain-ocre-croix-rousse/x-022",
+    "grain-ocre-croix-rousse/u-021": "grain-ocre-croix-rousse/x-021",
+    "grain-ocre-croix-rousse/u-023": "grain-ocre-croix-rousse/x-023",
+    "grain-ocre-croix-rousse/u-009": "grain-ocre-croix-rousse/x-009",
+    "grain-ocre-croix-rousse/u-008": "grain-ocre-croix-rousse/x-008",
+    "grain-ocre-croix-rousse/u-006": "grain-ocre-croix-rousse/x-006",
+    "grain-ocre-croix-rousse/u-007": "grain-ocre-croix-rousse/x-007",
+    "grain-ocre-croix-rousse/u-010": "grain-ocre-croix-rousse/x-010",
+    "grain-ocre-croix-rousse/u-004": "grain-ocre-croix-rousse/x-004",
+    "grain-ocre-croix-rousse/u-002": "grain-ocre-croix-rousse/x-002",
+    "grain-ocre-croix-rousse/u-001": "grain-ocre-croix-rousse/x-001",
+    "grain-ocre-croix-rousse/u-005": "grain-ocre-croix-rousse/x-005",
+    "grain-ocre-croix-rousse/u-003": "grain-ocre-croix-rousse/x-003"
+  },
+  "lost_queries": [],
+  "grounding": {
+    "proposed": 23,
+    "regrounded": 1,
+    "dropped": 0
+  },
+  "key": "14f09679bc81"
+}

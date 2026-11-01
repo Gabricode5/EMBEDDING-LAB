@@ -7,6 +7,8 @@ Fichier d'entrée (JSON Lines), une demande par ligne :
 
     python scripts/eval_agent.py --file data/agent_eval/test.jsonl
     python scripts/eval_agent.py --file data/agent_eval/test.jsonl --relations gold
+    python scripts/eval_agent.py --file data/agent_eval/test2.jsonl --split data/extracted/test2 \
+        --unit-map data/extracted/test2/alignment                 # unités extraites automatiquement
 """
 from __future__ import annotations
 
@@ -34,6 +36,14 @@ def recipient_of(result) -> str | None:
     return None
 
 
+def load_unit_map(folder: str) -> dict[str, str]:
+    """Unité annotée -> unité extraite, pour tous les projets du dossier d'alignement."""
+    out: dict[str, str] = {}
+    for p in sorted(Path(folder).glob("*.json")):
+        out |= json.loads(p.read_text(encoding="utf-8"))["units"]
+    return out
+
+
 def main() -> None:
     sys.path.insert(0, str(Path(__file__).parent))
     from agent import build_agent  # réutilise la construction de l'agent de scripts/agent.py
@@ -48,16 +58,21 @@ def main() -> None:
     ap.add_argument("--threshold", type=float, default=0.45)
     ap.add_argument("--abstention", choices=ABSTENTION_STRATEGIES, default=DEFAULT_ABSTENTION,
                     help="stratégie d'abstention (none : comportement historique)")
+    ap.add_argument("--unit-map", default=None,
+                    help="dossier d'alignement (data/extracted/<split>/alignment) : réécrit les unités attendues")
     ap.add_argument("--verbose", action="store_true", help="affiche chaque demande ratée")
     args = ap.parse_args()
 
     cases = [json.loads(l) for l in Path(args.file).read_text(encoding="utf-8").splitlines() if l.strip()]
     agent = build_agent(args)
+    unit_map = load_unit_map(args.unit_map) if args.unit_map else None
 
     rows = []
     for c in cases:
         r = agent.handle(c["message"], project=c.get("project"))
         expected_units = {gid(c["project"], u) for u in c.get("expected_units", [])}
+        if unit_map is not None:   # une unité attendue non extraite ne peut pas être trouvée : échec
+            expected_units = {unit_map.get(u, "(non extraite)") for u in expected_units}
         top_source = r.sources[0].unit_id if r.sources else None
         rows.append({**c, "kind": r.kind, "recipient": recipient_of(r), "top_source": top_source,
                      "source_ok": (top_source in expected_units) if expected_units else None, "text": r.text})

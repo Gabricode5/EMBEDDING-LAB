@@ -1,0 +1,5 @@
+{
+ "key": "14f09679bc81",
+ "model": "qwen3:8b",
+ "raw": "{\n  \"units\": [\n    {\n      \"type\": \"decision\",\n      \"statement\": \"La réunion confirme le lancement du projet le 17 novembre.\",\n      \"evidence\": \"Bon, on y va. Le 17, c'est confirmé. Go.\",\n      \"speaker\": \"Nadia Ferhat\",\n      \"due_date\": \"2026-11-17\",\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"fact\",\n      \"statement\": \"Quarante-deux personnes sont formées au bloc opératoire, et deux personnes restent à former.\",\n      \"evidence\": \"Alors, euh… 42 formés au bloc. Il m'en reste deux, ils sont en congé.\",\n      \"speaker\": \"Agnès Rousseau-Lin\",\n      \"owner\": \"Agnès Rousseau-Lin\",\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"commitment\",\n      \"statement\": \"Olivier Kervella s'engage à finaliser le deuxième patch.\",\n      \"evidence\": \"Les doublons, c'est réglé. Deuxième patch. Cette fois c'est bon, j'ai vérifié.\",\n      \"speaker\": \"Olivier Kervella\",\n      \"owner\": \"Oliv, Kervella\",\n      \"status\": \"active\"\n    }\n  ]\n}"
+}

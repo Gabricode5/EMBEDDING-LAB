@@ -1,0 +1,5 @@
+{
+ "key": "14f09679bc81",
+ "model": "qwen3:8b",
+ "raw": "{\n  \"units\": [\n    {\n      \"type\": \"decision\",\n      \"statement\": \"La date de la révision du planning a été confirmée au 20 octobre.\",\n      \"evidence\": \"On confirme le report au 20 octobre.\",\n      \"speaker\": \"Élodie Dubois\",\n      \"due_date\": \"2026-10-20\",\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"commitment\",\n      \"statement\": \"Sophie Moreau s'engage à livrer le planning de transport des équipements avant le 12 octobre.\",\n      \"evidence\": \"Je livre le planning de transport des équipements avant le 12 octobre.\",\n      \"speaker\": \"Sophie Moreau\",\n      \"due_date\": \"2026-10-12\",\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"fact\",\n      \"statement\": \"Pour rappel, c'est Thomas Leclerc qui pilote la communication.\",\n      \"evidence\": \"Pour rappel, c'est Thomas qui pilote la communication.\",\n      \"speaker\": \"Léa Girard\",\n      \"owner\": \"Thomas Leclerc\"\n    }\n  ]\n}"
+}

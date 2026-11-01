@@ -1,0 +1,603 @@
+{
+  "project_id": "grain-ocre-croix-rousse",
+  "project_name": "Grain d'Ocre Croix-Rousse",
+  "description": "Ouverture du second point de vente lyonnais de Grain d'Ocre, torréfaction artisanale déjà installée à Bellecour, sur le plateau de la Croix-Rousse.",
+  "people": [
+    {
+      "name": "Romane Aubertin",
+      "role": "Gérante",
+      "email": "romane.aubertin@example.org"
+    },
+    {
+      "name": "Kofi Mensah-Delorme",
+      "role": "Responsable financier",
+      "email": "kofi.mensah@example.org"
+    },
+    {
+      "name": "Inaya Belkacem",
+      "role": "Responsable aménagement et travaux",
+      "email": null
+    },
+    {
+      "name": "Victor Chapuis",
+      "role": "Responsable RH",
+      "email": "victor.chapuis@example.org"
+    },
+    {
+      "name": "Lou Tran-Mercier",
+      "role": "Responsable communication",
+      "email": "lou.tran@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-08",
+      "title": "Lancement du projet Croix-Rousse",
+      "participants": [
+        "Romane Aubertin",
+        "Kofi Mensah-Delorme",
+        "Inaya Belkacem",
+        "Lou Tran-Mercier"
+      ],
+      "units": [
+        {
+          "unit_id": "x-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "decision",
+          "statement": "Le projet va démarrer sur le local situé rue d'Austerlitz, tout en haut de la Croix-Rousse.",
+          "speaker": "Romane Aubertin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon, c'est acté pour le local : on part sur la rue d'Austerlitz, tout en haut de la Croix-Rousse.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Kofi Mensah-Delorme propose de prévoir un budget de 80 000 euros pour les travaux.",
+          "speaker": "Kofi Mensah-Delorme",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Moi je mettrais 80 000 sur les travaux, pas un euro de plus.",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "x-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "commitment",
+          "statement": "Romane Aubertin s'engage à organiser l'inauguration le 14 novembre.",
+          "speaker": "Romane Aubertin",
+          "owner": "Romane Aubertin",
+          "due_date": "2026-11-14",
+          "evidence": "Je verrais bien l'inauguration le 14 novembre. Ça te va, Lou ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "fact",
+          "statement": "Le projet ouvrira du mardi au samedi, comme à Bellecour.",
+          "speaker": "Romane Aubertin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Comme à Bellecour, on ouvre du mardi au samedi, point.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Lou Tran-Mercier suggère de créer un petit stand au marché du boulevard avant l'ouverture.",
+          "speaker": "Lou Tran-Mercier",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait peut-être tenter un petit stand au marché du boulevard avant d'ouvrir, je sais pas, à creuser.",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-22",
+      "title": "Bail et budget",
+      "participants": [
+        "Romane Aubertin",
+        "Kofi Mensah-Delorme",
+        "Inaya Belkacem"
+      ],
+      "units": [
+        {
+          "unit_id": "x-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "decision",
+          "statement": "Le montant du bail a été validé à 95 000.",
+          "speaker": "Kofi Mensah-Delorme",
+          "owner": null,
+          "due_date": null,
+          "evidence": "J'ai refait les calculs avec tes devis, Inaya. On valide 95 000, c'est bon pour moi.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "action",
+          "statement": "Romane Aubertin a confirmé la date du 14 novembre pour le bail.",
+          "speaker": "Romane Aubertin",
+          "owner": "Romane Aubertin",
+          "due_date": "2026-11-14",
+          "evidence": "Ok, on garde le 14 novembre. Tu bloques ça dans ton agenda.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "idea",
+          "statement": "Si le propriétaire accorde trois mois de franchise, le bail sera signé.",
+          "speaker": "Romane Aubertin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si le proprio nous lâche trois mois de franchise, on signe. Sinon, on attend.",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "x-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "action",
+          "statement": "Inaya Belkacem s'engage à envoyer les trois devis d'ici le 1er.",
+          "speaker": "Inaya Belkacem",
+          "owner": "Inaya Belkacem",
+          "due_date": "2026-10-01",
+          "evidence": "Je t'envoie les trois devis d'ici le 1er, promis.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "commitment",
+          "statement": "Kofi Mensah-Delorme s'engage à signer les devis.",
+          "speaker": "Kofi Mensah-Delorme",
+          "owner": "Kofi Mensah-Delorme",
+          "due_date": null,
+          "evidence": "Inaya, toi tu négocies avec les artisans, mais c'est moi qui signe les devis, ok ?",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-06",
+      "title": "Travaux et recrutement",
+      "participants": [
+        "Romane Aubertin",
+        "Kofi Mensah-Delorme",
+        "Inaya Belkacem",
+        "Victor Chapuis",
+        "Lou Tran-Mercier"
+      ],
+      "units": [
+        {
+          "unit_id": "x-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "decision",
+          "statement": "Le propriétaire a validé le contrat pour les trois mois.",
+          "speaker": "Romane Aubertin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bonne nouvelle : le proprio a dit oui pour les trois mois. J'ai signé vendredi.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "action",
+          "statement": "Romane Aubertin demande à Victor Chapuis de trouver un responsable de boutique pour fin octobre.",
+          "speaker": "Romane Aubertin",
+          "owner": "Victor Chapuis",
+          "due_date": "2026-10-31",
+          "evidence": "Victor, tu me trouves un responsable de boutique pour fin octobre ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "fact",
+          "statement": "Le menuisier a indiqué que le comptoir pourrait prendre deux semaines de retard.",
+          "speaker": "Inaya Belkacem",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le menuisier m'a prévenue, le comptoir peut prendre deux semaines de retard.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "question",
+          "statement": "La vitrine peut-elle être marquée avec le logo ?",
+          "speaker": "Lou Tran-Mercier",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et la vitrine, on a le droit de la floquer avec le logo ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "commitment",
+          "statement": "Victor Chapuis s'engage à gérer la situation avec deux vendeurs à plein temps.",
+          "speaker": "Victor Chapuis",
+          "owner": "Victor Chapuis",
+          "due_date": null,
+          "evidence": "Franchement, avec deux vendeurs à plein temps, tu tournes sans souci.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-20",
+      "title": "Point planning",
+      "participants": [
+        "Romane Aubertin",
+        "Kofi Mensah-Delorme",
+        "Inaya Belkacem",
+        "Victor Chapuis",
+        "Lou Tran-Mercier"
+      ],
+      "units": [
+        {
+          "unit_id": "x-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "decision",
+          "statement": "L'inauguration du comptoir est décalée au 28 octobre 2026.",
+          "speaker": "Romane Aubertin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le comptoir arrive pas avant le 20, donc on décale l'inauguration au 28.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "action",
+          "statement": "Romane Aubertin reprend le recrutement du responsable et vise le 14 novembre.",
+          "speaker": "Romane Aubertin",
+          "owner": "Romane Aubertin",
+          "due_date": "2026-11-14",
+          "evidence": "Victor, t'es sous l'eau avec Bellecour. Je reprends le recrutement du responsable, je vise le 14 novembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Le bail interdit le flocage, donc on peut juste coller un adhésif qui s'enlève.",
+          "speaker": "Inaya Belkacem",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Non, pas de flocage, le bail l'interdit. On peut juste coller un adhésif qui s'enlève.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-019",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Les habitants de la Croix-Rousse sortent le dimanche matin et l'ouverture est programmée le dimanche de 9 h à 13 h.",
+          "speaker": "Romane Aubertin",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Les gens de la Croix-Rousse, ils sortent le dimanche matin. On ouvre aussi le dimanche, de 9 h à 13 h.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-020",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "action",
+          "statement": "Lou Tran-Mercier gère les invits, qui partent avant le 14 novembre.",
+          "speaker": "Lou Tran-Mercier",
+          "owner": "Lou Tran-Mercier",
+          "due_date": "2026-11-14",
+          "evidence": "Je gère les invits, elles partent avant le 14.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-05",
+      "date": "2026-11-03",
+      "title": "Préparation de l'inauguration",
+      "participants": [
+        "Romane Aubertin",
+        "Kofi Mensah-Delorme",
+        "Victor Chapuis",
+        "Lou Tran-Mercier"
+      ],
+      "units": [
+        {
+          "unit_id": "x-021",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "fact",
+          "statement": "Le nombre de vendeurs nécessaires pour le samedi est mentionné comme étant trois minimum.",
+          "speaker": "Kofi Mensah-Delorme",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Deux vendeurs, tu rigoles ? Le samedi, il en faut trois minimum. Le dimanche aussi.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-022",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "action",
+          "statement": "Lou Tran-Mercier doit ajouter les commerçants de la rue que Kofi Mensah-Delorme connaît.",
+          "speaker": "Romane Aubertin",
+          "owner": "Lou Tran-Mercier",
+          "due_date": null,
+          "evidence": "Lou, tu rajoutes les commerçants de la rue que Kofi connaît, ok ? Il te file les contacts.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-023",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-03",
+          "type": "fact",
+          "statement": "Le nombre de personnes engagées est de 91 000 et le budget est tenu.",
+          "speaker": "Kofi Mensah-Delorme",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On est à 91 000 engagés, on tient le budget, t'inquiète.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Elle a lieu quand finalement, l'inauguration de la boutique Croix-Rousse ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-016"
+      ],
+      "hard_negative_unit_ids": [
+        "x-003",
+        "x-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting",
+        "informal"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "Quel budget a été validé pour les travaux d'aménagement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-006"
+      ],
+      "hard_negative_unit_ids": [
+        "x-002"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision",
+        "budget_change"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "Qui valide les devis de travaux ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-010"
+      ],
+      "hard_negative_unit_ids": [
+        "x-009"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui s'occupe du recrutement du responsable de boutique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-017"
+      ],
+      "hard_negative_unit_ids": [
+        "x-012"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "owner_change",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "Est-ce qu'on peut floquer la vitrine avec notre logo ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-018"
+      ],
+      "hard_negative_unit_ids": [
+        "x-014"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "negation"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "Le bail a-t-il été signé, et à quelle condition ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-008",
+        "x-011"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "conditional_agreement",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Un stand au marché de la Croix-Rousse est-il prévu avant l'ouverture ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-005"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "Quels sont les jours d'ouverture de la nouvelle boutique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-019"
+      ],
+      "hard_negative_unit_ids": [
+        "x-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Comment a évolué l'estimation du nombre de vendeurs nécessaires entre octobre et novembre ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "x-015",
+        "x-021"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Rédige un mail à l'équipe pour annoncer le report de l'inauguration et sa raison.",
+      "intent": "draft_email",
+      "relevant_unit_ids": [
+        "x-013",
+        "x-016"
+      ],
+      "hard_negative_unit_ids": [
+        "x-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-11",
+      "text": "Pourriez-vous me dire qui doit ajouter les commerçants de la rue à la liste des invités ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-022"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner",
+        "polite"
+      ]
+    },
+    {
+      "query_id": "q-12",
+      "text": "Où en sont les dépenses de travaux par rapport au budget prévu ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-006",
+        "x-023"
+      ],
+      "hard_negative_unit_ids": [
+        "x-002"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "budget_change",
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-13",
+      "text": "Combien coûte le loyer mensuel de la boutique Croix-Rousse ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "q-14",
+      "text": "Quel salaire est prévu pour le responsable de boutique ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    }
+  ]
+}

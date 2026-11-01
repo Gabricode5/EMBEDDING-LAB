@@ -1,0 +1,5 @@
+{
+ "key": "14f09679bc81",
+ "model": "qwen3:8b",
+ "raw": "{\n  \"units\": [\n    {\n      \"type\": \"decision\",\n      \"statement\": \"Le budget a été augmenté à 220 000 euros.\",\n      \"evidence\": \"Le budget a été augmenté à 220 000 euros.\",\n      \"speaker\": \"Pauline Dubois\",\n      \"owner\": null,\n      \"due_date\": null,\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"fact\",\n      \"statement\": \"Le planning de collecte de données est disponible sur le drive.\",\n      \"evidence\": \"Le planning de collecte de données est sur le drive depuis hier.\",\n      \"speaker\": \"Lucas Martin\",\n      \"owner\": null,\n      \"due_date\": null,\n      \"status\": \"active\"\n    },\n    {\n      \"type\": \"action\",\n      \"statement\": \"Sophie Moreau doit finaliser la communication pour le lancement.\",\n      \"evidence\": \"Sophie, tu finalises la communication pour le lancement.\",\n      \"speaker\": \"Théo Lefevre\",\n      \"owner\": \"Sophie Moreau\",\n      \"due_date\": null,\n      \"status\": \"active\"\n    }\n  ]\n}"
+}

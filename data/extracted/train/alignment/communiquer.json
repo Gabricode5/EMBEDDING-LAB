@@ -1,0 +1,24 @@
+{
+  "units": {
+    "communiquer/u-004": "communiquer/x-004",
+    "communiquer/u-003": "communiquer/x-003",
+    "communiquer/u-002": "communiquer/x-002",
+    "communiquer/u-001": "communiquer/x-001",
+    "communiquer/u-012": "communiquer/x-012",
+    "communiquer/u-013": "communiquer/x-013",
+    "communiquer/u-010": "communiquer/x-010",
+    "communiquer/u-011": "communiquer/x-011",
+    "communiquer/u-009": "communiquer/x-009",
+    "communiquer/u-005": "communiquer/x-005",
+    "communiquer/u-008": "communiquer/x-008",
+    "communiquer/u-006": "communiquer/x-006",
+    "communiquer/u-007": "communiquer/x-007"
+  },
+  "lost_queries": [],
+  "grounding": {
+    "proposed": 13,
+    "regrounded": 1,
+    "dropped": 0
+  },
+  "key": "14f09679bc81"
+}

@@ -1,0 +1,29 @@
+{
+  "units": {
+    "lyon-second-store/u-004": "lyon-second-store/x-004",
+    "lyon-second-store/u-003": "lyon-second-store/x-003",
+    "lyon-second-store/u-002": "lyon-second-store/x-002",
+    "lyon-second-store/u-001": "lyon-second-store/x-001",
+    "lyon-second-store/u-005": "lyon-second-store/x-005",
+    "lyon-second-store/u-017": "lyon-second-store/x-017",
+    "lyon-second-store/u-016": "lyon-second-store/x-016",
+    "lyon-second-store/u-018": "lyon-second-store/x-018",
+    "lyon-second-store/u-013": "lyon-second-store/x-013",
+    "lyon-second-store/u-012": "lyon-second-store/x-012",
+    "lyon-second-store/u-011": "lyon-second-store/x-011",
+    "lyon-second-store/u-015": "lyon-second-store/x-015",
+    "lyon-second-store/u-014": "lyon-second-store/x-014",
+    "lyon-second-store/u-007": "lyon-second-store/x-007",
+    "lyon-second-store/u-010": "lyon-second-store/x-010",
+    "lyon-second-store/u-009": "lyon-second-store/x-009",
+    "lyon-second-store/u-006": "lyon-second-store/x-006",
+    "lyon-second-store/u-008": "lyon-second-store/x-008"
+  },
+  "lost_queries": [],
+  "grounding": {
+    "proposed": 18,
+    "regrounded": 2,
+    "dropped": 0
+  },
+  "key": "14f09679bc81"
+}

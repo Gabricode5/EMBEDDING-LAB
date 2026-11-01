@@ -1,0 +1,35 @@
+{
+  "units": {
+    "nordstock-relais/u-002": "nordstock-relais/x-002",
+    "nordstock-relais/u-005": "nordstock-relais/x-005",
+    "nordstock-relais/u-003": "nordstock-relais/x-003",
+    "nordstock-relais/u-001": "nordstock-relais/x-001",
+    "nordstock-relais/u-004": "nordstock-relais/x-004",
+    "nordstock-relais/u-010": "nordstock-relais/x-010",
+    "nordstock-relais/u-008": "nordstock-relais/x-008",
+    "nordstock-relais/u-006": "nordstock-relais/x-006",
+    "nordstock-relais/u-007": "nordstock-relais/x-007",
+    "nordstock-relais/u-009": "nordstock-relais/x-009",
+    "nordstock-relais/u-011": "nordstock-relais/x-011",
+    "nordstock-relais/u-013": "nordstock-relais/x-014",
+    "nordstock-relais/u-015": "nordstock-relais/x-013",
+    "nordstock-relais/u-012": "nordstock-relais/x-012",
+    "nordstock-relais/u-014": "nordstock-relais/x-015",
+    "nordstock-relais/u-024": "nordstock-relais/x-024",
+    "nordstock-relais/u-020": "nordstock-relais/x-020",
+    "nordstock-relais/u-021": "nordstock-relais/x-021",
+    "nordstock-relais/u-022": "nordstock-relais/x-022",
+    "nordstock-relais/u-023": "nordstock-relais/x-023",
+    "nordstock-relais/u-019": "nordstock-relais/x-019",
+    "nordstock-relais/u-018": "nordstock-relais/x-018",
+    "nordstock-relais/u-017": "nordstock-relais/x-017",
+    "nordstock-relais/u-016": "nordstock-relais/x-016"
+  },
+  "lost_queries": [],
+  "grounding": {
+    "proposed": 24,
+    "regrounded": 0,
+    "dropped": 0
+  },
+  "key": "14f09679bc81"
+}

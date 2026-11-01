@@ -1,0 +1,803 @@
+{
+  "project_id": "nordstock-relais",
+  "project_name": "Relais NordStock",
+  "description": "Mise en place d'un partenariat logistique entre une entreprise de livraison urbaine et NordStock, exploitant d'entrepôts de proximité, pour le dernier kilomètre au nord de Paris.",
+  "people": [
+    {
+      "name": "Fatou Diallo",
+      "role": "Directrice des opérations",
+      "email": "fatou.diallo@example.org"
+    },
+    {
+      "name": "Grégoire Lambert",
+      "role": "Responsable achats",
+      "email": "gregoire.lambert@example.org"
+    },
+    {
+      "name": "Mei Chen-Aubert",
+      "role": "Juriste",
+      "email": null
+    },
+    {
+      "name": "Yannick Le Goff",
+      "role": "Responsable entrepôt",
+      "email": "yannick.legoff@example.org"
+    },
+    {
+      "name": "Salomé Petitjean",
+      "role": "Contrôleuse de gestion",
+      "email": "salome.petitjean@example.org"
+    }
+  ],
+  "meetings": [
+    {
+      "meeting_id": "meeting-01",
+      "date": "2026-09-08",
+      "title": "Lancement du partenariat",
+      "participants": [
+        "Fatou Diallo",
+        "Grégoire Lambert",
+        "Mei Chen-Aubert",
+        "Yannick Le Goff",
+        "Salomé Petitjean"
+      ],
+      "units": [
+        {
+          "unit_id": "x-001",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Fatou Diallo propose de déplacer le stockage du nord de Paris vers NordStock.",
+          "speaker": "Fatou Diallo",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon, l'idée, c'est… on sort le stockage du nord de Paris, on le met chez NordStock, voilà.",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "x-002",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Grégoire Lambert propose un budget annuel de 85 000 euros.",
+          "speaker": "Grégoire Lambert",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Moi je… je partirais sur 85 000 par an, à peu près, hein.",
+          "status": "hypothetical"
+        },
+        {
+          "unit_id": "x-003",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "fact",
+          "statement": "Yannick Le Goff indique que NordStock dispose de deux quais.",
+          "speaker": "Yannick Le Goff",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Euh, là-bas ils ont deux quais. Deux, pas plus.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-004",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "action",
+          "statement": "Fatou Diallo confie à Grégoire Lambert la négociation du SLA.",
+          "speaker": "Fatou Diallo",
+          "owner": "Grégoire Lambert",
+          "due_date": null,
+          "evidence": "Grégoire, tu prends la négo du SLA, ok ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-005",
+          "source_id": "meeting-01",
+          "source_date": "2026-09-08",
+          "type": "idea",
+          "statement": "Yannick Le Goff suggère de partager les camionnettes électriques avec NordStock.",
+          "speaker": "Yannick Le Goff",
+          "owner": null,
+          "due_date": null,
+          "evidence": "On pourrait peut-être… je sais pas, partager les camionnettes électriques avec eux ?",
+          "status": "hypothetical"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-02",
+      "date": "2026-09-22",
+      "title": "Point achats et juridique",
+      "participants": [
+        "Fatou Diallo",
+        "Grégoire Lambert",
+        "Mei Chen-Aubert",
+        "Salomé Petitjean"
+      ],
+      "units": [
+        {
+          "unit_id": "x-006",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "decision",
+          "statement": "La date du pilote a été confirmée au 13 octobre.",
+          "speaker": "Fatou Diallo",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Ok, on dit le 13 octobre pour le pilote. C'est calé.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-007",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "decision",
+          "statement": "La validation de l'exclu dépend du taux de service de 98 %.",
+          "speaker": "Fatou Diallo",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Si… s'ils nous garantissent 98 % de taux de service, là on valide l'exclu. Sinon, non.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-008",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "question",
+          "statement": "La manutention est-elle incluse dans le projet ?",
+          "speaker": "Salomé Petitjean",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Attendez, la manut', elle est dedans ou pas ?",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-009",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "action",
+          "statement": "Mei Chen-Aubert doit reprendre le SLA.",
+          "speaker": "Fatou Diallo",
+          "owner": "Mei Chen-Aubert",
+          "due_date": null,
+          "evidence": "Finalement, Mei, tu reprends le SLA. Grégoire, t'es sous l'eau, là.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-010",
+          "source_id": "meeting-02",
+          "source_date": "2026-09-22",
+          "type": "commitment",
+          "statement": "Mei Chen-Aubert s'engage à envoyer un premier jet avant le 2.",
+          "speaker": "Mei Chen-Aubert",
+          "owner": "Mei Chen-Aubert",
+          "due_date": "2026-10-02",
+          "evidence": "Je leur envoie un premier jet… euh, avant le 2, ça va.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-03",
+      "date": "2026-10-06",
+      "title": "Comité de validation",
+      "participants": [
+        "Fatou Diallo",
+        "Grégoire Lambert",
+        "Yannick Le Goff",
+        "Salomé Petitjean"
+      ],
+      "units": [
+        {
+          "unit_id": "x-011",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "decision",
+          "statement": "Le montant annuel validé est de 72 000.",
+          "speaker": "Fatou Diallo",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon, c'est validé, 72 000 par an.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-012",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "fact",
+          "statement": "La manutention est facturée en plus.",
+          "speaker": "Grégoire Lambert",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Non non, la manut', c'est en plus. Ils la facturent à côté.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-013",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "action",
+          "statement": "Salomé doit monter le tableau des coûts.",
+          "speaker": "Fatou Diallo",
+          "owner": "Salomé Petitjean",
+          "due_date": "2026-11-03",
+          "evidence": "Salomé, tu montes le tableau des coûts ? Yannick t'envoie les volumes, mais c'est toi qui le tiens, hein.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-014",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "commitment",
+          "statement": "Le pilote du projet aura lieu le 3 novembre.",
+          "speaker": "Fatou Diallo",
+          "owner": "Fatou Diallo",
+          "due_date": "2026-11-03",
+          "evidence": "Le pilote, ce sera le 3 novembre.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-015",
+          "source_id": "meeting-03",
+          "source_date": "2026-10-06",
+          "type": "risk",
+          "statement": "Les travaux matinaux risquent de causer des bouchons.",
+          "speaker": "Yannick Le Goff",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le matin, pendant les travaux… ça va bouchonner, je vous le dis.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-04",
+      "date": "2026-10-20",
+      "title": "Suivi du SLA et préparation du pilote",
+      "participants": [
+        "Fatou Diallo",
+        "Mei Chen-Aubert",
+        "Yannick Le Goff",
+        "Salomé Petitjean"
+      ],
+      "units": [
+        {
+          "unit_id": "x-016",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Les signataires ont signé pour 98 %.",
+          "speaker": "Mei Chen-Aubert",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Ils ont signé pour 98 %. C'est noir sur blanc dans le SLA.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-017",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "decision",
+          "statement": "La condition est remplie, donc l'exclu est validé.",
+          "speaker": "Fatou Diallo",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bon ben… la condition est remplie, donc l'exclu, on la valide.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-018",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Les quatre quais ont été finalisés.",
+          "speaker": "Yannick Le Goff",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Bonne nouvelle, ils ont fini. On a quatre quais maintenant.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-019",
+          "source_id": "meeting-04",
+          "source_date": "2026-10-20",
+          "type": "fact",
+          "statement": "Le premier jet a été envoyé le 1er.",
+          "speaker": "Mei Chen-Aubert",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Le premier jet, je l'ai envoyé le 1er. Ils ont répondu vite, d'ailleurs.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "meeting_id": "meeting-05",
+      "date": "2026-11-10",
+      "title": "Bilan de la première semaine du pilote",
+      "participants": [
+        "Fatou Diallo",
+        "Grégoire Lambert",
+        "Yannick Le Goff",
+        "Salomé Petitjean"
+      ],
+      "units": [
+        {
+          "unit_id": "x-020",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-10",
+          "type": "fact",
+          "statement": "Le pilote a démarré le 3 novembre 2026.",
+          "speaker": "Yannick Le Goff",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Ça a démarré le 3, pile.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-021",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-10",
+          "type": "idea",
+          "statement": "Grégoire Lambert propose d'ajouter Bobigny en 2027.",
+          "speaker": "Grégoire Lambert",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Moi je propose qu'on ajoute Bobigny en 2027.",
+          "status": "proposed"
+        },
+        {
+          "unit_id": "x-022",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-10",
+          "type": "fact",
+          "statement": "Le volume de manutention est supérieur de 15 % par rapport à l'estimation.",
+          "speaker": "Salomé Petitjean",
+          "owner": null,
+          "due_date": null,
+          "evidence": "La manut', on est à… plus 15 % par rapport à l'estimation.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-023",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-10",
+          "type": "fact",
+          "statement": "Il n'y a pas eu de bouchon le matin.",
+          "speaker": "Yannick Le Goff",
+          "owner": null,
+          "due_date": null,
+          "evidence": "Et le matin, finalement… zéro bouchon.",
+          "status": "active"
+        },
+        {
+          "unit_id": "x-024",
+          "source_id": "meeting-05",
+          "source_date": "2026-11-10",
+          "type": "commitment",
+          "statement": "Salomé Petitjean s'engage à fournir un bilan financier complet le 1er décembre.",
+          "speaker": "Salomé Petitjean",
+          "owner": "Salomé Petitjean",
+          "due_date": "2026-12-01",
+          "evidence": "Je vous fais le bilan financier complet… disons le 1er décembre.",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "relations": [],
+  "queries": [
+    {
+      "query_id": "q-01",
+      "text": "Quel montant a finalement été validé pour le contrat avec NordStock ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-011"
+      ],
+      "hard_negative_unit_ids": [
+        "x-002"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "budget_change",
+        "proposal_vs_decision"
+      ]
+    },
+    {
+      "query_id": "q-02",
+      "text": "À quelle date démarre le pilote à Saint-Ouen ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-014",
+        "x-020"
+      ],
+      "hard_negative_unit_ids": [
+        "x-006"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "current_decision",
+        "date_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-03",
+      "text": "L'exclusivité avec NordStock est-elle actée ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-016",
+        "x-017"
+      ],
+      "hard_negative_unit_ids": [
+        "x-007"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "conditional_agreement",
+        "current_decision",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-04",
+      "text": "Qui pilote la négociation du SLA avec le partenaire ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-009"
+      ],
+      "hard_negative_unit_ids": [
+        "x-004"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "owner_change",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "q-05",
+      "text": "Qui est responsable du tableau de suivi des coûts du pilote ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-013"
+      ],
+      "hard_negative_unit_ids": [
+        "x-024"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "person_cited_vs_owner",
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-06",
+      "text": "A-t-on décidé de partager les véhicules électriques avec NordStock ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-005"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "hypothesis_vs_decision",
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-07",
+      "text": "Combien de quais de chargement compte l'entrepôt de Saint-Ouen ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-018"
+      ],
+      "hard_negative_unit_ids": [
+        "x-003"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "multi_meeting",
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "q-08",
+      "text": "La manut', elle est comprise dans le prix du contrat ou pas ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-012"
+      ],
+      "hard_negative_unit_ids": [
+        "x-008",
+        "x-022"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "negation",
+        "informal"
+      ]
+    },
+    {
+      "query_id": "q-09",
+      "text": "Qu'est-ce qui a changé entre le montant proposé en septembre et celui validé en octobre ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "x-002",
+        "x-011"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "compare",
+        "budget_change",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-10",
+      "text": "Le matin, ça bouchonne au dépôt ou pas finalement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-015",
+        "x-023"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "informal",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "q-11",
+      "text": "Rédige un mail à NordStock pour confirmer l'extension du partenariat à Bobigny.",
+      "intent": "draft_email",
+      "relevant_unit_ids": [
+        "x-021"
+      ],
+      "hard_negative_unit_ids": [
+        "x-017"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "proposal_vs_decision"
+      ]
+    },
+    {
+      "query_id": "q-12",
+      "text": "Crée une tâche pour la présentation du bilan financier du pilote.",
+      "intent": "create_task",
+      "relevant_unit_ids": [
+        "x-024"
+      ],
+      "hard_negative_unit_ids": [
+        "x-013"
+      ],
+      "answerable": true,
+      "origin": "generated",
+      "tags": [
+        "commitment"
+      ]
+    },
+    {
+      "query_id": "q-13",
+      "text": "Quelle pénalité est prévue si NordStock ne respecte pas le taux de service ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "generated",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "a-01",
+      "text": "Salut, tu sais à quelle date le pilote démarre finalement ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-014",
+        "x-020"
+      ],
+      "hard_negative_unit_ids": [
+        "x-006"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "date_change",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "a-02",
+      "text": "Montant validé du contrat avec NordStock ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-011"
+      ],
+      "hard_negative_unit_ids": [
+        "x-002"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "budget_change",
+        "proposal_vs_decision"
+      ]
+    },
+    {
+      "query_id": "a-03",
+      "text": "Est-ce que tu pourrais me dire qui pilote maintenant la négo du contrat de niveau de service ? Merci !",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-009",
+        "x-010"
+      ],
+      "hard_negative_unit_ids": [
+        "x-004"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "owner_change",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "a-04",
+      "text": "Qui tient le tableau de suivi des coûts ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-013"
+      ],
+      "hard_negative_unit_ids": [
+        "x-024"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "person_cited_vs_owner"
+      ]
+    },
+    {
+      "query_id": "a-05",
+      "text": "Salut, tu sais si la mutualisation des véhicules électriques avec NordStock est actée ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-005"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "hypothesis_vs_decision"
+      ]
+    },
+    {
+      "query_id": "a-06",
+      "text": "L'exclusivité NordStock, c'est validé sous quelle condition ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-007",
+        "x-016",
+        "x-017"
+      ],
+      "hard_negative_unit_ids": [
+        "x-011"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "conditional_agreement",
+        "multi_meeting"
+      ]
+    },
+    {
+      "query_id": "a-07",
+      "text": "Qu'est-ce qui a changé pour les quais de chargement ?",
+      "intent": "compare",
+      "relevant_unit_ids": [
+        "x-003",
+        "x-018"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "compare"
+      ]
+    },
+    {
+      "query_id": "a-08",
+      "text": "Est-ce que tu pourrais me confirmer si l'extension à Bobigny en 2027 est décidée ? Merci !",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-021"
+      ],
+      "hard_negative_unit_ids": [],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "proposal_vs_decision"
+      ]
+    },
+    {
+      "query_id": "a-09",
+      "text": "La manutention est-elle incluse dans le contrat ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-012"
+      ],
+      "hard_negative_unit_ids": [
+        "x-008",
+        "x-022"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "negation"
+      ]
+    },
+    {
+      "query_id": "a-10",
+      "text": "Salut, tu sais si le risque de saturation des créneaux du matin est toujours d'actualité ?",
+      "intent": "answer",
+      "relevant_unit_ids": [
+        "x-023"
+      ],
+      "hard_negative_unit_ids": [
+        "x-015"
+      ],
+      "answerable": true,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "negation",
+        "current_decision"
+      ]
+    },
+    {
+      "query_id": "a-11",
+      "text": "Nom du contact chez NordStock ?",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "assisted",
+      "tags": [
+        "unanswerable"
+      ]
+    },
+    {
+      "query_id": "a-12",
+      "text": "Est-ce que tu pourrais me dire le tarif par palette ? Merci !",
+      "intent": "answer",
+      "relevant_unit_ids": [],
+      "hard_negative_unit_ids": [],
+      "answerable": false,
+      "origin": "assisted",
+      "tags": [
+        "polite",
+        "unanswerable"
+      ]
+    }
+  ]
+}
