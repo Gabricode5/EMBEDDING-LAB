@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 
 from sae.agent.engine import ABSTENTION_STRATEGIES, ABSTENTION_THRESHOLDS, Agent
-from sae.data import gid, load_scenarios
+from sae.data import gid
 
 INFO_INTENTS = ("answer", "compare")
 CALIBRATION_SPLITS = ("train", "val")

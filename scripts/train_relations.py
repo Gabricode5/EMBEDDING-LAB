@@ -93,7 +93,6 @@ class CrossEncoderClassifier:
             model_name, epochs, lr, batch_size, seed, out_dir
 
     def fit(self, pairs: list[UnitPair], units) -> "CrossEncoderClassifier":
-        import torch
         from datasets import Dataset
         from transformers import (AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding,
                                   Trainer, TrainingArguments, set_seed)

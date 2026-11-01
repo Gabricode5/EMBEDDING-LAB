@@ -12,7 +12,7 @@ from dataclasses import dataclass, field
 import numpy as np
 
 from sae.agent.understanding import ACTION_INTENTS, Understanding, norm, understand
-from sae.data import TYPE_LABELS_FR, EvalQuery, gid
+from sae.data import EvalQuery, gid
 from sae.memory import Memory, apply_memory
 from sae.retrieval.bm25 import BM25, FRENCH_STOPWORDS
 from sae.schemas import (Claim, Clarification, Dossier, DossierSection, EmailDraft, EventDraft, Recipient,

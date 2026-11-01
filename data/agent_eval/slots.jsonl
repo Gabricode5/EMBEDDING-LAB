@@ -1,0 +1,35 @@
+{"id": "c-05", "file": "test.jsonl", "message": "Écris au responsable de la formation au bloc pour lui demander combien de personnes restent à former.", "person": null, "project": null, "deadline": null}
+{"id": "c-06", "file": "test.jsonl", "message": "Rédige un mail à la personne qui doit relancer l'éditeur pour lui demander si le correctif est arrivé.", "person": null, "project": null, "deadline": null}
+{"id": "c-07", "file": "test.jsonl", "message": "Crée une tâche pour Baptiste : mettre à jour le suivi budgétaire avant vendredi", "person": "Baptiste N'Diaye", "project": null, "deadline": "avant vendredi"}
+{"id": "c-08", "file": "test.jsonl", "message": "Planifie un point avec l'équipe jeudi sur l'extension aux urgences", "person": null, "project": null, "deadline": "jeudi"}
+{"id": "c-09", "file": "test.jsonl", "message": "Envoie-lui un message.", "person": null, "project": null, "deadline": null}
+{"id": "c-10", "file": "test.jsonl", "message": "Prépare un mail au responsable du budget pour lui demander le récapitulatif des dépenses", "person": null, "project": null, "deadline": null}
+{"id": "c-12", "file": "test.jsonl", "message": "Écris à la personne responsable des urgences pour lui demander le planning de décembre.", "person": null, "project": null, "deadline": null}
+{"id": "h-05", "file": "holdout.jsonl", "message": "Écris à la personne qui s'occupe des cars pour lui demander l'heure de retour.", "person": null, "project": null, "deadline": null}
+{"id": "h-06", "file": "holdout.jsonl", "message": "Rédige un mail à la personne chargée du discours d'ouverture pour lui demander un premier jet.", "person": null, "project": null, "deadline": null}
+{"id": "h-07", "file": "holdout.jsonl", "message": "Crée une tâche pour Rachid : faire le point sur les 36 000 euros engagés", "person": "Rachid Ouali", "project": null, "deadline": null}
+{"id": "h-08", "file": "holdout.jsonl", "message": "Planifie une réunion mardi sur le déroulé du séminaire", "person": null, "project": null, "deadline": "mardi"}
+{"id": "h-09", "file": "holdout.jsonl", "message": "Fais un mail à la bonne personne.", "person": null, "project": null, "deadline": null}
+{"id": "h-11", "file": "holdout.jsonl", "message": "Écris au responsable du traiteur pour lui demander le menu.", "person": null, "project": null, "deadline": null}
+{"id": "n-05", "file": "holdout.jsonl", "message": "Écris à la personne qui négocie le contrat de niveau de service pour lui demander où en est la signature.", "person": null, "project": null, "deadline": null}
+{"id": "n-06", "file": "holdout.jsonl", "message": "Rédige un mail au responsable du tableau de suivi des coûts pour lui demander les chiffres de la semaine.", "person": null, "project": null, "deadline": null}
+{"id": "n-07", "file": "holdout.jsonl", "message": "Crée une tâche pour Mei : relancer NordStock sur le taux de service", "person": "Mei Chen-Aubert", "project": "nordstock-relais", "deadline": null}
+{"id": "n-08", "file": "holdout.jsonl", "message": "Planifie un point vendredi sur le bilan du pilote", "person": null, "project": null, "deadline": "vendredi"}
+{"id": "n-09", "file": "holdout.jsonl", "message": "Écris-lui.", "person": null, "project": null, "deadline": null}
+{"id": "n-11", "file": "holdout.jsonl", "message": "Prépare un mail au responsable du tableau des coûts pour lui demander le bilan.", "person": null, "project": null, "deadline": null}
+{"id": "n-12", "file": "holdout.jsonl", "message": "Écris à la personne responsable de la sécurité de l'entrepôt pour lui demander le protocole.", "person": null, "project": null, "deadline": null}
+{"id": "g-05", "file": "test2.jsonl", "message": "Écris à la personne qui gère le recrutement du responsable de boutique pour lui demander où en sont les entretiens.", "person": null, "project": null, "deadline": null}
+{"id": "g-06", "file": "test2.jsonl", "message": "Rédige un mail à la personne qui valide les devis de travaux pour lui demander si le comptoir est commandé.", "person": null, "project": null, "deadline": null}
+{"id": "g-07", "file": "test2.jsonl", "message": "Crée une tâche pour Lou : relancer les commerçants de la rue d'Austerlitz", "person": "Lou Tran-Mercier", "project": null, "deadline": null}
+{"id": "g-08", "file": "test2.jsonl", "message": "Planifie un point jeudi sur l'inauguration", "person": null, "project": null, "deadline": "jeudi"}
+{"id": "g-10", "file": "test2.jsonl", "message": "Écris au responsable de la sécurité du magasin pour lui demander le plan d'évacuation.", "person": null, "project": null, "deadline": null}
+{"id": "g-11", "file": "test2.jsonl", "message": "Écris à la personne chargée du site internet pour lui demander la date de mise en ligne.", "person": null, "project": null, "deadline": null}
+{"id": "g-12", "file": "test2.jsonl", "message": "Envoie-leur un message.", "person": null, "project": null, "deadline": null}
+{"id": "g-13", "file": "test2.jsonl", "message": "Écris à la personne qui envoie les invitations de l'inauguration pour lui demander combien de réponses on a.", "person": null, "project": null, "deadline": null}
+{"id": "p-05", "file": "test2.jsonl", "message": "Écris à la personne qui forme les négociateurs pour lui demander le planning des sessions.", "person": null, "project": null, "deadline": null}
+{"id": "p-06", "file": "test2.jsonl", "message": "Rédige un mail à la personne qui doit corriger l'export des mandats pour lui demander si c'est réglé.", "person": null, "project": null, "deadline": null}
+{"id": "p-07", "file": "test2.jsonl", "message": "Écris à la personne chargée du dédoublonnage pour lui demander combien de fiches restent.", "person": null, "project": null, "deadline": null}
+{"id": "p-08", "file": "test2.jsonl", "message": "Crée une tâche pour Aurélie : valider le test d'export avant la bascule", "person": "Aurélie Fontaine", "project": null, "deadline": "avant la bascule"}
+{"id": "p-09", "file": "test2.jsonl", "message": "Planifie une réunion lundi sur la bascule du 30 novembre", "person": null, "project": null, "deadline": "lundi"}
+{"id": "p-11", "file": "test2.jsonl", "message": "Écris à la personne responsable de l'hébergement des données pour lui demander le contrat.", "person": null, "project": null, "deadline": null}
+{"id": "p-12", "file": "test2.jsonl", "message": "Rédige un mail à la personne qui forme les négociateurs pour lui demander le planning.", "person": null, "project": null, "deadline": null}
