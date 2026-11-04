@@ -1,4 +1,4 @@
-"""BM25 (Okapi) en numpy, avec racinisation française.
+"""BM25 (Okapi) en numpy, avec racinisation française (anglaise avec language="english", pour QMSum).
 
 Implémentation maison pour disposer de la matrice de scores complète
 (nécessaire à la hard-negative accuracy) sans dépendre d'une API externe.
@@ -20,19 +20,28 @@ a à au aux avec ce ces c cette d dans de des du elle en et eux il ils je j l la
 leurs lui m ma mais me même mes moi mon n nos notre nous on ou par pour qu que qui s sa se ses
 son sur t ta te tes toi ton tu un une vos votre vous y été être est sont était ont avoir as ai
 """.split())
+# Mots vides anglais (QMSum) ; mêmes choix : négations ("no", "not", "never", "without") conservées.
+ENGLISH_STOPWORDS = frozenset("""
+a an the and or but if of at by for with about to from in on into over under this that these those it its
+i me my we our you your he him his she her they them their is are was were be been being am do does did
+have has had so as than then there here what which who whom when where why how all any both each also
+just very s t can will would should could shall may might must uh um yeah okay ok
+""".split())
+STOPWORDS = {"french": FRENCH_STOPWORDS, "english": ENGLISH_STOPWORDS}
 
 
 class BM25:
     def __init__(self, k1: float = 1.5, b: float = 0.75, language: str = "french") -> None:
         self.k1, self.b = k1, b
         self._stem = Stemmer.Stemmer(language).stemWords
+        self._stopwords = STOPWORDS.get(language, frozenset())
         self._postings: dict[str, tuple[np.ndarray, np.ndarray]] = {}
         self._idf: dict[str, float] = {}
         self._norm: np.ndarray | None = None
         self._n_docs = 0
 
     def tokenize(self, text: str) -> list[str]:
-        tokens = [t for t in _TOKEN.findall(text.lower()) if t not in FRENCH_STOPWORDS]
+        tokens = [t for t in _TOKEN.findall(text.lower()) if t not in self._stopwords]
         return self._stem(tokens)
 
     def fit(self, docs: list[str]) -> "BM25":
