@@ -1,0 +1,4 @@
+[server]
+# Évite que Streamlit parcoure tous les modules de transformers
+# (dont des modèles d'image qui demandent torchvision, inutile ici).
+fileWatcherType = "none"

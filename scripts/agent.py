@@ -5,6 +5,7 @@
     python scripts/agent.py --eval-intents
     python scripts/agent.py --relations gold --demo     # mémoire annotée (borne haute)
     python scripts/agent.py --abstention score --chat   # abstention si l'information est absente
+    python scripts/agent.py --writer qwen3:8b --chat    # réponses rédigées par un modèle local (Ollama)
 """
 from __future__ import annotations
 
@@ -13,6 +14,7 @@ import json
 from collections import Counter
 
 from sae.agent.engine import ABSTENTION_STRATEGIES, DEFAULT_ABSTENTION, Agent
+from sae.agent.writer import DEFAULT_HOST, DEFAULT_K, VRAM_MIB, WRITER_MODELS, Writer
 from sae.agent.understanding import detect_intent, is_hypothetical
 from sae.data import load_scenarios
 from sae.memory import Memory
@@ -49,17 +51,56 @@ def make_retriever(name: str):
     return DenseRetriever(resolve_spec(name))
 
 
+def make_writer(args) -> Writer | None:
+    """Rédacteur local, ou None (option none, ou Ollama injoignable : l'agent garde l'affichage en règles)."""
+    name = getattr(args, "writer", "none")
+    if name == "none":
+        return None
+    writer = Writer(name, getattr(args, "ollama_host", DEFAULT_HOST), getattr(args, "writer_k", DEFAULT_K))
+    problem = writer.unavailable()
+    if problem:
+        print(f"Rédaction désactivée : {problem}. Réponses affichées sans rédaction (première unité trouvée).")
+        return None
+    import torch
+    if torch.cuda.is_available():
+        free = torch.cuda.mem_get_info()[0] / 2**20
+        need = VRAM_MIB.get(name, 0)
+        if free < need:
+            other = [m for m in WRITER_MODELS if m != name and VRAM_MIB.get(m, need) < need]
+            print(f"Attention : {free:.0f} Mio libres sur le GPU, {name} en demande environ {need} ; Ollama en "
+                  "mettra une partie sur le CPU (plus lent). Ferme les autres programmes qui utilisent le GPU"
+                  + (f", ou essaie --writer {other[0]}." if other else " (qwen3.5:4b n'en demande pas moins)."))
+    return writer
+
+
 def build_agent(args) -> Agent:
     scenarios = load_scenarios(args.split)
     memory = Memory.from_scenarios(scenarios, with_type=not args.no_type)
     if args.relations == "predicted":
         from sae.relations.predict import CrossEncoderRelations
         memory = CrossEncoderRelations(args.relations_model, args.threshold).build_memory(scenarios, memory)
+        free_gpu()   # le classifieur de relations ne sert plus : sa mémoire GPU revient au modèle de rédaction
     elif args.relations == "none":
         memory.successor, memory.inactive_override = {}, set()
     print(f"Mémoire : {len(memory.corpus.ids)} unités, {len(memory.successor)} remplacements ({args.relations})")
-    return Agent(scenarios, memory, make_retriever(args.retriever), with_type=not args.no_type,
-                 abstention=getattr(args, "abstention", DEFAULT_ABSTENTION))
+    retriever = make_retriever(args.retriever)
+    return Agent(scenarios, memory, retriever, with_type=not args.no_type,
+                 abstention=getattr(args, "abstention", DEFAULT_ABSTENTION), writer=make_writer(args))
+
+
+def free_gpu() -> None:
+    import gc
+    import torch
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+
+
+def add_writer_args(ap: argparse.ArgumentParser) -> None:
+    ap.add_argument("--writer", choices=("none", *WRITER_MODELS), default="none",
+                    help="rédaction des réponses answer et compare par un modèle local (none : affichage en règles)")
+    ap.add_argument("--writer-k", type=int, default=DEFAULT_K, help="nombre d'unités données au rédacteur (5 à 8)")
+    ap.add_argument("--ollama-host", default=DEFAULT_HOST)
 
 
 def show(label: str, message: str, agent: Agent, project: str | None, as_json: bool) -> None:
@@ -102,6 +143,7 @@ def main() -> None:
     ap.add_argument("--threshold", type=float, default=0.45)
     ap.add_argument("--abstention", choices=ABSTENTION_STRATEGIES, default=DEFAULT_ABSTENTION,
                     help="stratégie d'abstention pour les questions sans réponse (none : toujours répondre)")
+    add_writer_args(ap)
     ap.add_argument("--demo", action="store_true")
     ap.add_argument("--chat", action="store_true")
     ap.add_argument("--eval-intents", action="store_true")

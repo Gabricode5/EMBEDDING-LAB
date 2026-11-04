@@ -46,7 +46,7 @@ def load_unit_map(folder: str) -> dict[str, str]:
 
 def main() -> None:
     sys.path.insert(0, str(Path(__file__).parent))
-    from agent import build_agent  # réutilise la construction de l'agent de scripts/agent.py
+    from agent import add_writer_args, build_agent  # réutilise la construction de l'agent de scripts/agent.py
 
     ap = argparse.ArgumentParser()
     ap.add_argument("--file", default="data/agent_eval/test.jsonl")
@@ -61,6 +61,7 @@ def main() -> None:
     ap.add_argument("--unit-map", default=None,
                     help="dossier d'alignement (data/extracted/<split>/alignment) : réécrit les unités attendues")
     ap.add_argument("--verbose", action="store_true", help="affiche chaque demande ratée")
+    add_writer_args(ap)
     args = ap.parse_args()
 
     cases = [json.loads(l) for l in Path(args.file).read_text(encoding="utf-8").splitlines() if l.strip()]

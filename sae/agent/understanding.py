@@ -46,8 +46,19 @@ class Understanding:
     candidates_projects: list[str] = field(default_factory=list)
 
 
+# Salutation, remerciement ou question sur l'agent, seuls dans le message : ni recherche ni action.
+# Le message entier doit en être composé (« Bonjour, prépare un dossier » reste une demande de dossier).
+_GREETING = (r"bonjour|bonsoir|salut|hello|coucou|merci(?: beaucoup| bien)?|au revoir|aide(?:-moi)?|help|"
+             r"tu sais faire quoi|tu fais quoi|que sais-tu faire|qu'est-ce que tu (?:sais|peux) faire|"
+             r"que peux-tu faire|tu peux faire quoi|comment (?:ca marche|t'utiliser|tu fonctionnes)|"
+             r"qui es-tu|tu es qui|a quoi sers-tu|tu sers a quoi")
+SMALLTALK = re.compile(rf"^[\s,;:!.?]*(?:(?:{_GREETING})[\s,;:!.?]*)+$")
+
+
 def detect_intent(message: str) -> tuple[str, str]:
     m = norm(message)
+    if SMALLTALK.match(m):
+        return "help", f"salutation ou question sur l'agent (« {m.strip(' ,;:!.?')} »)"
     for intent, pattern in INTENT_RULES:
         hit = pattern.search(m)
         if hit:

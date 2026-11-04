@@ -11,6 +11,7 @@ from dataclasses import dataclass, field
 
 import numpy as np
 
+from sae.agent.writer import Writer, WriterUnit
 from sae.agent.understanding import ACTION_INTENTS, Understanding, norm, understand
 from sae.data import EvalQuery, gid
 from sae.memory import Memory, apply_memory
@@ -38,6 +39,13 @@ DEFAULT_ABSTENTION = "score"   # choisie sur train + val : aucune abstention à 
 TEMPORAL_TAIL = re.compile(
     r"\s+(?:avant|d'ici|d’ici|pour)?\s*(?:le |la |ce |cette )?(?:lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche|"
     r"\d{1,2}(?:er)? \w+|demain|la semaine prochaine|fin de (?:la )?semaine|fin du mois)\b.*$", re.I)
+# Exemples de demandes (message d'aide, interface) : sujet d'une décision, tâche d'un engagement
+EXAMPLE_SUBJECT = re.compile(r"^((?:Le|La|Les|L') ?[^,]+?) (?:est|sont|a été|sera|seront) ")
+MONTHS = "janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre"
+EXAMPLE_DATED = re.compile(rf"\b(?:report|fix|décal|lanc|démarr)\w*\b.*\b\d{{1,2}}(?:er)? (?:{MONTHS})\b")
+EXAMPLE_DATE_TAIL = re.compile(rf"\s+(?:le |au |aux |en |du )?(?:\d{{1,2}}(?:er)? )?(?:{MONTHS})\b.*$")
+EXAMPLE_BUDGET = re.compile(r"a validé un budget de [^,]+? euros(?: (pour [^,]+?))?\.?$")
+EXAMPLE_TASK = re.compile(r"^(?:\S+ (?:s'engage à|doit|est chargée? de)|\S+ demande à \S+ (?:de|d'))\s*([^,]+?)\.?$")
 
 
 @dataclass
@@ -57,7 +65,7 @@ class Source:
 
 @dataclass
 class AgentResult:
-    kind: str           # answer, compare, no_answer, dossier, email_draft, task_draft, event_draft, clarify, no_action
+    kind: str           # answer, compare, no_answer, dossier, email_draft, task_draft, event_draft, clarify, no_action, help
     text: str
     understanding: Understanding
     sources: list[Source] = field(default_factory=list)
@@ -84,10 +92,13 @@ def should_abstain(strategy: str, thresholds: dict[str, float], intent: str, sig
 
 class Agent:
     def __init__(self, scenarios: list[Scenario], memory: Memory, retriever, with_type: bool = True,
-                 abstention: str = DEFAULT_ABSTENTION, thresholds: dict[str, float] | None = None) -> None:
+                 abstention: str = DEFAULT_ABSTENTION, thresholds: dict[str, float] | None = None,
+                 writer: Writer | None = None) -> None:
         if abstention not in ABSTENTION_STRATEGIES:
             raise ValueError(f"stratégie d'abstention inconnue : {abstention}")
         self.abstention = abstention
+        self._writer_note: dict | None = None
+        self.writer = writer          # rédaction par un modèle local (answer, compare) ; None : affichage en règles
         self.thresholds = ABSTENTION_THRESHOLDS.get(abstention, {}) if thresholds is None else thresholds
         self.scenarios = {s.project_id: s for s in scenarios}
         self.memory = memory
@@ -248,9 +259,68 @@ class Agent:
         t = t.strip().rstrip(".?! ")
         return t[0].upper() + t[1:] if t else message
 
+    def examples(self, project: str | None) -> list[tuple[str, str]]:
+        """Exemples de demandes tirés des réunions du projet : (étiquette, demande). Aucune recherche.
+
+        Décision et comparaison : sujet d'une décision en vigueur (« Le démarrage au bloc est reporté… »),
+        de préférence une décision qui en remplace d'autres ; mail : engagement le plus récent avec responsable.
+        """
+        p = project or next(iter(self.scenarios))
+        units = sorted(((g, x) for g, x in self.units.items() if g.startswith(p + "/") and g not in self.inactive),
+                       key=lambda gx: (gx[0] in self.predecessors, gx[1].source_date), reverse=True)
+        subjects = []                                    # (sujet, la décision porte-t-elle sur une date ?)
+        for g, x in units:
+            m = EXAMPLE_SUBJECT.match(x.statement)
+            # « La direction a validé un budget de … » : le sujet est le budget
+            b = EXAMPLE_BUDGET.search(x.statement)
+            s = EXAMPLE_DATE_TAIL.sub("", m.group(1)) if m else f"Le budget{' ' + b.group(1) if b.group(1) else ''}" \
+                if b else None
+            if x.type == "decision" and s and s not in [y for y, _ in subjects]:
+                subjects.append((s, bool(EXAMPLE_DATED.search(x.statement))))
+        out = []
+        dated = [s for s, d in subjects if d]
+        if dated:
+            out.append(("Décision", f"Quelle date a finalement été retenue pour {self._subject(dated[0])} ?"))
+        rest = [s for s, _ in subjects if not dated or s != dated[0]]
+        if rest:
+            out.append(("Comparaison", f"Qu'est-ce qui a changé sur {self._subject(rest[0])} ?"))
+        out.append(("Dossier", f"Prépare un dossier complet sur le projet {self.scenarios[p].project_name}."))
+        for g, x in sorted(units, key=lambda gx: gx[1].source_date, reverse=True):
+            m = EXAMPLE_TASK.match(x.statement)
+            if x.owner and x.type in ("commitment", "action") and m:
+                task = m.group(1).rstrip(" .")
+                de = "d'" if norm(task)[:1] in "aeiouyh" else "de "
+                out.append(("Mail", f"Rédige un mail à {x.owner} pour lui demander {de}{task}."))
+                break
+        return out
+
+    @staticmethod
+    def _subject(s: str) -> str:
+        s = re.sub(r"^La date (?:de |d')", "Le ", s)    # « la date de lancement » -> « le lancement »
+        return s[0].lower() + s[1:]
+
+    def _help(self, message: str, u: Understanding) -> AgentResult:
+        """Salutation ou question sur l'agent : ce qu'il sait faire, avec des exemples du projet courant."""
+        examples = self.examples(u.project)
+        p = u.project or next(iter(self.scenarios))
+        hello = "Avec plaisir." if norm(message).lstrip(" ,!.").startswith("merci") else "Bonjour."
+        text = (f"{hello} Je réponds à partir des réunions de projet, sans rien inventer :\n"
+                "- réponse à une question, avec sa source (réunion, date, phrase exacte) ;\n"
+                "- comparaison : ce qui a changé sur un sujet, version par version ;\n"
+                "- dossier complet sur un projet ;\n"
+                "- brouillons de mail, de tâche ou d'événement, jamais envoyés : tu les confirmes.\n\n"
+                f"Exemples pour le projet {self.scenarios[p].project_name} :\n"
+                + "\n".join(f"- {q}" for _, q in examples[:3]))
+        if u.project is None and len(self.scenarios) > 1:
+            text += "\n\nPrécise le projet dans ta demande s'il y en a plusieurs."
+        return AgentResult("help", text, u, payload={"project_id": p, "examples": [q for _, q in examples]})
+
     # ------------------------------------------------------------------ point d'entrée
     def handle(self, message: str, project: str | None = None) -> AgentResult:
         u = understand(message, list(self.scenarios.values()), default_project=project)
+
+        if u.intent == "help":
+            return self._help(message, u)
 
         if u.hypothetical:
             return AgentResult("no_action", "C'est une piste évoquée, pas une demande : je ne crée aucune action. "
@@ -268,7 +338,42 @@ class Agent:
                               reason="demande trop vague pour choisir un destinataire ou un contenu")
             return AgentResult("clarify", c.question, u, payload=c.model_dump())
 
-        return getattr(self, f"_{u.intent}")(message, u)
+        self._writer_note = None
+        r = getattr(self, f"_{u.intent}")(message, u)
+        if self._writer_note and r.payload is None:   # rédaction rejetée ou impossible : affichage en règles
+            r.payload = {"writer": self._writer_note}
+        return r
+
+    # ------------------------------------------------------------------ rédaction (answer, compare)
+    def writer_unit(self, g: str) -> WriterUnit:
+        """Unité telle que la voit le rédacteur ; « remplacée » vient de la mémoire de l'agent, pas des annotations."""
+        s, x = self.source(g), self.units[g]
+        if g in self.inactive:
+            status = "annulée" if x.status == "cancelled" else "remplacée"
+        else:
+            status = {"proposed": "proposée", "hypothetical": "hypothétique", "cancelled": "annulée"}.get(
+                x.status, "en vigueur")
+        return WriterUnit(g, s.date, s.meeting, s.speaker, x.type, status, x.statement, x.evidence)
+
+    def _write(self, message: str, u: Understanding, intent: str, sig: dict) -> AgentResult | None:
+        """Réponse rédigée à partir des K premières unités, ou None (pas de rédacteur, rejet, erreur)."""
+        if self.writer is None:
+            return None
+        hits = self.search(message, u.project, intent, k=self.writer.k)
+        name = self.scenarios[u.project].project_name if u.project in self.scenarios else ""
+        res = self.writer.write(message, [self.writer_unit(g) for g, _ in hits], name)
+        out = res.output
+        note = {"model": self.writer.model, "status": res.status, "message": res.message,
+                "seconds": round(res.seconds, 2), "given_unit_ids": [g for g, _ in hits], "cited_unit_ids": res.cited,
+                "found": out.found if out else None, "disagreement": out.disagreement if out else None}
+        if not res.ok:
+            self._writer_note = note
+            return None
+        srcs = [self.source(g) for g in res.cited]
+        text = out.answer.strip()
+        if srcs:
+            text += "\n\nSources : " + " ; ".join(s.cite() for s in srcs)
+        return AgentResult(intent, text, u, srcs, {"writer": note}, sig)
 
     # ------------------------------------------------------------------ opérations
     def _answer(self, message: str, u: Understanding) -> AgentResult:
@@ -276,6 +381,9 @@ class Agent:
         sig = self.signals(message, hits)
         if self.abstains("answer", sig):
             return self._no_answer(u, hits, sig)
+        written = self._write(message, u, "answer", sig)
+        if written:
+            return written
         top = self.source(hits[0][0])
         text = top.statement
         older = [g for g in self.history(hits[0][0]) if g != hits[0][0]]
@@ -290,6 +398,9 @@ class Agent:
         sig = self.signals(message, hits)
         if self.abstains("compare", sig):
             return self._no_answer(u, hits, sig)
+        written = self._write(message, u, "compare", sig)
+        if written:
+            return written
         chain = self.history(hits[0][0])
         if len(chain) == 1:
             top = self.units[hits[0][0]]
