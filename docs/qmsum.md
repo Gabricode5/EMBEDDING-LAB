@@ -12,12 +12,12 @@ python scripts/eval_qmsum.py --split test --frozen experiments/qmsum-val-2026110
 
 ## 1. Licence
 
-Vérifiée avant tout téléchargement.
+Je l'ai vérifiée avant tout téléchargement.
 
-- **Dépôt QMSum** ([Yale-LILY/QMSum](https://github.com/Yale-LILY/QMSum)) : licence MIT (« Copyright (c) 2021
+- Dépôt QMSum ([Yale-LILY/QMSum](https://github.com/Yale-LILY/QMSum)) : licence MIT (« Copyright (c) 2021
   Yale-LILY »), usage, copie et modification libres avec mention de la licence. Article : Zhong et al.,
   *QMSum: A New Benchmark for Query-based Multi-domain Meeting Summarization*, NAACL 2021.
-- **Sources des transcriptions** (citées dans la section éthique de l'article, qui les dit « public and open
+- Sources des transcriptions (citées dans la section éthique de l'article, qui les dit « public and open
   to use ») :
   - AMI Meeting Corpus (réunions de conception de produit) : CC BY 4.0, attribution requise
     ([licence](https://groups.inf.ed.ac.uk/ami/corpus/license.shtml)) ;
@@ -48,37 +48,37 @@ pas de passage pertinent.
 | test | 35 (20 / 9 / 6) | 244 (129 / 49 / 66) | 607 |
 
 Les passages pertinents (`relevant_text_span`) sont des plages de tours inclusives, longues : 23 tours en
-médiane (val), 1,05 passage par question en moyenne. En moyenne, **10 % des tours d'une réunion sont
-pertinents** pour une question ; un classement au hasard des tours obtient déjà MRR@10 ≈ 0,20 (AMI 0,25,
-ICSI et commissions 0,13). Les scores ci-dessous sont à lire par rapport à ce niveau.
+médiane (val), 1,05 passage par question en moyenne. En moyenne, 10 % des tours d'une réunion sont pertinents
+pour une question. Un classement au hasard des tours obtient déjà MRR@10 ≈ 0,20 (AMI 0,25, ICSI et commissions
+0,13). Les scores ci-dessous sont à lire par rapport à ce niveau.
 
 ## 3. Méthode
 
-- **Corpus** : la recherche se fait dans la réunion de la question. Documents : les tours de parole
+- Corpus : la recherche se fait dans la réunion de la question. Documents : les tours de parole
   (« Locuteur: texte », marques de transcription comme `{disfmarker}` retirées, texte anglais non traduit) et,
   pour une fenêtre w > 1, des fenêtres de w tours consécutifs, avec un pas de w/2 arrondi au-dessus, ajoutées aux
   tours.
-- **Pertinence** : un document est pertinent s'il recoupe un passage de la question. Métriques de
+- Pertinence : un document est pertinent s'il recoupe un passage de la question. Métriques de
   `sae/eval/metrics.py` (`per_query_docs`), avec les passages comme unités :
   - Recall@k : part des passages de la question recoupés dans les k premiers documents (≈ réussite@k, puisqu'il
     y a presque toujours un seul passage) ;
   - MRR@10 : rang du premier document pertinent ;
   - nDCG@10 : gain par passage nouveau.
-- **Modèles** :
-  - BM25, avec un nouveau paramètre de langue qui donne la racinisation et des mots vides anglais. Par défaut,
-    BM25 reste en français et le reste du projet est inchangé : la démo de l'agent et les intentions sont
-    identiques ;
+- Modèles :
+  - BM25, avec un nouveau paramètre de langue que j'ai ajouté pour la racinisation et des mots vides anglais.
+    Par défaut, BM25 reste en français et le reste du projet est inchangé : la démo de l'agent et les
+    intentions sont identiques ;
   - e5-small et e5-base d'origine (intfloat/multilingual-e5-*) ;
   - bge-m3 ;
   - l'encodeur fine-tuné `models/e5b-both-type-s1`.
 
   Les encodeurs e5 utilisent les préfixes « query: » et « passage: », et aucun préfixe de type d'unité (il
   n'y a pas d'unités ici). Longueur maximale : 256 jetons pour les e5, 512 pour bge-m3.
-- **Choix sur val uniquement** : taille de fenêtre parmi 1 (tours seuls), 3, 5, 8, par la meilleure MRR@10.
+- Choix sur val uniquement : taille de fenêtre parmi 1 (tours seuls), 3, 5, 8, par la meilleure MRR@10.
   Les cinq modèles choisissent 8. La grille s'arrête à 8 (« quelques tours », et une fenêtre plus longue
-  recoupe mécaniquement plus facilement un long passage). Test est mesuré une seule fois, avec la fenêtre figée
-  et les tours seuls comme référence.
-- **Mémoire GPU** : un modèle chargé à la fois, libéré avant le suivant ; chaque réunion est encodée une fois
+  recoupe mécaniquement plus facilement un long passage). J'ai mesuré test une seule fois, avec la fenêtre
+  figée et les tours seuls comme référence.
+- Mémoire GPU : un modèle chargé à la fois, libéré avant le suivant. Chaque réunion est encodée une fois
   pour toutes les tailles de fenêtre.
 
 ## 4. Résultats
@@ -110,7 +110,7 @@ MRR@10 :
 | e5-base fine-tuné | tours seuls | 0,435 | 0,788 | 0,849 | 0,610 | 0,658 |
 | e5-base fine-tuné | tours + fenêtres de 8 | 0,468 | **0,790** | 0,880 | 0,644 | 0,688 |
 
-MRR@10 par source (test, tours + fenêtres de 8 ; nombre de questions entre parenthèses) :
+MRR@10 par source (test, tours + fenêtres de 8, nombre de questions entre parenthèses) :
 
 | modèle | AMI (129) | ICSI (49) | commissions (66) |
 |---|---|---|---|
@@ -120,7 +120,7 @@ MRR@10 par source (test, tours + fenêtres de 8 ; nombre de questions entre pare
 | bge-m3 | 0,620 | 0,480 | 0,735 |
 | e5-base fine-tuné | 0,657 | 0,509 | 0,718 |
 
-**e5-base fine-tuné contre e5-base d'origine** (différence de MRR@10 par question, test, intervalle de confiance à
+e5-base fine-tuné contre e5-base d'origine (différence de MRR@10 par question, test, intervalle de confiance à
 95 % par bootstrap apparié, 5 000 tirages) :
 
 | corpus | différence | IC 95 % | questions meilleures / moins bonnes / égales |
@@ -130,45 +130,45 @@ MRR@10 par source (test, tours + fenêtres de 8 ; nombre de questions entre pare
 
 ## 5. Interprétation
 
-- **Le fine-tuning a légèrement dégradé la recherche sur ces vraies réunions anglaises.** La MRR@10 baisse
+- Le fine-tuning a légèrement dégradé la recherche sur ces vraies réunions anglaises. La MRR@10 baisse
   d'environ 0,04 et le Recall@1 de 0,06. L'écart est petit : son intervalle de confiance exclut zéro de peu,
   et sur val il était du même ordre (0,612 contre 0,646). Les deux tiers des questions ne changent pas. Le
   Recall@5 est en revanche un peu plus haut (0,790 contre 0,768). Le modèle fine-tuné trouve donc le bon passage
   presque aussi souvent dans les 5 premiers, mais le met moins souvent en tête.
-- **La perte est concentrée sur ICSI** (0,509 contre 0,607) et, dans une moindre mesure, sur les commissions
+- La perte est concentrée sur ICSI (0,509 contre 0,607) et, dans une moindre mesure, sur les commissions
   (0,718 contre 0,772). Sur AMI, les deux modèles sont à égalité (0,657 contre 0,663). AMI est le domaine le
   plus proche des données d'entraînement : des réunions de projet avec des décisions, des responsables et des
   échéances. ICSI (réunions de recherche, vocabulaire technique, discussions longues) et les commissions (débats
   formels) s'en éloignent.
-- **Lecture** : le fine-tuning a spécialisé l'encodeur sur une forme de texte (unités courtes, en français,
+- Lecture : le fine-tuning a spécialisé l'encodeur sur une forme de texte (unités courtes, en français,
   préfixées par leur type) et un style de questions (décision en vigueur, responsable, date). Hors de ce
   domaine, une partie de la généralité d'e5-base est perdue, sans effondrement. Le modèle fine-tuné reste
   au-dessus de BM25 et de bge-m3, et au niveau d'e5-small. Pour le projet, cela confirme que le fine-tuning est
   adapté à son domaine. Pour un usage sur de vraies réunions anglaises, e5-base d'origine serait le meilleur
   point de départ.
-- **Autres modèles** :
+- Autres modèles :
   - e5-base d'origine est le meilleur partout ;
   - BM25 est très bon sur les commissions (0,762), où les questions reprennent les termes exacts du débat, et
     faible sur ICSI ;
   - bge-m3 fait moins bien qu'e5-base, malgré une longueur maximale double.
-- **Fenêtres** : elles aident les encodeurs (+0,03 de MRR@10 pour e5-base), pas BM25. Sur test, BM25 fait un
-  peu mieux avec les tours seuls : son choix de fenêtre sur val ne se transfère pas.
+- Fenêtres : elles aident les encodeurs (+0,03 de MRR@10 pour e5-base), pas BM25. Sur test, BM25 fait un peu
+  mieux avec les tours seuls : son choix de fenêtre sur val ne se transfère pas.
 
 ## 6. Limites
 
-- **Langue** : l'encodeur a été fine-tuné en français et il est évalué en anglais. La baisse mesurée mélange
-  l'effet du domaine (réunions synthétiques contre réelles) et celui de la langue, sans pouvoir les séparer ;
-  une version française de QMSum (traduction) le permettrait, mais elle n'est pas faite ici.
-- **Pas d'annotations de statut** : QMSum n'indique ni remplacement, ni proposition contre décision. La
+- Langue : l'encodeur a été fine-tuné en français et il est évalué en anglais. La baisse mesurée mélange
+  l'effet du domaine (réunions synthétiques contre réelles) et celui de la langue, sans pouvoir les séparer.
+  Une version française de QMSum (traduction) le permettrait, mais elle n'est pas faite ici.
+- Pas d'annotations de statut : QMSum n'indique ni remplacement, ni proposition contre décision. La
   mémoire, l'abstention et les pièges de statut, qui sont l'apport principal du projet, ne sont donc pas
   évalués. Seule la recherche brute l'est.
-- **Questions orientées résumé** : les questions spécifiques demandent souvent un résumé d'une discussion
-  (« What did the group discuss about… ») ; les passages sont longs (23 tours en médiane) et un classement au
+- Questions orientées résumé : les questions spécifiques demandent souvent un résumé d'une discussion
+  (« What did the group discuss about… »). Les passages sont longs (23 tours en médiane) et un classement au
   hasard atteint déjà MRR@10 ≈ 0,20. La mesure est grossière : elle récompense de tomber dans la bonne zone de
   la réunion, pas de trouver une phrase précise.
-- **Troncature** : avec les fenêtres de 8 tours, 13 % des documents dépassent les 256 jetons des encodeurs e5
-  (5 % dépassent 512) et sont tronqués ; les tours seuls ne le sont presque jamais (0,6 %).
-- **Effectifs** : 244 questions sur test, dont 49 pour ICSI, sur seulement 9 réunions. Les écarts par source
+- Troncature : avec les fenêtres de 8 tours, 13 % des documents dépassent les 256 jetons des encodeurs e5
+  (5 % dépassent 512) et sont tronqués. Les tours seuls ne le sont presque jamais (0,6 %).
+- Effectifs : 244 questions sur test, dont 49 pour ICSI, sur seulement 9 réunions. Les écarts par source
   reposent sur peu de réunions.
-- **Fenêtre au bord de la grille** : tous les modèles choisissent la plus grande taille essayée (8).
+- Fenêtre au bord de la grille : tous les modèles choisissent la plus grande taille essayée (8).
   Une taille plus grande aurait peut-être été choisie, mais avec une part mécanique croissante.

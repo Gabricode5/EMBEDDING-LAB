@@ -93,29 +93,29 @@ n'est pas dans les données.
 
 ```mermaid
 flowchart TD
-    E["Projet exemple Atlas<br/>écrit à la main"] --> G["Génération<br/>qwen3:8b pour train et val<br/>copier-coller pour test et test2"]
+    E["Projet exemple Atlas<br/>écrit par une IA, relu et corrigé"] --> G["Génération<br/>qwen3:8b pour train et val<br/>copier-coller pour test et test2"]
     G --> N["Normalisation<br/>oublis de forme évidents"]
     N --> V{"Validation<br/>par le schéma"}
     V -- erreurs --> G
     V -- ok --> L["Relecture à la main<br/>aidée par review_scenarios.py"]
     L --> D[("data/scenarios<br/>train, val, test, test2")]
-    H["Questions écrites à la main<br/>ou reformulées avec une IA"] --> D
+    H["Questions d'Atlas écrites par une IA<br/>questions assistées suggérées en partie par une IA<br/>toutes reformulées ou relues, vérifiées par moi"] --> D
 ```
 
-Les splits sont faits par projet. Le test vient d'un autre générateur que l'entraînement, et test2 d'un autre
-générateur et d'un autre domaine.
+Les splits sont faits par projet. Le test et test2 viennent d'un autre générateur (Claude) que l'entraînement
+(qwen3:8b) ; test2 change de projets et de consigne de style par rapport au test, mais pas de générateur.
 
 ## Recherche et fine-tuning
 
-- **Corpus.** Un document par unité, avec le type en préfixe (« Décision : … »). J'ai aussi comparé des tours
+- Corpus : un document par unité, avec le type en préfixe (« Décision : … »). J'ai aussi comparé des tours
   de parole et des fenêtres de mots ([chunking.md](chunking.md)) : les unités sont meilleures.
-- **BM25.** Codé à la main (`sae/retrieval/bm25.py`), pour avoir le score de chaque document pour chaque
+- BM25 : codé à la main (`sae/retrieval/bm25.py`), pour avoir le score de chaque document pour chaque
   question, ce qui est nécessaire pour la précision sur les négatifs difficiles. Il utilise la racinisation
   française. Les négations (« ne », « pas », « jamais ») sont gardées, parce qu'elles changent le sens. Un
   paramètre de langue permet de passer à l'anglais pour QMSum.
-- **Encodeurs.** Les encodeurs denses (`sae/retrieval/dense.py`) utilisent Sentence Transformers en bf16 sur
+- Encodeurs : les encodeurs denses (`sae/retrieval/dense.py`) utilisent Sentence Transformers en bf16 sur
   le GPU, avec les préfixes « query: » et « passage: » pour les e5.
-- **Fine-tuning** (`scripts/train_embedder.py`, `sae/training/pairs.py`). C'est un apprentissage contrastif à
+- Fine-tuning (`scripts/train_embedder.py`, `sae/training/pairs.py`) : c'est un apprentissage contrastif à
   partir d'e5-base :
   - les paires sont question → unité pertinente (76) et phrase dite → résumé de l'unité (119) ;
   - les négatifs sont explicites (les négatifs difficiles annotés) et minés par le modèle ;
@@ -134,19 +134,19 @@ flowchart LR
     A["Relations annotées<br/>borne haute"] -.-> M
 ```
 
-- **Classifieur** (`sae/relations/`, `scripts/train_relations.py`). Il prédit la relation entre deux unités
+- Classifieur (`sae/relations/`, `scripts/train_relations.py`) : il prédit la relation entre deux unités
   d'un même projet. J'ai essayé une régression logistique sur des embeddings et un cross-encodeur mDeBERTa
   fine-tuné, et je garde le cross-encodeur. Le seuil de 0,45 sur `supersedes` est choisi sur val. Des règles
   de types excluent les remplacements impossibles : une question ou une réponse ne devient pas obsolète, et
   une idée ne remplace pas une décision.
-- **Mémoire** (`sae/memory.py`). Elle garde les unités et les remplacements, prédits par le classifieur ou
+- Mémoire (`sae/memory.py`) : elle garde les unités et les remplacements, prédits par le classifieur ou
   annotés pour la borne haute. Pour une question, `apply_memory` agit en trois temps :
   - une unité remplacée transmet son score à la version en vigueur (en bout de chaîne) ;
   - les unités inactives passent sous toutes les autres ;
   - les autres projets passent sous le projet de la question.
 
   Pour une question « qu'est-ce qui a changé », les anciennes versions sont gardées.
-- **Coût de la prédiction.** La prédiction des relations porte sur toutes les paires d'un projet : son coût
+- Coût de la prédiction : la prédiction des relations porte sur toutes les paires d'un projet, son coût
   croît comme le carré du nombre d'unités ([reranking_et_systeme.md](reranking_et_systeme.md)).
 
 ## Extraction des unités
@@ -181,26 +181,26 @@ flowchart TD
     AN --> WR["rédaction facultative"]
 ```
 
-- **Compréhension** (`sae/agent/understanding.py`). Ce sont des règles :
+- Compréhension (`sae/agent/understanding.py`) : ce sont des règles :
   - une intention par mots-clés, avec sa raison ;
   - un garde-fou sur les phrases hypothétiques (« on pourrait peut-être… ») ;
   - la détection des salutations et des questions sur l'agent ;
   - les paramètres : personne, projet (identifiant, nom ou nom propre du titre) et échéance.
-- **Opérations** (`sae/agent/engine.py`) :
-  - **réponse** : l'unité trouvée et, si elle en remplace d'autres, les anciennes versions ;
-  - **comparaison** : la chaîne des versions, de la plus ancienne à celle en vigueur ;
-  - **dossier** : décisions, engagements, risques, idées et historique, chaque affirmation citant son unité ;
-  - **brouillons** : ils ne sont jamais envoyés. Le destinataire doit être désigné comme responsable (`owner`)
+- Opérations (`sae/agent/engine.py`) :
+  - réponse : l'unité trouvée et, si elle en remplace d'autres, les anciennes versions ;
+  - comparaison : la chaîne des versions, de la plus ancienne à celle en vigueur ;
+  - dossier : décisions, engagements, risques, idées et historique, chaque affirmation citant son unité ;
+  - brouillons : ils ne sont jamais envoyés. Le destinataire doit être désigné comme responsable (`owner`)
     dans une réunion, et l'agent vérifie qu'il n'a pas été réattribué depuis ;
-  - **précision** : l'agent demande le projet ou le sujet quand la demande est trop vague ;
-  - **abstention** : sur une question d'information, l'agent répond « pas trouvé » si le score de la première
+  - précision : l'agent demande le projet ou le sujet quand la demande est trop vague ;
+  - abstention : sur une question d'information, l'agent répond « pas trouvé » si le score de la première
     unité est sous un seuil calibré sur train et val (stratégie `score`, [abstention.md](abstention.md)).
-- **Rédaction facultative** (`sae/agent/writer.py`). Elle s'applique aux réponses et aux comparaisons. qwen3:8b
+- Rédaction facultative (`sae/agent/writer.py`) : elle s'applique aux réponses et aux comparaisons. qwen3:8b
   lit les 6 premières unités après la mémoire et rédige 1 à 3 phrases en citant leurs identifiants. Le code
   rejette la réponse dans trois cas : un identifiant cité n'est pas fourni, rien n'est cité, ou un nom propre
   ou un nombre est absent des unités citées. L'agent revient alors à l'affichage en règles. C'est désactivé par
   défaut en ligne de commande et activé dans l'interface ([redaction.md](redaction.md)).
-- **Reranking** (`sae/retrieval/rerank.py`). bge-reranker-v2-m3 reclasse les 10 premiers candidats avant la
+- Reranking (`sae/retrieval/rerank.py`) : bge-reranker-v2-m3 reclasse les 10 premiers candidats avant la
   mémoire. Il a été mesuré, mais je ne l'ai pas intégré à l'agent : il coûte environ 60 ms par question et son
   gain dépend des questions ([reranking_et_systeme.md](reranking_et_systeme.md)).
 

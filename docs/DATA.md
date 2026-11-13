@@ -11,16 +11,18 @@ remplacée) et les responsables. J'ai donc créé des projets fictifs, en franç
 
 | split | projets | comment ils ont été produits |
 |---|---|---|
-| train | atlas, communiquer, immobilis, lyon-second-store, rh-refresh, salle-sport, santech | Atlas écrit à la main (il sert d'exemple dans le prompt) ; les 6 autres générés en local avec qwen3:8b via Ollama |
+| train | atlas, communiquer, immobilis, lyon-second-store, rh-refresh, salle-sport, santech | Atlas écrit par Claude comme scénario exemple, puis relu et corrigé par moi (il sert d'exemple dans le prompt) ; les 6 autres générés en local avec qwen3:8b via Ollama |
 | val | bio-gamme, e-com-site | générés avec qwen3:8b via Ollama |
 | test | clinique-tilleuls, horizons-2026, nordstock-relais | générés avec Claude par copier-coller (mode `manual` de `generate_scenarios.py`) |
-| test2 | grain-ocre-croix-rousse, pierre-angle-crm | générés par copier-coller (mode `manual`) avec un autre modèle que pour le test : modèle à confirmer |
+| test2 | grain-ocre-croix-rousse, pierre-angle-crm | générés avec Claude par copier-coller, comme le test, mais avec une autre consigne de style (« ton familier, phrases courtes, beaucoup de tutoiement ») et sur des projets jamais vus |
 
 Un premier jeu de test généré avec llama3.1:8b a été rejeté pour sa mauvaise qualité. Trois projets rejetés
 sont gardés hors du dépôt, dans `data/rejected/` (ignoré par git).
 
-Le test vient d'un autre générateur que l'entraînement, pour que le modèle ne soit pas évalué sur le style de
-son propre générateur. test2 change encore de générateur et de domaine (une boutique, une agence immobilière).
+Le test vient d'un autre générateur (Claude) que le reste de l'entraînement (qwen3:8b), à part le projet
+exemple Atlas, écrit lui aussi par Claude, pour que le modèle ne soit pas évalué sur le style de son propre
+générateur. test2 vient du même générateur que le test, mais sur deux
+projets jamais vus (une boutique, une agence immobilière), écrits avec une autre consigne de style.
 
 QMSum (vraies réunions en anglais) sert uniquement à l'évaluation de la recherche : il n'est jamais utilisé pour
 l'entraînement. Il est décrit dans [qmsum.md](qmsum.md).
@@ -60,9 +62,14 @@ actions, et remettre dans le bon sens les relations `creates_action` (de la caus
 **Origine des questions.**
 
 - `generated` : écrites par le générateur en même temps que le projet ;
-- `manual` : écrites à la main (les 10 questions d'Atlas) ;
-- `assisted` : questions du test écrites avec l'aide d'une IA, qui les a reformulées dans un style plus oral
-  ou plus poli, puis vérifiées à la main.
+- `manual` : les 10 questions d'Atlas, écrites par Claude avec le scénario exemple, puis relues par moi ;
+- `assisted` : questions du test dont les idées venaient en partie de suggestions d'une IA, que j'ai choisies
+  ou adaptées, puis reformulées par Claude dans un style plus oral ou plus poli ; j'ai vérifié chaque réponse
+  attendue.
+
+**Origine des demandes.** Les demandes de `data/agent_eval/test.jsonl`, `holdout.jsonl` et `test2.jsonl`
+(origin `suggested`) ont été proposées par un assistant d'IA, puis vérifiées par moi, en particulier les
+destinataires attendus (`expected_recipient`).
 
 **Paramètres annotés à la main.** `data/agent_eval/slots.jsonl` contient la personne, le projet et l'échéance
 attendus pour 35 demandes d'action. Je les ai validés à la main avant toute mesure
@@ -208,8 +215,9 @@ et, pour les modèles Ollama, avec `ollama show`, le 4 novembre 2026 :
 Les modèles que j'ai entraînés (`models/`) dérivent d'e5-base, d'e5-small et de mDeBERTa, tous sous licence
 MIT. Ils ne sont pas versionnés.
 
-**Sorties de Claude.** Le jeu de test et les questions assistées ont été produits avec Claude (Anthropic).
-Leur usage relève des conditions d'utilisation d'Anthropic, auxquelles je renvoie sans les résumer.
+**Sorties de Claude.** Le scénario Atlas, le jeu de test, test2 et les questions assistées (idées en partie
+suggérées par une IA, reformulées par Claude) ont été produits avec Claude (Anthropic). Leur usage relève des
+conditions d'utilisation d'Anthropic, auxquelles je renvoie sans les résumer.
 
 **QMSum.** Le dépôt est sous licence MIT. AMI et ICSI sont sous CC BY 4.0. Les commissions du Parlement gallois
 et de la Chambre des communes du Canada sont réutilisables sans but commercial. Je ne redistribue pas ces
@@ -217,15 +225,16 @@ données. Le détail et les liens sont dans [qmsum.md](qmsum.md).
 
 ## 6. Limites
 
-- **Données synthétiques.** Les réunions sont générées par des modèles de langue : l'oral est plus propre
+- Données synthétiques : les réunions sont générées par des modèles de langue, l'oral est plus propre
   qu'en vrai, et les questions et les unités partagent souvent le même vocabulaire. L'évaluation sur QMSum
   montre que les conclusions ne se transfèrent pas telles quelles à de vraies réunions.
-- **Projets proches.** Beaucoup de projets suivent le même schéma : un budget proposé puis validé, une date
+- Projets proches : beaucoup de projets suivent le même schéma, un budget proposé puis validé, une date
   fixée puis reportée, un responsable remplacé. C'est voulu pour tester les statuts, mais cela rend les
   splits plus proches entre eux que de vrais projets.
-- **Petits effectifs.** 14 projets, 270 unités, 191 questions, dont 73 sur test et 28 sur test2. Une question
+- Petits effectifs : 14 projets, 270 unités, 191 questions, dont 73 sur test et 28 sur test2. Une question
   pèse 1,4 point sur test et 3,6 points sur test2.
-- **Questions assistées.** Les 33 questions `assisted` ont été reformulées par une IA. Elles sont plus
-  variées que les questions générées, mais elles ne sont pas écrites par de vrais utilisateurs.
-- **Vérité terrain produite par les générateurs.** Les annotations viennent du même modèle que le texte. Je
+- Questions assistées : les idées des 33 questions `assisted` venaient en partie de suggestions d'une IA, que
+  j'ai choisies ou adaptées, puis reformulées par Claude. Elles sont plus variées que les questions générées,
+  mais elles ne sont pas écrites par de vrais utilisateurs.
+- Vérité terrain produite par les générateurs : les annotations viennent du même modèle que le texte. Je
   les ai relues, mais je n'ai pas fait d'accord inter-annotateurs.
