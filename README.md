@@ -23,16 +23,18 @@ le MRR@10 : il vaut 1 quand la bonne unité est classée première, 0,5 quand el
 
 Je n'ai pas trouvé de corpus public de réunions où les décisions sont annotées avec leur statut et leur
 responsable. AMI ou QMSum ont des transcriptions et des résumés, mais pas cette information. J'ai donc fabriqué
-des projets fictifs. J'ai écrit le premier, Atlas, à la main pour fixer le format. Il sert ensuite d'exemple
-dans le prompt de génération. Les projets d'entraînement et de validation ont été générés en local avec
-qwen3:8b.
+des projets fictifs. Le premier, Atlas, a été écrit par un assistant d'IA (Claude) comme scénario exemple,
+puis relu et corrigé par moi pour fixer le format. Il sert ensuite d'exemple dans le prompt de génération.
+Les projets d'entraînement et de validation ont été générés en local avec qwen3:8b.
 
 Pour le test, je voulais un autre générateur que pour l'entraînement, sinon le modèle aurait pu apprendre le
 style de qwen plutôt que la tâche. J'ai d'abord essayé llama3.1:8b. Les trois projets obtenus passaient le
 schéma, mais je les ai trouvés trop pauvres en les relisant : 12 à 20 unités par projet, et un oral qui
 ressemblait à de l'écrit. Je les ai mis de côté (`data/rejected/`, hors du dépôt). J'ai refait le test avec
 Claude, par copier-coller, ce qui a donné 3 projets de 23 unités en moyenne, avec un oral plus naturel. J'ai
-aussi ajouté 33 questions plus orales ou plus polies, reformulées avec une IA puis vérifiées à la main.
+aussi ajouté 33 questions dont les idées venaient en partie de suggestions d'une IA, que j'ai choisies ou
+adaptées, puis reformulées par Claude dans un style plus oral ou plus poli ; j'ai vérifié chaque réponse
+attendue.
 
 La validation par le schéma ne voyait pas les erreurs de sens. J'ai donc écrit `review_scenarios.py`, qui
 signale les cas suspects, et j'ai relu chaque projet. Deux erreurs revenaient tout le temps dans les projets
@@ -65,9 +67,9 @@ que 11 secondes (195 paires), donc je pouvais me le permettre.
 La meilleure configuration est la même sur val et sur test, mais val ne contient que 20 questions et elle
 s'est trompée sur un point. Pour e5-small, elle disait que le type dans le texte faisait baisser le score
 (0,825 → 0,818), alors que sur test il le fait monter (0,807 → 0,829). C'est la première fois que j'ai vu que
-ma validation était trop petite pour trancher des écarts de 0,01. J'ai gardé la graine 1 du meilleur
-réglage (`e5b-both-type-s1`, 0,826 sur test). Ce n'est pas la meilleure graine sur test (0,850 pour la graine
-2), mais choisir la graine en regardant test aurait faussé la mesure.
+ma validation était trop petite pour trancher des écarts de 0,01. J'ai gardé la graine 1 sans regarder le
+test : ce n'est d'ailleurs pas la meilleure (0,826 contre 0,850 pour la graine 2), mais je voulais un seul
+modèle par configuration.
 
 ### Mémoire et relations
 
@@ -95,11 +97,12 @@ le point faible du système.
 ### Un deuxième jeu de test
 
 Comme tous mes projets se ressemblent (un budget proposé puis validé, une date reportée), j'avais peur que les
-résultats ne tiennent qu'à ce style. J'ai créé test2 : deux projets dans un autre domaine (une boutique et un
-CRM d'agence immobilière), générés avec un autre modèle. L'encodeur fine-tuné y fait 0,791, à peine devant
+résultats ne tiennent qu'à ce style. J'ai créé test2 : deux autres projets, jamais vus, écrits dans un autre
+style (une boutique et un CRM d'agence immobilière), générés avec Claude comme pour le test, avec la consigne
+« ton familier, phrases courtes, beaucoup de tutoiement ». L'encodeur fine-tuné y fait 0,791, à peine devant
 bge-m3 (0,788). Avec la mémoire, il monte à 0,847 avec les relations prédites et à 0,931 avec les relations
 annotées. Le gain vient donc surtout de la mémoire, et beaucoup moins du fine-tuning, quand on change de
-domaine.
+projets et de style.
 
 ### L'agent
 
@@ -107,6 +110,9 @@ L'agent est fait de règles. Il détecte l'intention par mots-clés, refuse d'ag
 (« on pourrait peut-être revoir le budget »), cherche les unités, applique la mémoire puis choisit
 l'opération. Pour un mail, le destinataire doit être désigné comme responsable dans une réunion. Une personne
 seulement citée ne suffit pas, et aucune adresse n'est inventée.
+
+Les demandes utilisées pour l'évaluer viennent d'un assistant d'IA, qui les a proposées à partir des unités de
+chaque projet. J'ai vérifié chaque réaction attendue, en particulier les destinataires.
 
 Pour ne pas régler l'agent sur les données qui le mesurent, j'ai séparé ses demandes en trois jeux. Le
 premier, 6 demandes sur Atlas, servait à la mise au point. Au début, 5 sur 6 passaient : « Crée une tâche pour
