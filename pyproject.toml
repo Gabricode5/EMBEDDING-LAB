@@ -9,3 +9,6 @@ requires-python = ">=3.10"
 
 [tool.setuptools.packages.find]
 include = ["sae*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
