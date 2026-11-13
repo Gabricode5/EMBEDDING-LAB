@@ -17,7 +17,6 @@ encodeurs avec leurs préfixes query/passage, sans préfixe de type d'unité.
 from __future__ import annotations
 
 import argparse
-import gc
 import json
 import re
 import sys
@@ -28,6 +27,8 @@ from pathlib import Path
 
 from sae.data import EvalQuery
 from sae.eval.metrics import aggregate, grouped, per_query_docs
+from sae.retrieval import make_retriever
+from sae.retrieval.dense import free_gpu
 
 COMMIT = "83d7768c1f2b4dfeb091385d3dc7e239b8e5bb7e"   # dépôt Yale-LILY/QMSum, 29 août 2023
 RAW = f"https://raw.githubusercontent.com/Yale-LILY/QMSum/{COMMIT}/data"
@@ -104,24 +105,9 @@ def doc_units(spans: list[tuple[int, int]], passages: dict[str, tuple[int, int]]
     return [frozenset(p for p, (a, b) in passages.items() if s <= b and a <= e) for s, e in spans]
 
 
-def make_retriever(name: str):
-    if name == "bm25":
-        from sae.retrieval.bm25 import BM25
-        return BM25(language="english")
-    from sae.retrieval.dense import DenseRetriever, resolve_spec
-    return DenseRetriever(resolve_spec(name))
-
-
-def free_gpu() -> None:
-    import torch
-    gc.collect()
-    if torch.cuda.is_available():
-        torch.cuda.empty_cache()
-
-
 def evaluate(meetings: list[dict], model: str, windows: list[int]) -> dict[int, list[dict]]:
     """Lignes par question (per_query_docs) pour chaque taille de fenêtre ; un seul modèle chargé à la fois."""
-    retriever = make_retriever(model)
+    retriever = make_retriever(model, language="english")
     rows: dict[int, list[dict]] = {w: [] for w in windows}
     t0 = time.perf_counter()
     for i, m in enumerate(meetings, 1):

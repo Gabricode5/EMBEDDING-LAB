@@ -15,17 +15,11 @@ from pathlib import Path
 from sae.data import build_queries, load_scenarios
 from sae.eval.metrics import aggregate, grouped, per_query
 from sae.memory import Memory, apply_memory, rrf
+from sae.retrieval import make_retriever
 from sae.retrieval.bm25 import BM25
 
 COLS = ("recall@1", "recall@5", "mrr@10", "ndcg@10", "hn_acc")
 FOCUS = ("origin=generated", "origin=assisted", "tag=current_decision", "tag=compare")
-
-
-def make_retriever(name: str):
-    if name == "bm25":
-        return BM25()
-    from sae.retrieval.dense import DenseRetriever, resolve_spec
-    return DenseRetriever(resolve_spec(name))
 
 
 def main() -> None:

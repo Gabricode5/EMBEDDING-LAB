@@ -70,7 +70,8 @@ def gpu_state(host: str, model: str) -> dict:
 
 def evaluate(split: str, writer: Writer, args) -> dict:
     sys.path.insert(0, str(Path(__file__).parent))
-    from agent import build_agent, free_gpu
+    from agent import build_agent
+    from sae.retrieval.dense import free_gpu
 
     writer.unload()   # le classifieur de relations et le bi-encodeur passent avant le modèle de rédaction
 

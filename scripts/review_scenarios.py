@@ -8,8 +8,8 @@ Les signalements sont des pistes à vérifier, pas des erreurs certaines.
 """
 from __future__ import annotations
 
+import argparse
 import re
-import sys
 from pathlib import Path
 
 from sae.schemas import Scenario
@@ -91,8 +91,11 @@ def show(s: Scenario) -> None:
 
 
 def main() -> None:
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    targets = [Path(a) for a in args] or [Path("data/scenarios") / s for s in ("train", "val", "test")]
+    ap = argparse.ArgumentParser(description="Signale les incohérences probables que le validateur ne voit pas.")
+    ap.add_argument("paths", nargs="*", help="splits ou fichiers JSON (par défaut : train, val et test)")
+    ap.add_argument("--show", action="store_true", help="affiche aussi les unités, relations et requêtes")
+    args = ap.parse_args()
+    targets = [Path(a) for a in args.paths] or [Path("data/scenarios") / s for s in ("train", "val", "test")]
     files = sorted(p for t in targets for p in ([t] if t.suffix == ".json" else t.glob("*.json")))
 
     # Scénarios servant d'exemples au générateur : leurs requêtes ne doivent pas être recopiées.
@@ -111,7 +114,7 @@ def main() -> None:
         print(f"\n### {f}  ({len(issues)} point(s) à vérifier)")
         for i in issues:
             print(f"  - {i}")
-        if "--show" in sys.argv:
+        if args.show:
             show(s)
     print(f"\nTotal : {total} point(s) à vérifier.")
 

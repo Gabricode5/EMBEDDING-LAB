@@ -18,16 +18,9 @@ import numpy as np
 
 from sae.data import build_corpus, build_queries, load_scenarios
 from sae.eval.metrics import aggregate, grouped, per_query
-from sae.retrieval.bm25 import BM25
+from sae.retrieval import make_retriever
 
 MAIN_COLS = ("recall@1", "recall@5", "recall@10", "mrr@10", "ndcg@10", "hn_acc")
-
-
-def make_retriever(name: str):
-    if name == "bm25":
-        return BM25()
-    from sae.retrieval.dense import DenseRetriever, resolve_spec
-    return DenseRetriever(resolve_spec(name))
 
 
 def hardware() -> dict:

@@ -79,7 +79,7 @@ def print_tables(results: dict, doc_stats: dict, n_queries: dict) -> None:
 
 def main() -> None:
     sys.path.insert(0, str(Path(__file__).parent))
-    from run_baselines import make_retriever  # mêmes modèles que les baselines
+    from sae.retrieval import make_retriever  # mêmes modèles que les baselines
 
     ap = argparse.ArgumentParser()
     ap.add_argument("--splits", nargs="+", default=list(SELECTION_SPLITS))

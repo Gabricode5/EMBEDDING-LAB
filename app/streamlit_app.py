@@ -24,7 +24,8 @@ if str(ROOT) not in sys.path:
 
 from sae.agent.engine import ABSTENTION_STRATEGIES, DEFAULT_ABSTENTION, Agent, AgentResult  # noqa: E402
 from sae.agent.writer import DEFAULT_HOST, WRITER_MODELS, Writer  # noqa: E402
-from scripts.agent import DEMO, build_agent, free_gpu  # noqa: E402
+from sae.retrieval.dense import free_gpu  # noqa: E402
+from scripts.agent import DEMO, build_agent  # noqa: E402
 
 # projets proposés (test et test2, plus atlas de train pour sa démo) : nom court et jeu de données
 PROJECTS = {

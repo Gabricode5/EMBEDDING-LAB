@@ -4,6 +4,7 @@
 """
 from __future__ import annotations
 
+import argparse
 import sys
 from collections import Counter
 from pathlib import Path
@@ -18,6 +19,7 @@ REQUIRED_TAGS = ("proposal_vs_decision", "hypothesis_vs_decision", "date_change"
 
 
 def main() -> int:
+    argparse.ArgumentParser(description="Valide tous les scénarios et contrôle les fuites entre splits.").parse_args()
     ok = True
     loaded = {}
     for split in SPLITS:

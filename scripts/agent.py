@@ -17,6 +17,8 @@ from sae.agent.engine import ABSTENTION_STRATEGIES, DEFAULT_ABSTENTION, Agent
 from sae.agent.writer import DEFAULT_HOST, DEFAULT_K, VRAM_MIB, WRITER_MODELS, Writer
 from sae.agent.understanding import detect_intent, is_hypothetical
 from sae.data import load_scenarios
+from sae.retrieval import make_retriever
+from sae.retrieval.dense import free_gpu
 from sae.memory import Memory
 
 DEMO = {
@@ -41,14 +43,6 @@ DEMO = {
         ("7. Phrase hypothétique", "On pourrait peut-être revoir le budget."),
     ],
 }
-
-
-def make_retriever(name: str):
-    if name == "bm25":
-        from sae.retrieval.bm25 import BM25
-        return BM25()
-    from sae.retrieval.dense import DenseRetriever, resolve_spec
-    return DenseRetriever(resolve_spec(name))
 
 
 def make_writer(args) -> Writer | None:
@@ -86,14 +80,6 @@ def build_agent(args) -> Agent:
     retriever = make_retriever(args.retriever)
     return Agent(scenarios, memory, retriever, with_type=not args.no_type,
                  abstention=getattr(args, "abstention", DEFAULT_ABSTENTION), writer=make_writer(args))
-
-
-def free_gpu() -> None:
-    import gc
-    import torch
-    gc.collect()
-    if torch.cuda.is_available():
-        torch.cuda.empty_cache()
 
 
 def add_writer_args(ap: argparse.ArgumentParser) -> None:

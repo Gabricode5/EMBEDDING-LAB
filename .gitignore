@@ -35,5 +35,6 @@ embedding-lab-todo.md
 .vscode/
 .idea/
 .DS_Store
+
 # Corpus externes (QMSum…) : retéléchargés par leurs scripts, jamais commités
 data/external/

@@ -6,6 +6,15 @@ from dataclasses import dataclass
 import numpy as np
 
 
+def free_gpu() -> None:
+    """Rend au GPU la mémoire des modèles PyTorch qui ne sont plus référencés."""
+    import gc
+    import torch
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+
+
 @dataclass(frozen=True)
 class EncoderSpec:
     name: str
