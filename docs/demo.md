@@ -12,7 +12,8 @@ streamlit run app/streamlit_app.py       # puis ouvrir http://localhost:8501
 ```
 
 Il faut les modèles locaux `models/e5b-both-type-s1` (recherche) et, pour la mémoire prédite,
-`models/relations-cross`. Le premier chargement prend une dizaine de secondes ; les modèles sont ensuite gardés
+`models/relations-cross`. Ils ne sont pas dans le dépôt : `python scripts/setup_models.py` les recrée s'ils
+manquent (53 s sur ma machine). Le premier chargement prend une dizaine de secondes ; les modèles sont ensuite gardés
 en mémoire (trois configurations au plus). Le GPU de 8 Go ne doit pas être occupé par Ollama en même temps.
 
 ## Barre latérale
