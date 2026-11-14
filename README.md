@@ -12,7 +12,7 @@ jamais.
 Le projet est terminé. Tout ce qui est décrit ici est codé et évalué, sauf le reranking, que j'ai mesuré mais
 pas intégré à l'agent. Le fonctionnement est expliqué dans [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) et les
 données dans [docs/DATA.md](docs/DATA.md). Le rapport complet, avec la démarche détaillée et tous les
-résultats, est dans [docs/RAPPORT.pdf](docs/RAPPORT.pdf).
+résultats, est dans [docs/RAPPORT.pdf](docs/RAPPORT.pdf). Une vidéo de démonstration de 2 minutes est dans [docs/demo.mp4](docs/demo.mp4).
 
 ## Démarche
 
