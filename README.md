@@ -11,13 +11,15 @@ jamais.
 
 Le projet est terminé. Tout ce qui est décrit ici est codé et évalué, sauf le reranking, que j'ai mesuré mais
 pas intégré à l'agent. Le fonctionnement est expliqué dans [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) et les
-données dans [docs/DATA.md](docs/DATA.md).
+données dans [docs/DATA.md](docs/DATA.md). Le rapport complet, avec la démarche détaillée et tous les
+résultats, est dans [docs/RAPPORT.pdf](docs/RAPPORT.pdf).
 
 ## Démarche
 
-Je raconte ici les étapes dans l'ordre où je les ai faites, avec ce qui n'a pas marché. Les dates viennent de
-l'historique git. Les chiffres viennent de `docs/` et `experiments/`. Sauf mention contraire, la métrique est
-le MRR@10 : il vaut 1 quand la bonne unité est classée première, 0,5 quand elle est deuxième, etc.
+Le détail de chaque étape est dans le [rapport](docs/RAPPORT.pdf). Je raconte ici les étapes dans l'ordre où
+je les ai faites, avec ce qui n'a pas marché. Les dates viennent de l'historique git. Les chiffres viennent de
+`docs/` et `experiments/`. Sauf mention contraire, la métrique est le MRR@10 : il vaut 1 quand la bonne unité
+est classée première, 0,5 quand elle est deuxième, etc.
 
 ### Données (16 au 25 octobre)
 
@@ -33,7 +35,7 @@ schéma, mais je les ai trouvés trop pauvres en les relisant : 12 à 20 unités
 ressemblait à de l'écrit. Je les ai mis de côté (`data/rejected/`, hors du dépôt). J'ai refait le test avec
 Claude, par copier-coller, ce qui a donné 3 projets de 23 unités en moyenne, avec un oral plus naturel. J'ai
 aussi ajouté 33 questions dont les idées venaient en partie de suggestions d'une IA, que j'ai choisies ou
-adaptées, puis reformulées par Claude dans un style plus oral ou plus poli ; j'ai vérifié chaque réponse
+adaptées, puis reformulées par Claude dans un style plus oral ou plus poli. J'ai vérifié chaque réponse
 attendue.
 
 La validation par le schéma ne voyait pas les erreurs de sens. J'ai donc écrit `review_scenarios.py`, qui
@@ -426,6 +428,7 @@ EMBEDDING-LAB/
 │   ├── extracted/              unités extraites automatiquement et alignement
 │   └── external/               QMSum, retéléchargé (non versionné)
 ├── docs/                       architecture, données, résultats détaillés
+│   └── RAPPORT.pdf             rapport final du projet
 ├── experiments/                résultats des évaluations (non versionnés)
 ├── models/                     modèles entraînés (non versionnés, voir setup_models.py)
 ├── requirements.txt
